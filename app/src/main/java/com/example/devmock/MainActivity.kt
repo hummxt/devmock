@@ -31,6 +31,8 @@ import androidx.compose.runtime.setValue
 import com.google.firebase.auth.FirebaseAuth
 import com.example.devmock.ui.screens.splash.SplashScreen
 import kotlinx.coroutines.delay
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.devmock.ui.screens.quiz.QuestionsViewModel
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,7 +45,7 @@ class MainActivity : ComponentActivity() {
             var showSplash by remember { mutableStateOf(true) }
 
             LaunchedEffect(Unit) {
-                delay(2500) // Show splash for 2.5 seconds
+                delay(2500)
                 showSplash = false
             }
 
@@ -68,8 +70,7 @@ class MainActivity : ComponentActivity() {
                         bottomBar = {
                             if (showBottomBar) {
                                 BottomBar(
-                                    navController = navController,
-                                    currentRoute = currentRoute ?: "home"
+                                    navController = navController
                                 )
                             }
                         }
@@ -81,7 +82,7 @@ class MainActivity : ComponentActivity() {
                         ) {
                             composable("onboarding") {
                                 OnboardingScreen(
-                                    onGetStarted = { navController.navigate("login") }
+                                    onComplete = { navController.navigate("login") }
                                 )
                             }
                             composable("login") {
@@ -108,23 +109,23 @@ class MainActivity : ComponentActivity() {
                             }
                             composable("home") {
                                 Homepage(
-                                    onNavigateToQuiz = { navController.navigate("quiz") },
-                                    onNavigateToInterview = { navController.navigate("interview") }
+                                    onNavigateToInterview = { navController.navigate("interview") },
+                                    onNavigateToQuestions = { navController.navigate("quiz") }
                                 )
                             }
                             composable("quiz") {
+                                val qViewModel: QuestionsViewModel = viewModel()
                                 QuestionsScreen(
-                                    onBackClick = { navController.popBackStack() },
-                                    onStartInterview = { topicId ->
-                                        navController.navigate("library_interview/$topicId")
-                                    }
+                                    navController = navController,
+                                    viewModel = qViewModel
                                 )
                             }
                             composable("interview") {
                                 InterviewScreen(
-                                    onBackClick = { navController.popBackStack() },
                                     onStartInterview = { topic, count, difficulty ->
                                         navController.navigate("live_interview/$topic/$count/$difficulty")
+                                    },
+                                    onNavigateToDetail = { topicId ->
                                     }
                                 )
                             }
@@ -150,30 +151,33 @@ class MainActivity : ComponentActivity() {
                             composable("library_interview/{topicId}") { backStackEntry ->
                                 val topicId = backStackEntry.arguments?.getString("topicId") ?: ""
                                 val repository = remember { com.example.devmock.data.repository.LocalQuestionsRepository(this@MainActivity) }
-                                val questions = remember { repository.getQuestionsByTopicId(topicId) }
-
-                                val viewModel = remember {
-                                    com.example.devmock.ui.screens.interview.live.LocalInterviewViewModel(questions)
+                                
+                                var topic by remember { mutableStateOf<com.example.devmock.ui.screens.quiz.TopicGroup?>(null) }
+                                
+                                LaunchedEffect(topicId) {
+                                    topic = repository.getTopicById(topicId)
                                 }
 
-                                com.example.devmock.ui.screens.interview.live.LiveInterviewScreen(
-                                    onBackClick = { navController.popBackStack() },
-                                    viewModel = viewModel
-                                )
+                                topic?.let { currentTopic ->
+                                    val viewModel = remember(currentTopic) {
+                                        com.example.devmock.ui.screens.interview.live.LocalInterviewViewModel(currentTopic.fullQuestions)
+                                    }
+
+                                    com.example.devmock.ui.screens.interview.live.LiveInterviewScreen(
+                                        onBackClick = { navController.popBackStack() },
+                                        viewModel = viewModel
+                                    )
+                                }
                             }
                             composable("profile") {
                                 ProfileScreen(
-                                    onLogout = {
-                                        auth.signOut()
-                                        isLoggedIn = false
-                                        navController.navigate("onboarding") {
-                                            popUpTo(0) { inclusive = true }
-                                        }
-                                    }
+                                    onNavigateToSettings = { navController.navigate("settings") }
                                 )
                             }
                             composable("settings") {
-                                SettingsScreen()
+                                SettingsScreen(
+                                    onNavigateBack = { navController.popBackStack() }
+                                )
                             }
                         }
                     }

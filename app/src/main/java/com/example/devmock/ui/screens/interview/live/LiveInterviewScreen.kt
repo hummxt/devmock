@@ -221,7 +221,7 @@ fun InterviewContent(
                 .fillMaxSize()
                 .verticalScroll(scrollState)
                 .padding(24.dp)
-                .padding(bottom = 120.dp) // Extra padding for fixed button
+                .padding(bottom = 120.dp)
         ) {
             LinearProgressIndicator(
                 progress = { (state.currentQuestionIndex + 1).toFloat() / state.questions.size },
@@ -277,7 +277,6 @@ fun InterviewContent(
             }
         }
 
-        // Fixed bottom button area with background that matches app theme
         Surface(
             modifier = Modifier
                 .align(Alignment.BottomCenter)

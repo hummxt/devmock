@@ -5,10 +5,6 @@ import retrofit2.http.Body
 import retrofit2.http.Header
 import retrofit2.http.POST
 
-/**
- * Groq API Service for AI chat completions
- * Using Llama 3.3 70B model for high-quality responses
- */
 interface GroqApiService {
     
     @POST("openai/v1/chat/completions")
@@ -19,9 +15,6 @@ interface GroqApiService {
     ): Response<GroqChatResponse>
 }
 
-/**
- * Request body for Groq chat completions
- */
 data class GroqChatRequest(
     val model: String = "llama-3.3-70b-versatile",
     val messages: List<GroqMessage>,
@@ -39,9 +32,6 @@ data class GroqMessage(
     val content: String
 )
 
-/**
- * Response from Groq API
- */
 data class GroqChatResponse(
     val id: String?,
     val choices: List<GroqChoice>?,
