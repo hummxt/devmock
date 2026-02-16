@@ -62,7 +62,7 @@ class MainActivity : ComponentActivity() {
                     val currentRoute = currentBackStackEntry?.destination?.route
 
                     val showBottomBar = when (currentRoute) {
-                        "home", "quiz", "interview", "profile", "settings" -> true
+                        "home", "questions", "interview", "profile", "settings" -> true
                         else -> false
                     }
 
@@ -110,10 +110,10 @@ class MainActivity : ComponentActivity() {
                             composable("home") {
                                 Homepage(
                                     onNavigateToInterview = { navController.navigate("interview") },
-                                    onNavigateToQuestions = { navController.navigate("quiz") }
+                                    onNavigateToQuestions = { navController.navigate("questions") }
                                 )
                             }
-                            composable("quiz") {
+                            composable("questions") {
                                 val qViewModel: QuestionsViewModel = viewModel()
                                 QuestionsScreen(
                                     navController = navController,

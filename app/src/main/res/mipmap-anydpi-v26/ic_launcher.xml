@@ -3,6 +3,6 @@
     <background android:drawable="@color/splash_background"/>
     <foreground>
         <inset android:drawable="@drawable/logo"
-            android:inset="20%"/>
+            android:inset="30%"/>
     </foreground>
 </adaptive-icon>

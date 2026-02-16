@@ -17,10 +17,8 @@ import com.example.devmock.R
 
 @Composable
 fun SplashScreen() {
-    // Animation states
     val infiniteTransition = rememberInfiniteTransition(label = "splash")
     
-    // Logo scale animation - starts small, grows, then pulses
     var logoAnimationStarted by remember { mutableStateOf(false) }
     
     val logoScale by animateFloatAsState(
@@ -41,7 +39,6 @@ fun SplashScreen() {
         label = "logo_alpha"
     )
     
-    // Gentle pulse animation after initial scale
     val pulse by infiniteTransition.animateFloat(
         initialValue = 1f,
         targetValue = 1.05f,
@@ -52,7 +49,6 @@ fun SplashScreen() {
         label = "pulse"
     )
     
-    // Gradient rotation animation
     val gradientRotation by infiniteTransition.animateFloat(
         initialValue = 0f,
         targetValue = 360f,
@@ -63,7 +59,6 @@ fun SplashScreen() {
         label = "gradient_rotation"
     )
     
-    // Shimmer effect
     val shimmer by infiniteTransition.animateFloat(
         initialValue = -1f,
         targetValue = 1f,
@@ -93,7 +88,6 @@ fun SplashScreen() {
             ),
         contentAlignment = Alignment.Center
     ) {
-        // Animated background circles
         repeat(3) { index ->
             val scale by infiniteTransition.animateFloat(
                 initialValue = 0.8f + (index * 0.1f),
@@ -138,7 +132,6 @@ fun SplashScreen() {
             )
         }
         
-        // Main logo with animations
         Image(
             painter = painterResource(id = R.drawable.full_logo),
             contentDescription = "App Logo",
@@ -148,7 +141,6 @@ fun SplashScreen() {
                 .alpha(logoAlpha)
         )
         
-        // Subtle shimmer overlay
         Box(
             modifier = Modifier
                 .fillMaxSize()
