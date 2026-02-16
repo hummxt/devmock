@@ -78,7 +78,7 @@ fun ProfileSection(
                 }
             }
             Column(modifier = Modifier.padding(start = 12.dp)) {
-                val nameToDisplay = if (displayName == "Devmock User") "Hummet User" else displayName
+                val nameToDisplay = displayName
                 Text(
                     "Hello, $nameToDisplay",
                     style = MaterialTheme.typography.titleMedium,
