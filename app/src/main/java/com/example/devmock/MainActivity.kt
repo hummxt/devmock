@@ -136,6 +136,7 @@ class MainActivity : ComponentActivity() {
                             composable("live_interview/{topic}/{count}/{difficulty}") { backStackEntry ->
                                 val topic = backStackEntry.arguments?.getString("topic") ?: ""
                                 val count = backStackEntry.arguments?.getString("count")?.toIntOrNull() ?: 5
+                                val userName = com.google.firebase.auth.FirebaseAuth.getInstance().currentUser?.displayName ?: "Hummet User"
                                 val difficulty = backStackEntry.arguments?.getString("difficulty") ?: "Medium"
 
                                 val viewModel = remember {
