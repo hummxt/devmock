@@ -2,10 +2,9 @@ package com.example.hummet.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val Purple80 = Color(0xFF5204FF)
-val PurpleGrey80 = Color(0xFFCCC2DC)
-val Pink80 = Color(0xFFEFB8C8)
+val HummetPrimary = Color(0xFF040C4C)
+val HummetAccent = Color(0xFFF5CA0E)
+val HummetSecondary = Color(0xFF70C5D3)
 
-val Purple40 = Color(0xFF6650a4)
-val PurpleGrey40 = Color(0xFF625b71)
-val Pink40 = Color(0xFF7D5260)
+val HummetDarkBackground = Color(0xFF020520)
+val HummetDarkSurface = Color(0xFF040C4C)

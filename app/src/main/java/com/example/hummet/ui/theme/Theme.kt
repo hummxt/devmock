@@ -12,23 +12,31 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.graphics.Color
 
 private val DarkColorScheme = darkColorScheme(
-    primary = Color(0xFF5109FA),
-    onPrimary = Color(0xFF381E72),
-    secondary = Color(0xFFCCC2DC),
-    surface = Color(0xFF1C1B1F),
-    onSurface = Color(0xFFE6E1E5),
-    surfaceVariant = Color(0xFF49454F),
-    onSurfaceVariant = Color(0xFFCAC4D0)
+    primary = HummetAccent,
+    onPrimary = HummetPrimary,
+    secondary = HummetSecondary,
+    onSecondary = HummetPrimary,
+    tertiary = HummetSecondary,
+    background = HummetDarkBackground,
+    surface = HummetDarkSurface,
+    onBackground = Color.White,
+    onSurface = Color.White,
+    surfaceVariant = HummetPrimary,
+    onSurfaceVariant = Color.White.copy(alpha = 0.7f)
 )
 
 private val LightColorScheme = lightColorScheme(
-    primary = Color(0xFF6750A4),
+    primary = HummetPrimary,
     onPrimary = Color.White,
-    secondary = Color(0xFF625b71),
-    surface = Color(0xFFFFFBFE),
-    onSurface = Color(0xFF1C1B1F),
-    surfaceVariant = Color(0xFFE7E0EC),
-    onSurfaceVariant = Color(0xFF49454F)
+    secondary = HummetSecondary,
+    onSecondary = HummetPrimary,
+    tertiary = HummetAccent,
+    background = Color.White,
+    surface = Color.White,
+    onBackground = HummetPrimary,
+    onSurface = HummetPrimary,
+    surfaceVariant = Color(0xFFF0F2F5),
+    onSurfaceVariant = HummetPrimary.copy(alpha = 0.7f)
 )
 
 object ThemeConfig {
