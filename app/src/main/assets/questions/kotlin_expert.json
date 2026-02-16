@@ -1,0 +1,201 @@
+{
+    "id": "kotlin-expert",
+    "topicTitle": "Kotlin Expert",
+    "category": "Mobile",
+    "difficulty": "Hard",
+    "accentColor": "#8B5CF6",
+    "tags": [
+        "Kotlin",
+        "Modern",
+        "Mobile"
+    ],
+    "questions": [
+        "Inline Functions",
+        "Sealed Classes",
+        "Delegation",
+        "Reified Type Parameters",
+        "Scope Functions"
+    ],
+    "fullQuestions": [
+        {
+            "question": "What is the primary benefit of using an 'inline' function in Kotlin?",
+            "options": [
+                "It makes the function run on a background thread",
+                "It reduces memory overhead by inserting the function's bytecode at each call site",
+                "It prevents the function from being overridden",
+                "It allows the function to access private variables"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Inlining a function tells the compiler to replace the function call with the actual body of the function, which is particularly useful when passing lambdas to avoid creating extra object instances.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is the difference between 'lateinit' and 'by lazy'?",
+            "options": [
+                "They are identical",
+                "lateinit is for var, by lazy is for val",
+                "lateinit is for val, by lazy is for var",
+                "lateinit can only be used with primitives"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "lateinit is used for mutable variables (var) that will be initialized later. 'by lazy' is for read-only properties (val) that are initialized on their first access.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is a 'Sealed Class' in Kotlin?",
+            "options": [
+                "A class that cannot be inherited",
+                "A class with a restricted hierarchy that is known at compile time",
+                "A class that is automatically encrypted",
+                "A class that can only have one instance (Singleton)"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Sealed classes represent restricted class hierarchies. They are often used with 'when' expressions to ensure all possible subclasses are handled without needing an 'else' block.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "Which keyword allows you to access the generic type 'T' at runtime in an inline function?",
+            "options": [
+                "runtime",
+                "typeinfo",
+                "reified",
+                "generic"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The 'reified' keyword allows us to perform type checks (like 'T is String') or access the class of T at runtime, which is normally not possible due to type erasure.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "What is 'Structured Concurrency' in Kotlin Coroutines?",
+            "options": [
+                "A way to write faster code",
+                "A design principle where the lifetime of a coroutine is tied to a specific scope",
+                "A method for sorting arrays",
+                "A tool for UI design"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Structured concurrency ensures that when a scope is cancelled, all of its child coroutines are also cancelled, preventing memory leaks and orphaned jobs.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "In Kotlin, what is the 'apply' scope function typically used for?",
+            "options": [
+                "To calculate a result based on an object",
+                "To initialize or configure an object's properties",
+                "To handle nullability",
+                "To iterate over a list"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "'apply' returns the context object itself ('this') after modifying it, making it perfect for object configuration (builder-style).",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is the 'Nothing' type in Kotlin?",
+            "options": [
+                "It represents a null value",
+                "It represents a value that never exists (e.g., a function that always throws an exception)",
+                "It's an alias for Unit",
+                "It's the same as void in Java"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "'Nothing' is used to signal that a function never returns naturally, such as a function that always throws an exception or enters an infinite loop.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "Which of these is NOT a real Kotlin visibility modifier?",
+            "options": [
+                "internal",
+                "protected",
+                "package-private",
+                "private"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "Kotlin doesn't have 'package-private' (the Java default). Instead, it has 'internal', which makes a declaration visible within the same module.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is property delegation 'by' keyword used for?",
+            "options": [
+                "To inherit from multiple classes",
+                "To hand off the get/set logic of a property to another object",
+                "To rename a property",
+                "To make a property private"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Delegation allows you to reuse common property logic, like observable properties, lazy initialization, or map-backed storage.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is the difference between 'Sequence' and 'Iterable' in Kotlin?",
+            "options": [
+                "Sequences are faster for small lists",
+                "Sequences are evaluated lazily (element by element), Iterables are evaluated eagerly",
+                "Iterables are only for numbers",
+                "There is no difference"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Sequences perform multi-step processing lazily, which is much more efficient for large datasets as it avoids creating intermediate collection copies.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is a 'Tailrec' function?",
+            "options": [
+                "A function that runs at the end of the program",
+                "A recursive function that the compiler optimizes into a loop to prevent stack overflow",
+                "A function that only accepts strings",
+                "A tool for debugging"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "'tailrec' marks a function for tail-call optimization. If the recursive call is the last thing the function does, the compiler turns it into a loop.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "In Kotlin, which is the correct way to handle a nullable string 'str' with a default value?",
+            "options": [
+                "str ?? 'Default'",
+                "str ?: 'Default'",
+                "str !! 'Default'",
+                "str.or('Default')"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The '?:' (Elvis operator) returns the left-hand side if it's not null, or the right-hand side if the left is null.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is the 'companion object' used for?",
+            "options": [
+                "To create a helper class",
+                "To define members that can be called on the class name similarly to static methods in Java",
+                "To create a second constructor",
+                "To manage database transactions"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Companion objects are tied to the class rather than instances. Member of a companion object can be accessed directly using the class name.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What does the 'crossinline' modifier do in an inline function parameter?",
+            "options": [
+                "It makes the lambda run faster",
+                "It prevents the lambda from using non-local returns (returning from the calling function)",
+                "It allowing the lambda to be used in another thread",
+                "It hides the lambda bytecode"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "crossinline is used when an inline function passes its lambda to another execution context (like a local object or another function) where a non-local return would be illegal.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "What is the difference between Array<Int> and IntArray?",
+            "options": [
+                "IntArray is more memory efficient because it's compiled to a primitive int[]",
+                "Array<Int> is faster",
+                "One is for negative numbers, one is for positive",
+                "They are identical"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "IntArray avoids boxing/unboxing overhead by mapping directly to a primitive Java 'int[]', whereas Array<Int> results in an 'Integer[]' object array.",
+            "difficulty": "Medium"
+        }
+    ]
+}

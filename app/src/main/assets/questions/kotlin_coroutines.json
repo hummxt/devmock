@@ -1,0 +1,46 @@
+{
+    "id": "kotlin-coroutines",
+    "topicTitle": "Kotlin Coroutines",
+    "category": "Mobile",
+    "difficulty": "Medium",
+    "accentColor": "#3B82F6",
+    "tags": [
+        "Kotlin",
+        "Async",
+        "Mobile"
+    ],
+    "companyHistory": "Key topic for Meta, Airbnb, and Square Android roles",
+    "questions": [
+        "What is a Coroutine?",
+        "Explain suspend functions",
+        "launch vs async",
+        "CoroutineContext and Dispatchers",
+        "Structured Concurrency"
+    ],
+    "fullQuestions": [
+        {
+            "question": "What is a 'suspend' function in Kotlin?",
+            "options": [
+                "A function that blocks the thread until it finishes",
+                "A function that can be paused and resumed without blocking a thread",
+                "A function that always runs on a background thread",
+                "A function that cannot return any value"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Suspend functions are at the center of all coroutines. They can be paused and resumed later, which allows for non-blocking asynchronous code that looks sequential.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "Which Dispatcher should be used for CPU-intensive tasks like sorting large lists?",
+            "options": [
+                "Dispatchers.Main",
+                "Dispatchers.IO",
+                "Dispatchers.Default",
+                "Dispatchers.Unconfined"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "Dispatchers.Default is optimized for CPU-intensive work outside of the main thread. IO is for blocking network or disk operations.",
+            "difficulty": "Medium"
+        }
+    ]
+}

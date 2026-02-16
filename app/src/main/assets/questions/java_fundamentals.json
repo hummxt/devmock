@@ -1,0 +1,201 @@
+{
+    "id": "java-fundamentals",
+    "topicTitle": "Java Fundamentals",
+    "category": "Backend",
+    "difficulty": "Easy",
+    "accentColor": "#F87171",
+    "tags": [
+        "Java",
+        "OOP",
+        "Basics"
+    ],
+    "questions": [
+        "JVM vs JRE vs JDK",
+        "String Pool",
+        "Static keyword",
+        "Interfaces vs Abstract",
+        "Memory Management"
+    ],
+    "fullQuestions": [
+        {
+            "question": "What is the function of the 'JVM' (Java Virtual Machine)?",
+            "options": [
+                "To compile Java code into bytecode",
+                "To execute Java bytecode on any platform that has a JVM",
+                "To provide a set of libraries for development",
+                "To manage database connections"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "JVM is the execution environment for Java applications. It allows Java to be platform-independent ('Write Once, Run Anywhere').",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "Which of these is NOT a primitive data type in Java?",
+            "options": [
+                "byte",
+                "short",
+                "Integer",
+                "float"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "Integer is a wrapper class, not a primitive. The primitive version is 'int'.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is the 'String Pool' in Java?",
+            "options": [
+                "A pool of threads for string processing",
+                "A special storage area in the heap memory where string literals are stored",
+                "A database of all strings used in the app",
+                "A tool for concatenating strings"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "To save memory, Java stores only one copy of each string literal in the String Pool. If you create another string with the same value, it will point to the same location.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What does the 'static' keyword mean in Java?",
+            "options": [
+                "The variable's value cannot be changed",
+                "The member belongs to the class itself rather than instances of the class",
+                "The method can only be called from an interface",
+                "The variable is stored in the database"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Static members (variables or methods) are shared across all instances of a class. You don't need to create an object to access them.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is the difference between an Interface and an Abstract Class?",
+            "options": [
+                "Interfaces can have constructors, abstract classes cannot",
+                "A class can implement multiple interfaces but extend only one abstract class",
+                "Abstract classes are faster than interfaces",
+                "They are the same thing"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Java supports multiple inheritance through interfaces, but a class can only have one superclass (even if it's abstract).",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is 'Autoboxing' in Java?",
+            "options": [
+                "Automatic generation of getter/setter",
+                "Automatic conversion of primitive types to their corresponding wrapper classes",
+                "Automatic memory management",
+                "Automatic database synchronization"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Autoboxing is the automatic conversion the Java compiler makes between the primitive types and their corresponding object wrapper classes (e.g., int to Integer).",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "Which access modifier provides the narrowest visibility?",
+            "options": [
+                "public",
+                "protected",
+                "private",
+                "default"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "Private members are only accessible within the class they are defined in.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is the purpose of the 'finally' block in a try-catch-finally statement?",
+            "options": [
+                "To catch all remaining exceptions",
+                "To execute code whether an exception is thrown or not (usually for cleanup)",
+                "To restart the program after an error",
+                "To display a message to the user"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The finally block is used for 'cleanup' code, like closing database connections or files, ensuring it runs regardless of an error.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is the 'Diamond Problem' in Java?",
+            "options": [
+                "A memory leak related to strings",
+                "An issue with multiple inheritance where a class inherits from two classes that have a common parent",
+                "A problem with the Java compiler",
+                "When a program is too complex"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Java avoids the Diamond Problem by not allowing multiple inheritance for classes. However, it can occur with default methods in interfaces, where the class must override the conflicting method.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "What is 'Garbage Collection'?",
+            "options": [
+                "Deleting unused files on the disk",
+                "Automatic identification and removal of objects no longer in use to free up memory",
+                "Clearing user session data",
+                "Sorting data in the database"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "GC is a background process in the JVM that automatically handles memory management by reclaiming heap space occupied by 'dead' objects.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is a 'Checked Exception'?",
+            "options": [
+                "An exception that occurs at runtime",
+                "An exception that must be either caught or declared in the method's 'throws' clause at compile time",
+                "An exception related to database queries",
+                "A logic error in the code"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Checked exceptions (like IOException) are verified at compile-time. The compiler ensures you have acknowledged the possibility of this error.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is the difference between '==' and '.equals()' for Strings?",
+            "options": [
+                "'==' compares values, '.equals()' compares memory locations",
+                "'==' compares memory locations, '.equals()' compares the actual text content",
+                "They are the same",
+                "One is for numbers, one is for text"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "'==' checks if two references point to the same object in memory. '.equals()' checks if the character sequences are identical.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is the 'Volatile' keyword used for?",
+            "options": [
+                "To make a variable faster",
+                "To ensure changes to a variable are immediately visible to all threads",
+                "To prevent a variable from being changed",
+                "To store a variable in a file"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Volatile ensures that the value of the variable is always read from and written to main memory, rather than being cached in a thread's local storage.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "Which data structure in Java uses a key-value pair and does not allow duplicate keys?",
+            "options": [
+                "ArrayList",
+                "LinkedList",
+                "HashMap",
+                "HashSet"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "HashMap stores data in key-value pairs. Each key must be unique, though multiple keys can point to the same value.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'Composition' over 'Inheritance'?",
+            "options": [
+                "A design principle suggesting you should use objects as components rather than inheriting from parent classes",
+                "A way to write shorter code",
+                "A tool for UI layout",
+                "A database design pattern"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "Composition is more flexible because it allows you to change behavior at runtime and avoids the 'fragile base class' problem associated with deep inheritance hierarchies.",
+            "difficulty": "Hard"
+        }
+    ]
+}

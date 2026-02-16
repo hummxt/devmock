@@ -1,0 +1,261 @@
+{
+    "id": "mobile-development",
+    "topicTitle": "Mobile Development Concepts",
+    "category": "Mobile",
+    "difficulty": "Medium",
+    "accentColor": "#10B981",
+    "tags": [
+        "Mobile",
+        "Android",
+        "iOS"
+    ],
+    "questions": [
+        "Mobile Basics",
+        "App Lifecycle",
+        "UI/UX",
+        "Performance",
+        "Best Practices"
+    ],
+    "fullQuestions": [
+        {
+            "question": "What is the difference between Native and Hybrid mobile apps?",
+            "options": [
+                "Native apps are faster",
+                "Native apps are built for specific platforms, Hybrid apps use web technologies wrapped in a native container",
+                "Hybrid apps are more expensive",
+                "They are the same thing"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Native apps are built specifically for iOS or Android using platform-specific languages. Hybrid apps use web technologies (HTML, CSS, JS) wrapped in a native container.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is an 'Activity' in Android?",
+            "options": [
+                "A background task",
+                "A single screen with a user interface",
+                "A database operation",
+                "A network request"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "An Activity represents a single screen with a user interface in Android. Apps typically consist of multiple activities that users navigate between.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is a 'Fragment' in Android?",
+            "options": [
+                "A broken piece of code",
+                "A reusable portion of UI that can be combined in activities",
+                "A data type",
+                "A network protocol"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "A Fragment represents a reusable portion of your app's UI. Multiple fragments can be combined in a single activity to build multi-pane UIs.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is the 'Activity Lifecycle' in Android?",
+            "options": [
+                "How long an activity runs",
+                "The series of states an activity goes through from creation to destruction",
+                "The development timeline",
+                "The app's lifespan"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The Activity Lifecycle includes states like onCreate(), onStart(), onResume(), onPause(), onStop(), and onDestroy(), managing the activity's behavior.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'Intent' in Android?",
+            "options": [
+                "The purpose of an app",
+                "A messaging object used to request an action from another component",
+                "A design pattern",
+                "A database query"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "An Intent is a messaging object that facilitates communication between components, used to start activities, services, or broadcast messages.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'RecyclerView' in Android?",
+            "options": [
+                "A garbage collection tool",
+                "An efficient view for displaying large lists by recycling view holders",
+                "A data storage component",
+                "A network cache"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "RecyclerView efficiently displays large datasets by recycling views that scroll off-screen, improving performance and memory usage compared to ListView.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is 'ViewModel' in Android Architecture Components?",
+            "options": [
+                "A database model",
+                "A class that stores and manages UI-related data in a lifecycle-conscious way",
+                "A UI component",
+                "A network model"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "ViewModel stores UI-related data that survives configuration changes like screen rotations, separating UI logic from UI controllers.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is 'LiveData' in Android?",
+            "options": [
+                "Real-time data from servers",
+                "An observable data holder class that is lifecycle-aware",
+                "A streaming service",
+                "A database type"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "LiveData is an observable data holder that respects the lifecycle of app components, ensuring UI updates only when the component is active.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is 'Jetpack Compose'?",
+            "options": [
+                "A music composition tool",
+                "Android's modern declarative UI toolkit",
+                "A database library",
+                "A testing framework"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Jetpack Compose is Android's modern toolkit for building native UI declaratively, simplifying UI development and reducing boilerplate code.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'Responsive Design' in mobile development?",
+            "options": [
+                "Fast app performance",
+                "Designing UIs that adapt to different screen sizes and orientations",
+                "Quick response times",
+                "Interactive animations"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Responsive design ensures your app's UI adapts gracefully to different screen sizes, densities, and orientations, providing a good experience on all devices.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'Dependency Injection' in Android?",
+            "options": [
+                "Adding new libraries",
+                "A technique for providing dependencies to classes rather than having them create dependencies",
+                "A security feature",
+                "A database connection method"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Dependency Injection (using tools like Hilt or Dagger) provides dependencies to classes, improving testability, reusability, and code organization.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is 'ANR' in Android?",
+            "options": [
+                "Android Native Runtime",
+                "Application Not Responding - when the UI thread is blocked for too long",
+                "Android Network Request",
+                "Automatic Notification Reminder"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "ANR occurs when the main thread is blocked for more than 5 seconds, causing the system to show a dialog. Avoid long operations on the main thread.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'Coroutines' in Kotlin?",
+            "options": [
+                "A type of function",
+                "A concurrency design pattern for asynchronous programming",
+                "A data structure",
+                "A UI component"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Coroutines provide a way to write asynchronous code that looks synchronous, making it easier to handle long-running tasks without blocking threads.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is 'Material Design'?",
+            "options": [
+                "A fabric design system",
+                "Google's design language for creating intuitive and beautiful user interfaces",
+                "A 3D modeling tool",
+                "A database design pattern"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Material Design is Google's design system providing guidelines for visual, motion, and interaction design across platforms and devices.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'ProGuard' in Android?",
+            "options": [
+                "A security guard service",
+                "A tool that shrinks, optimizes, and obfuscates code",
+                "A UI component",
+                "A testing framework"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "ProGuard reduces app size by removing unused code and resources, and obfuscates remaining code to make reverse engineering harder.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is 'Deep Linking' in mobile apps?",
+            "options": [
+                "Linking to external websites",
+                "URLs that navigate users directly to specific content within an app",
+                "Database relationships",
+                "Network connections"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Deep links allow users to navigate directly to specific content in your app from external sources like websites, emails, or other apps.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is 'Room' in Android?",
+            "options": [
+                "A UI layout",
+                "A persistence library that provides an abstraction layer over SQLite",
+                "A navigation component",
+                "A design pattern"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Room is part of Android Jetpack, providing a robust database access layer over SQLite with compile-time verification of SQL queries.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is 'App Bundle' in Android?",
+            "options": [
+                "A package of apps",
+                "A publishing format that enables smaller, optimized APKs for different device configurations",
+                "A promotional offer",
+                "A development tool"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Android App Bundle is a publishing format that lets Google Play generate and serve optimized APKs for each device configuration, reducing download size.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is 'Memory Leak' in mobile development?",
+            "options": [
+                "A security vulnerability",
+                "When memory is allocated but never released, causing increased memory usage",
+                "A data breach",
+                "A storage error"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Memory leaks occur when objects are no longer needed but aren't garbage collected because references still exist, gradually consuming memory.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is 'Push Notification'?",
+            "options": [
+                "A UI animation",
+                "Messages sent from a server to a mobile app even when the app isn't running",
+                "A data sync method",
+                "A security alert"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Push notifications allow servers to send timely messages to mobile devices, engaging users even when the app is closed. Implemented using FCM or similar services.",
+            "difficulty": "Easy"
+        }
+    ]
+}
