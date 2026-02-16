@@ -1,0 +1,6 @@
+/build
+google-services.json
+**/AIRepository.kt
+**/ProfileImageRepository.kt
+**/RetrofitClient.kt
+**/InterviewApiService.kt
