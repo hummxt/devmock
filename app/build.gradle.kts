@@ -14,11 +14,11 @@ if (localPropertiesFile.exists()) {
 }
 
 android {
-    namespace = "com.example.hummet"
+    namespace = "com.example.devmock"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.example.hummet"
+        applicationId = "com.example.devmock"
         minSdk = 24
         targetSdk = 36
         versionCode = 1
@@ -78,6 +78,7 @@ dependencies {
     
     implementation(libs.cloudinary)
     implementation(libs.google.generativeai)
+    implementation("androidx.core:core-splashscreen:1.0.1")
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

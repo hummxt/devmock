@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Hummet"
+rootProject.name = "Devmock"
 include(":app")

@@ -1,4 +1,4 @@
-package com.example.hummet.ui.screens
+package com.example.devmock.ui.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
@@ -20,7 +20,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.hummet.R
+import com.example.devmock.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -47,7 +47,7 @@ fun Homepage(
                         )
                         Column(modifier = Modifier.padding(start = 12.dp)) {
                             Text(
-                                text = "Hello, Hummet Muellim",
+                                text = "Hello, Devmock User",
                                 style = MaterialTheme.typography.titleMedium,
                                 fontWeight = FontWeight.Bold
                             )
