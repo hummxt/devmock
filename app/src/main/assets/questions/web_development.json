@@ -1,0 +1,261 @@
+{
+    "id": "web-development",
+    "topicTitle": "Web Development Essentials",
+    "category": "Web",
+    "difficulty": "Medium",
+    "accentColor": "#6366F1",
+    "tags": [
+        "Web",
+        "Frontend",
+        "Backend"
+    ],
+    "questions": [
+        "HTML & CSS",
+        "JavaScript",
+        "Frameworks",
+        "Web Performance",
+        "Best Practices"
+    ],
+    "fullQuestions": [
+        {
+            "question": "What does 'HTML' stand for?",
+            "options": [
+                "High Tech Modern Language",
+                "HyperText Markup Language",
+                "Home Tool Markup Language",
+                "Hyper Transfer Markup Language"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "HTML is the standard markup language for creating web pages, defining the structure and content of web documents.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'CSS'?",
+            "options": [
+                "Computer Style Sheets",
+                "Cascading Style Sheets - a language for styling HTML elements",
+                "Central Security System",
+                "Code Syntax Standard"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "CSS is used to control the presentation, formatting, and layout of web pages, separating content from design.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is the 'DOM' (Document Object Model)?",
+            "options": [
+                "A database model",
+                "A programming interface that represents HTML/XML documents as a tree structure",
+                "A design pattern",
+                "A server architecture"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The DOM represents the page structure as a tree of objects that can be manipulated with JavaScript to dynamically change content, structure, and styling.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'AJAX'?",
+            "options": [
+                "A cleaning product",
+                "Asynchronous JavaScript and XML - a technique for updating web pages without reloading",
+                "A JavaScript framework",
+                "A server technology"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "AJAX allows web pages to update asynchronously by exchanging data with a server in the background, creating more dynamic and responsive web applications.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'Responsive Web Design'?",
+            "options": [
+                "Fast-loading websites",
+                "Designing websites that adapt to different screen sizes and devices",
+                "Interactive websites",
+                "Websites with quick response times"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Responsive web design uses flexible layouts, images, and CSS media queries to ensure websites look good on all devices, from phones to desktops.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'localStorage' in web browsers?",
+            "options": [
+                "Server storage",
+                "A web storage API that stores data in the browser with no expiration",
+                "A database system",
+                "Cloud storage"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "localStorage allows websites to store key-value pairs in the browser persistently (no expiration), useful for saving user preferences and offline data.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is the difference between 'sessionStorage' and 'localStorage'?",
+            "options": [
+                "sessionStorage is faster",
+                "sessionStorage data is cleared when the browser tab closes, localStorage persists",
+                "localStorage is more secure",
+                "They are the same"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "sessionStorage data exists only for the duration of the page session (until the tab is closed), while localStorage persists even after the browser is closed.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is 'SPA' (Single Page Application)?",
+            "options": [
+                "A one-page website",
+                "A web app that loads a single HTML page and dynamically updates content",
+                "A simple application",
+                "A static website"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "SPAs load a single HTML page and dynamically update content as users interact, providing a more fluid experience similar to desktop applications.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'CORS' (Cross-Origin Resource Sharing)?",
+            "options": [
+                "A security vulnerability",
+                "A mechanism that allows restricted resources to be requested from another domain",
+                "A database protocol",
+                "A CSS framework"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "CORS is a security feature that allows or restricts web pages from making requests to a different domain than the one serving the web page.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is 'Webpack'?",
+            "options": [
+                "A web server",
+                "A module bundler that bundles JavaScript files and assets for the browser",
+                "A CSS framework",
+                "A testing tool"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Webpack is a static module bundler that processes and bundles JavaScript modules, CSS, images, and other assets for optimized web deployment.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is 'Progressive Web App' (PWA)?",
+            "options": [
+                "A web app that gets progressively better",
+                "A web app that uses modern web capabilities to deliver app-like experiences",
+                "A mobile-only app",
+                "A desktop application"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "PWAs use modern web technologies to provide app-like experiences including offline functionality, push notifications, and home screen installation.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is 'Server-Side Rendering' (SSR)?",
+            "options": [
+                "Rendering graphics on the server",
+                "Generating HTML on the server for each request before sending to the client",
+                "A database operation",
+                "A caching strategy"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "SSR generates the full HTML for a page on the server in response to navigation, improving initial load time and SEO compared to client-side rendering.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is 'WebSocket'?",
+            "options": [
+                "A type of electrical outlet",
+                "A protocol providing full-duplex communication channels over a single TCP connection",
+                "A web framework",
+                "A database connection"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "WebSocket enables real-time, bidirectional communication between client and server, ideal for chat applications, live updates, and gaming.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is 'Lazy Loading'?",
+            "options": [
+                "Slow website performance",
+                "Deferring loading of non-critical resources until they're needed",
+                "A caching technique",
+                "A database optimization"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Lazy loading delays loading of images, scripts, or components until they're needed (e.g., when scrolling into view), improving initial page load time.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'CDN' in web development?",
+            "options": [
+                "Central Data Network",
+                "Content Delivery Network - distributed servers that deliver content based on user location",
+                "Code Development Network",
+                "Cloud Database Network"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "CDNs cache content at multiple geographic locations, serving users from the nearest server to reduce latency and improve load times.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'Minification'?",
+            "options": [
+                "Making websites smaller visually",
+                "Removing unnecessary characters from code to reduce file size",
+                "Compressing images",
+                "Reducing server load"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Minification removes whitespace, comments, and shortens variable names in code files (JS, CSS) to reduce file size and improve load times.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'RESTful API'?",
+            "options": [
+                "A sleeping API",
+                "An API that follows REST architectural principles using HTTP methods",
+                "A database API",
+                "A security protocol"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "RESTful APIs use HTTP methods (GET, POST, PUT, DELETE) to perform CRUD operations on resources, following REST architectural constraints.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'JWT' (JSON Web Token)?",
+            "options": [
+                "A JavaScript testing tool",
+                "A compact, URL-safe token format for securely transmitting information",
+                "A web framework",
+                "A database format"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "JWT is a standard for creating access tokens that assert claims, commonly used for authentication and information exchange in web applications.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is 'SEO' (Search Engine Optimization)?",
+            "options": [
+                "Server Error Optimization",
+                "Practices to improve website visibility in search engine results",
+                "Security Enhancement Operations",
+                "Software Engineering Organization"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "SEO involves optimizing website content, structure, and technical aspects to rank higher in search engine results and attract organic traffic.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'Semantic HTML'?",
+            "options": [
+                "HTML with comments",
+                "Using HTML elements that clearly describe their meaning and content",
+                "Encrypted HTML",
+                "Compressed HTML"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Semantic HTML uses elements like <article>, <nav>, <header> that clearly describe their purpose, improving accessibility, SEO, and code readability.",
+            "difficulty": "Easy"
+        }
+    ]
+}

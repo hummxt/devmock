@@ -1,0 +1,261 @@
+{
+    "id": "system-design-basics",
+    "topicTitle": "System Design Fundamentals",
+    "category": "Architecture",
+    "difficulty": "Hard",
+    "accentColor": "#8B5CF6",
+    "tags": [
+        "System Design",
+        "Scalability",
+        "Architecture"
+    ],
+    "questions": [
+        "Scalability",
+        "Load Balancing",
+        "Caching",
+        "Databases",
+        "Distributed Systems"
+    ],
+    "fullQuestions": [
+        {
+            "question": "What is 'Horizontal Scaling'?",
+            "options": [
+                "Making servers wider",
+                "Adding more machines to a system to handle increased load",
+                "Upgrading existing hardware",
+                "Reducing system capacity"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Horizontal scaling (scaling out) adds more machines to distribute the load, offering better fault tolerance and theoretically unlimited scaling.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'Vertical Scaling'?",
+            "options": [
+                "Making servers taller",
+                "Adding more resources (CPU, RAM) to an existing machine",
+                "Adding more machines",
+                "Reducing server height"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Vertical scaling (scaling up) increases the capacity of a single machine by adding more CPU, RAM, or storage. It has physical limits and creates a single point of failure.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is a 'Load Balancer'?",
+            "options": [
+                "A weight measurement tool",
+                "A system that distributes network traffic across multiple servers",
+                "A database optimizer",
+                "A caching mechanism"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Load balancers distribute incoming requests across multiple servers to prevent any single server from being overwhelmed, improving availability and reliability.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'Caching'?",
+            "options": [
+                "Hiding data",
+                "Storing frequently accessed data in fast-access storage for quick retrieval",
+                "Deleting old data",
+                "Encrypting data"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Caching stores copies of frequently accessed data in faster storage (memory) to reduce database load and improve response times.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'Database Sharding'?",
+            "options": [
+                "Breaking databases",
+                "Partitioning data across multiple databases to improve performance",
+                "Backing up databases",
+                "Encrypting databases"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Sharding splits a database into smaller, more manageable pieces (shards) distributed across multiple servers, improving performance and scalability.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is 'Database Replication'?",
+            "options": [
+                "Duplicating database code",
+                "Copying data from one database to another for redundancy and availability",
+                "Deleting duplicate data",
+                "Merging databases"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Replication creates copies of data across multiple databases, improving read performance, providing backup, and ensuring high availability.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'CAP Theorem'?",
+            "options": [
+                "A database naming convention",
+                "A principle stating distributed systems can only guarantee 2 of 3: Consistency, Availability, Partition tolerance",
+                "A caching strategy",
+                "A security protocol"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "CAP Theorem states that in a distributed system, you can only achieve two of: Consistency (same data everywhere), Availability (always accessible), Partition tolerance (works despite network failures).",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "What is a 'Message Queue'?",
+            "options": [
+                "A chat application",
+                "A component that enables asynchronous communication between services",
+                "A database type",
+                "A caching layer"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Message queues (like RabbitMQ, Kafka) enable asynchronous communication by storing messages until they're processed, decoupling services and improving reliability.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is 'Rate Limiting'?",
+            "options": [
+                "Limiting server speed",
+                "Controlling the number of requests a user can make in a time period",
+                "Reducing database size",
+                "Limiting bandwidth"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Rate limiting restricts the number of requests from a user/IP in a given timeframe, preventing abuse, ensuring fair usage, and protecting against DDoS attacks.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'Database Indexing'?",
+            "options": [
+                "Numbering database rows",
+                "Creating data structures to improve query performance",
+                "Backing up databases",
+                "Deleting old data"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Indexes are data structures (like B-trees) that improve the speed of data retrieval operations, though they require additional storage and slow down writes.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'Consistent Hashing'?",
+            "options": [
+                "A password hashing method",
+                "A technique for distributing data across nodes that minimizes reorganization when nodes change",
+                "A caching strategy",
+                "A security protocol"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Consistent hashing distributes data across nodes in a way that minimizes data movement when nodes are added or removed, crucial for distributed caching and databases.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "What is 'Microservices Architecture'?",
+            "options": [
+                "Very small applications",
+                "An architectural style where applications are composed of small, independent services",
+                "A database design",
+                "A caching strategy"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Microservices break applications into small, loosely coupled services that can be developed, deployed, and scaled independently.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'Database Normalization'?",
+            "options": [
+                "Making databases normal",
+                "Organizing data to reduce redundancy and improve data integrity",
+                "Backing up databases",
+                "Encrypting databases"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Normalization organizes database tables and columns to reduce redundancy and dependency, typically following normal forms (1NF, 2NF, 3NF, etc.).",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is 'Database Denormalization'?",
+            "options": [
+                "Breaking database rules",
+                "Intentionally introducing redundancy to improve read performance",
+                "Deleting databases",
+                "Encrypting data"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Denormalization adds redundant data to reduce the number of joins needed for queries, trading storage and write complexity for faster reads.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is 'ACID' in databases?",
+            "options": [
+                "A chemical property",
+                "Atomicity, Consistency, Isolation, Durability - properties ensuring reliable transactions",
+                "A database type",
+                "A query language"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "ACID properties ensure database transactions are processed reliably: Atomicity (all or nothing), Consistency (valid state), Isolation (concurrent transactions), Durability (permanent).",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is 'BASE' in distributed systems?",
+            "options": [
+                "A foundation layer",
+                "Basically Available, Soft state, Eventual consistency - an alternative to ACID",
+                "A database type",
+                "A security model"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "BASE is an alternative to ACID for distributed systems, prioritizing availability over immediate consistency, accepting that data will eventually become consistent.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "What is 'API Gateway'?",
+            "options": [
+                "A network router",
+                "A single entry point for API requests that routes to appropriate services",
+                "A database connection",
+                "A caching layer"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "API Gateway acts as a reverse proxy, routing requests to microservices, handling authentication, rate limiting, and other cross-cutting concerns.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is 'Content Delivery Network' (CDN)?",
+            "options": [
+                "A media streaming service",
+                "A distributed network of servers that delivers content based on geographic location",
+                "A database system",
+                "A security network"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "CDNs cache static content at edge locations worldwide, serving users from the nearest server to reduce latency and bandwidth costs.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'Idempotency' in system design?",
+            "options": [
+                "Systems that never change",
+                "Operations that produce the same result regardless of how many times they're executed",
+                "A security feature",
+                "A caching strategy"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Idempotent operations can be safely retried without causing unintended side effects, crucial for reliable distributed systems and API design.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "What is 'Circuit Breaker' pattern?",
+            "options": [
+                "An electrical safety device",
+                "A pattern that prevents cascading failures by stopping requests to failing services",
+                "A security mechanism",
+                "A caching strategy"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Circuit Breaker monitors for failures and temporarily blocks requests to failing services, allowing them to recover and preventing system-wide cascading failures.",
+            "difficulty": "Hard"
+        }
+    ]
+}

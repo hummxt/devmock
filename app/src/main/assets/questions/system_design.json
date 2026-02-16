@@ -1,0 +1,46 @@
+{
+    "id": "system-design-basics",
+    "topicTitle": "System Design Basics",
+    "category": "Architecture",
+    "difficulty": "Hard",
+    "accentColor": "#EC4899",
+    "tags": [
+        "Scalability",
+        "Backend",
+        "Architecture"
+    ],
+    "companyHistory": "Critical for Senior roles at Amazon, Netflix, and Google",
+    "questions": [
+        "Vertical vs Horizontal Scaling",
+        "Load Balancing Strategies",
+        "Caching Strategies",
+        "Database Sharding",
+        "Microservices Architecture"
+    ],
+    "fullQuestions": [
+        {
+            "question": "What is the primary difference between Vertical and Horizontal Scaling?",
+            "options": [
+                "Vertical is adding more machines, Horizontal is adding more power to one machine",
+                "Vertical is adding more power to one machine, Horizontal is adding more machines",
+                "Vertical is for databases, Horizontal is for frontend",
+                "There is no difference"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Vertical scaling (scaling up) means adding more power (CPU, RAM) to an existing machine. Horizontal scaling (scaling out) means adding more machines to your network of resources.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "What is the main purpose of a Load Balancer?",
+            "options": [
+                "To encrypt network traffic",
+                "To distribute incoming network traffic across multiple servers",
+                "To store user session data",
+                "To speed up database queries"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "A load balancer acts as a reverse proxy and distributes network or application traffic across a number of servers to increase capacity and reliability of applications.",
+            "difficulty": "Hard"
+        }
+    ]
+}
