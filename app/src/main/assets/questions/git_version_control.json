@@ -1,0 +1,201 @@
+{
+    "id": "git-version-control",
+    "topicTitle": "Git & Version Control",
+    "category": "DevOps",
+    "difficulty": "Medium",
+    "accentColor": "#F97316",
+    "tags": [
+        "Git",
+        "VCS",
+        "Collaboration"
+    ],
+    "questions": [
+        "Git Basics",
+        "Branching Strategy",
+        "Merge vs Rebase",
+        "Conflict Resolution",
+        "Git Workflow"
+    ],
+    "fullQuestions": [
+        {
+            "question": "What is the main difference between 'git pull' and 'git fetch'?",
+            "options": [
+                "They are identical commands",
+                "git pull fetches and merges changes, git fetch only downloads changes",
+                "git fetch is faster than git pull",
+                "git pull works only with remote branches"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "git fetch downloads changes from the remote repository but doesn't merge them into your current branch. git pull does both fetch and merge in one command.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What does 'git stash' do?",
+            "options": [
+                "Permanently deletes uncommitted changes",
+                "Temporarily saves uncommitted changes so you can switch branches",
+                "Creates a new branch",
+                "Pushes changes to remote"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "git stash temporarily shelves (or stashes) changes you've made to your working directory so you can work on something else, then come back and re-apply them later.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is a 'merge conflict'?",
+            "options": [
+                "When Git can't automatically determine what changes to keep",
+                "When you try to merge a deleted branch",
+                "When your internet connection fails during push",
+                "When two people work on different files"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "A merge conflict occurs when Git can't automatically resolve differences in code between two commits, usually when the same lines were modified differently in separate branches.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is the purpose of a '.gitignore' file?",
+            "options": [
+                "To ignore merge conflicts",
+                "To specify files and directories that Git should not track",
+                "To list all branches in the repository",
+                "To configure Git settings"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": ".gitignore tells Git which files or directories to ignore in a project, such as build artifacts, dependencies, or sensitive configuration files.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What does 'git rebase' do?",
+            "options": [
+                "Deletes the current branch",
+                "Moves or combines a sequence of commits to a new base commit",
+                "Creates a backup of your repository",
+                "Renames the current branch"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Rebasing is the process of moving or combining a sequence of commits to a new base commit. It's an alternative to merging that creates a linear history.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is the difference between 'git reset --soft' and 'git reset --hard'?",
+            "options": [
+                "No difference, they do the same thing",
+                "--soft keeps changes in staging area, --hard discards all changes",
+                "--soft is faster than --hard",
+                "--hard only works on remote branches"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "git reset --soft moves the HEAD but keeps your changes staged. git reset --hard moves HEAD and discards all changes in working directory and staging area.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is a 'detached HEAD' state?",
+            "options": [
+                "When Git is corrupted",
+                "When you checkout a specific commit instead of a branch",
+                "When you delete the main branch",
+                "When your repository has no commits"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Detached HEAD means you're not on any branch, but rather on a specific commit. Any commits you make won't belong to any branch unless you create one.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is 'cherry-pick' in Git?",
+            "options": [
+                "Selecting which files to commit",
+                "Applying a specific commit from one branch to another",
+                "Choosing which branch to merge",
+                "Deleting specific commits"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "git cherry-pick allows you to apply the changes from a specific commit onto your current branch, without merging the entire branch.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is the purpose of 'git bisect'?",
+            "options": [
+                "To split a repository into two",
+                "To find the commit that introduced a bug using binary search",
+                "To create two branches simultaneously",
+                "To compare two files"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "git bisect uses binary search to find the commit that introduced a bug. You mark commits as good or bad, and Git narrows down the problematic commit.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "What does 'git reflog' show?",
+            "options": [
+                "Only merge commits",
+                "A log of all reference updates (HEAD movements)",
+                "Remote branch history",
+                "Deleted files"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "git reflog shows a log of where your HEAD and branch references have been. It's useful for recovering lost commits or understanding what happened in your repository.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "What is a 'fast-forward' merge?",
+            "options": [
+                "A merge that happens very quickly",
+                "A merge where the branch pointer simply moves forward without creating a merge commit",
+                "A merge that skips conflict resolution",
+                "A merge that only works with small files"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "A fast-forward merge occurs when there's a direct linear path from the current branch to the target branch, so Git just moves the pointer forward.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is the 'origin' in Git?",
+            "options": [
+                "The first commit in the repository",
+                "The default name for the remote repository",
+                "The main branch",
+                "The folder where Git is installed"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "'origin' is the conventional name for the primary remote repository. It's created automatically when you clone a repository.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What does 'git blame' do?",
+            "options": [
+                "Finds bugs in your code",
+                "Shows who last modified each line of a file",
+                "Lists all merge conflicts",
+                "Identifies security vulnerabilities"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "git blame shows what revision and author last modified each line of a file. It's useful for understanding the history and context of code changes.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is a 'Git hook'?",
+            "options": [
+                "A way to link repositories",
+                "Scripts that run automatically at certain points in the Git workflow",
+                "A method to download repositories",
+                "A type of merge strategy"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Git hooks are scripts that Git executes before or after events like commit, push, and receive. They're used for automation, testing, and enforcing policies.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "What is the difference between 'git merge' and 'git rebase' in terms of history?",
+            "options": [
+                "Merge creates a linear history, rebase creates a branching history",
+                "Merge preserves the complete history with a merge commit, rebase creates a linear history",
+                "They create identical histories",
+                "Rebase deletes history, merge preserves it"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Merge preserves the exact history of how branches diverged and came together. Rebase rewrites history to create a linear sequence of commits, making it cleaner but losing some context.",
+            "difficulty": "Hard"
+        }
+    ]
+}

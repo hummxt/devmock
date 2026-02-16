@@ -1,0 +1,237 @@
+{
+    "id": "data-structures",
+    "topicTitle": "Data Structures Essentials",
+    "category": "Computer Science",
+    "difficulty": "Medium",
+    "accentColor": "#A855F7",
+    "tags": [
+        "Algorithms",
+        "CS",
+        "Fundamentals"
+    ],
+    "questions": [
+        "Arrays & Lists",
+        "Stacks & Queues",
+        "Trees & Graphs",
+        "Hash Tables",
+        "Complexity"
+    ],
+    "fullQuestions": [
+        {
+            "question": "What is the time complexity of accessing an element in an array by index?",
+            "options": [
+                "O(n)",
+                "O(1)",
+                "O(log n)",
+                "O(n²)"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Array access by index is O(1) - constant time - because you can directly calculate the memory address of any element using its index.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is a 'Stack' data structure?",
+            "options": [
+                "A random access collection",
+                "A Last-In-First-Out (LIFO) collection",
+                "A First-In-First-Out (FIFO) collection",
+                "A sorted collection"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "A stack follows LIFO principle - the last element added is the first one removed, like a stack of plates. Main operations are push (add) and pop (remove).",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is a 'Queue' data structure?",
+            "options": [
+                "A Last-In-First-Out collection",
+                "A First-In-First-Out (FIFO) collection",
+                "A sorted collection",
+                "A random access collection"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "A queue follows FIFO principle - the first element added is the first one removed, like a line of people waiting. Main operations are enqueue (add) and dequeue (remove).",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is a 'Linked List'?",
+            "options": [
+                "A contiguous block of memory",
+                "A sequence of nodes where each node contains data and a reference to the next node",
+                "A sorted array",
+                "A type of tree"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "A linked list is a linear data structure where elements (nodes) are not stored in contiguous memory. Each node contains data and a pointer to the next node.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is the main advantage of a Linked List over an Array?",
+            "options": [
+                "Faster access by index",
+                "Dynamic size and efficient insertions/deletions at the beginning",
+                "Uses less memory",
+                "Better for sorting"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Linked lists can grow/shrink dynamically and inserting/deleting at the beginning is O(1). Arrays have fixed size and require shifting elements for insertions/deletions.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is a 'Hash Table'?",
+            "options": [
+                "A sorted list",
+                "A data structure that maps keys to values using a hash function",
+                "A type of tree",
+                "A linear search algorithm"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "A hash table uses a hash function to compute an index where values are stored, providing average O(1) time complexity for insertions, deletions, and lookups.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is a 'Binary Tree'?",
+            "options": [
+                "A tree with exactly two nodes",
+                "A tree where each node has at most two children",
+                "A tree with only binary data",
+                "A sorted array"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "A binary tree is a hierarchical structure where each node has at most two children, typically referred to as left child and right child.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is a 'Binary Search Tree' (BST)?",
+            "options": [
+                "Any binary tree",
+                "A binary tree where left child < parent < right child for all nodes",
+                "A tree with two levels",
+                "A balanced tree"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "In a BST, for every node, all values in the left subtree are smaller and all values in the right subtree are larger, enabling efficient searching.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What does 'Big O notation' represent?",
+            "options": [
+                "The exact runtime of an algorithm",
+                "The upper bound of an algorithm's time or space complexity as input grows",
+                "The best-case scenario",
+                "The memory usage only"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Big O notation describes the worst-case scenario for how an algorithm's time or space requirements grow relative to input size, helping compare algorithm efficiency.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is the time complexity of binary search?",
+            "options": [
+                "O(n)",
+                "O(log n)",
+                "O(1)",
+                "O(n²)"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Binary search repeatedly divides the search space in half, resulting in O(log n) time complexity. It only works on sorted data.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is a 'Graph'?",
+            "options": [
+                "A chart or diagram",
+                "A collection of nodes (vertices) connected by edges",
+                "A type of tree",
+                "A sorted list"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "A graph is a non-linear data structure consisting of vertices (nodes) connected by edges. It can represent networks, relationships, and many real-world scenarios.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is the difference between 'Depth-First Search' (DFS) and 'Breadth-First Search' (BFS)?",
+            "options": [
+                "DFS is faster than BFS",
+                "DFS explores as far as possible along each branch before backtracking, BFS explores all neighbors first",
+                "BFS uses more memory than DFS",
+                "They are the same algorithm"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "DFS goes deep into a graph before exploring siblings (uses stack/recursion). BFS explores all neighbors at the current level first (uses queue).",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is a 'Heap'?",
+            "options": [
+                "Memory allocated dynamically",
+                "A specialized tree-based structure where parent nodes have a specific ordering relationship with children",
+                "A type of linked list",
+                "A sorting algorithm"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "A heap is a complete binary tree where each parent is either greater than (max heap) or less than (min heap) its children. Used in priority queues and heap sort.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is 'Collision' in hash tables?",
+            "options": [
+                "When two computers access the same data",
+                "When two different keys hash to the same index",
+                "When the table is full",
+                "When a key is not found"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "A collision occurs when the hash function produces the same index for different keys. Common resolution methods include chaining and open addressing.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is a 'Doubly Linked List'?",
+            "options": [
+                "A list with two elements",
+                "A linked list where each node has pointers to both next and previous nodes",
+                "Two separate linked lists",
+                "A circular linked list"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "In a doubly linked list, each node has two pointers: one to the next node and one to the previous node, allowing traversal in both directions.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is the space complexity of a recursive algorithm that makes n recursive calls?",
+            "options": [
+                "O(1)",
+                "O(n)",
+                "O(log n)",
+                "O(n²)"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Each recursive call adds a frame to the call stack. If there are n recursive calls, the space complexity is O(n) due to the stack space required.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is a 'Trie' (Prefix Tree)?",
+            "options": [
+                "A binary tree",
+                "A tree-like structure used for storing strings where each path represents a word",
+                "A sorting algorithm",
+                "A type of hash table"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "A trie is a tree structure where each node represents a character. It's efficient for prefix-based searches, autocomplete, and spell checking.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "What is the worst-case time complexity of QuickSort?",
+            "options": [
+                "O(n log n)",
+                "O(n²)",
+                "O(n)",
+                "O(log n)"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "QuickSort's worst case is O(n²) when the pivot is consistently the smallest or largest element. However, average case is O(n log n) with good pivot selection.",
+            "difficulty": "Hard"
+        }
+    ]
+}

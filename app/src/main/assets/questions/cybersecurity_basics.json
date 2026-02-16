@@ -1,0 +1,237 @@
+{
+    "id": "cybersecurity-basics",
+    "topicTitle": "Cybersecurity Fundamentals",
+    "category": "Security",
+    "difficulty": "Medium",
+    "accentColor": "#EF4444",
+    "tags": [
+        "Security",
+        "Encryption",
+        "Privacy"
+    ],
+    "questions": [
+        "Security Principles",
+        "Encryption",
+        "Authentication",
+        "Common Attacks",
+        "Best Practices"
+    ],
+    "fullQuestions": [
+        {
+            "question": "What does 'CIA Triad' stand for in cybersecurity?",
+            "options": [
+                "Central Intelligence Agency",
+                "Confidentiality, Integrity, Availability",
+                "Computer Internet Access",
+                "Cyber Investigation Agency"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The CIA Triad is the foundation of information security: Confidentiality (data privacy), Integrity (data accuracy), and Availability (data accessibility).",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'Encryption'?",
+            "options": [
+                "Deleting sensitive data",
+                "Converting data into a coded format to prevent unauthorized access",
+                "Compressing files",
+                "Backing up data"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Encryption transforms readable data (plaintext) into an unreadable format (ciphertext) using an algorithm and key, protecting it from unauthorized access.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is the difference between 'Authentication' and 'Authorization'?",
+            "options": [
+                "They are the same thing",
+                "Authentication verifies identity, Authorization determines access permissions",
+                "Authorization happens before Authentication",
+                "Authentication is for users, Authorization is for systems"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Authentication confirms who you are (login), while Authorization determines what you're allowed to do (permissions). Authentication always comes first.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'Two-Factor Authentication' (2FA)?",
+            "options": [
+                "Using two passwords",
+                "Requiring two different types of verification to prove identity",
+                "Logging in twice",
+                "Having two user accounts"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "2FA requires two different authentication factors (e.g., password + SMS code, or password + fingerprint) to verify identity, significantly improving security.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is a 'Phishing' attack?",
+            "options": [
+                "Hacking into databases",
+                "Fraudulent attempts to obtain sensitive information by disguising as a trustworthy entity",
+                "Overloading servers with traffic",
+                "Installing malware on computers"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Phishing uses fake emails, websites, or messages that appear legitimate to trick people into revealing passwords, credit card numbers, or other sensitive data.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is a 'DDoS' attack?",
+            "options": [
+                "Data Deletion of Service",
+                "Distributed Denial of Service - overwhelming a system with traffic to make it unavailable",
+                "Direct Database of Secrets",
+                "Digital Download of Software"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "DDoS attacks flood a target system with massive amounts of traffic from multiple sources, overwhelming it and making it unavailable to legitimate users.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'Malware'?",
+            "options": [
+                "Broken software",
+                "Malicious software designed to harm, exploit, or gain unauthorized access to systems",
+                "Outdated software",
+                "Software with bugs"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Malware is any software intentionally designed to cause damage, including viruses, trojans, ransomware, spyware, and worms.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'SSL/TLS'?",
+            "options": [
+                "A programming language",
+                "Cryptographic protocols that provide secure communication over networks",
+                "A type of firewall",
+                "A database system"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "SSL (Secure Sockets Layer) and its successor TLS (Transport Layer Security) encrypt data transmitted between web browsers and servers, indicated by HTTPS.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is a 'Firewall'?",
+            "options": [
+                "A physical wall that prevents fires",
+                "A security system that monitors and controls network traffic based on rules",
+                "An antivirus program",
+                "A backup system"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "A firewall acts as a barrier between trusted internal networks and untrusted external networks, filtering traffic based on predetermined security rules.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'SQL Injection'?",
+            "options": [
+                "A way to optimize database queries",
+                "An attack that inserts malicious SQL code to manipulate databases",
+                "A method to backup databases",
+                "A database migration technique"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "SQL Injection exploits vulnerabilities in applications by inserting malicious SQL statements into input fields, potentially exposing or manipulating database data.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is 'Ransomware'?",
+            "options": [
+                "Software that demands payment",
+                "Malware that encrypts files and demands payment for decryption",
+                "A payment processing system",
+                "A type of cryptocurrency"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Ransomware encrypts a victim's files and demands payment (usually in cryptocurrency) for the decryption key, often threatening to delete data if not paid.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is a 'VPN' (Virtual Private Network)?",
+            "options": [
+                "A type of social network",
+                "A service that creates an encrypted connection over the internet for privacy and security",
+                "A video streaming platform",
+                "A cloud storage service"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "A VPN creates a secure, encrypted tunnel for your internet traffic, hiding your IP address and protecting your data from eavesdropping, especially on public Wi-Fi.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'Social Engineering'?",
+            "options": [
+                "Building social media platforms",
+                "Manipulating people into divulging confidential information or performing actions",
+                "Network engineering",
+                "Team building activities"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Social engineering exploits human psychology rather than technical vulnerabilities, tricking people into breaking security procedures through manipulation or deception.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is 'Zero-Day' vulnerability?",
+            "options": [
+                "A bug found on the first day of release",
+                "A security flaw unknown to the vendor and without a patch",
+                "A vulnerability that takes zero days to fix",
+                "A scheduled security update"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "A zero-day vulnerability is a security flaw that is unknown to the software vendor, meaning there are zero days of protection before it can be exploited.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "What is 'Hashing' in security?",
+            "options": [
+                "Encrypting passwords",
+                "Converting data into a fixed-size string that cannot be reversed",
+                "Compressing files",
+                "Deleting data"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Hashing is a one-way function that converts data into a fixed-size string (hash). It's used for password storage because the original data cannot be recovered from the hash.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is the principle of 'Least Privilege'?",
+            "options": [
+                "Giving everyone minimal access",
+                "Users should have only the minimum access necessary to perform their job",
+                "Administrators have the least privileges",
+                "New users get the least access"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The principle of least privilege states that users, programs, and processes should have only the minimum permissions necessary to complete their tasks, reducing security risks.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is 'Multi-Factor Authentication' (MFA)?",
+            "options": [
+                "Using multiple passwords",
+                "Requiring multiple independent credentials to verify identity",
+                "Logging in from multiple devices",
+                "Having multiple user accounts"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "MFA requires two or more independent authentication factors: something you know (password), something you have (phone), or something you are (biometric).",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is a 'Man-in-the-Middle' (MITM) attack?",
+            "options": [
+                "An attack from inside the company",
+                "Intercepting communication between two parties to eavesdrop or alter data",
+                "A physical security breach",
+                "A type of virus"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "In a MITM attack, the attacker secretly intercepts and possibly alters communication between two parties who believe they're communicating directly with each other.",
+            "difficulty": "Medium"
+        }
+    ]
+}

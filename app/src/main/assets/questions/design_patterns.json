@@ -1,0 +1,261 @@
+{
+    "id": "design-patterns",
+    "topicTitle": "Software Design Patterns",
+    "category": "Software Engineering",
+    "difficulty": "Hard",
+    "accentColor": "#F59E0B",
+    "tags": [
+        "Patterns",
+        "OOP",
+        "Architecture"
+    ],
+    "questions": [
+        "Creational Patterns",
+        "Structural Patterns",
+        "Behavioral Patterns",
+        "SOLID Principles",
+        "Best Practices"
+    ],
+    "fullQuestions": [
+        {
+            "question": "What is a 'Design Pattern'?",
+            "options": [
+                "A UI template",
+                "A reusable solution to a commonly occurring problem in software design",
+                "A coding style guide",
+                "A database schema"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Design patterns are proven solutions to common software design problems, providing templates that can be adapted to specific situations.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is the 'Singleton Pattern'?",
+            "options": [
+                "A pattern for single users",
+                "A pattern that ensures a class has only one instance",
+                "A pattern for single-threaded applications",
+                "A database pattern"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Singleton ensures a class has only one instance and provides a global point of access to it. Common for configuration managers and logging.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is the 'Factory Pattern'?",
+            "options": [
+                "A manufacturing process",
+                "A pattern that creates objects without specifying their exact classes",
+                "A database creation pattern",
+                "A testing pattern"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Factory pattern defines an interface for creating objects but lets subclasses decide which class to instantiate, promoting loose coupling.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is the 'Observer Pattern'?",
+            "options": [
+                "A monitoring tool",
+                "A pattern where objects subscribe to and receive notifications about changes in other objects",
+                "A security pattern",
+                "A database pattern"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Observer pattern defines a one-to-many dependency where when one object changes state, all its dependents are notified automatically. Used in event handling.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is the 'Strategy Pattern'?",
+            "options": [
+                "A business planning pattern",
+                "A pattern that defines a family of algorithms and makes them interchangeable",
+                "A security pattern",
+                "A database optimization pattern"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Strategy pattern encapsulates algorithms in separate classes and makes them interchangeable, allowing the algorithm to vary independently from clients that use it.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is the 'Decorator Pattern'?",
+            "options": [
+                "A UI styling pattern",
+                "A pattern that adds new functionality to objects dynamically",
+                "A code formatting pattern",
+                "A database pattern"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Decorator pattern attaches additional responsibilities to an object dynamically, providing a flexible alternative to subclassing for extending functionality.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What does 'SOLID' stand for in software design?",
+            "options": [
+                "Secure, Optimized, Logical, Integrated, Documented",
+                "Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion",
+                "Simple, Organized, Logical, Integrated, Designed",
+                "Structured, Object-oriented, Layered, Integrated, Distributed"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "SOLID is a set of five design principles that make software more maintainable, flexible, and scalable when building object-oriented systems.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is the 'Single Responsibility Principle'?",
+            "options": [
+                "A class should have only one developer",
+                "A class should have only one reason to change",
+                "A class should have only one method",
+                "A class should handle only one user"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Single Responsibility Principle states that a class should have only one job or reason to change, making code more maintainable and easier to understand.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is the 'Adapter Pattern'?",
+            "options": [
+                "A hardware connector",
+                "A pattern that allows incompatible interfaces to work together",
+                "A network pattern",
+                "A database migration pattern"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Adapter pattern converts the interface of a class into another interface clients expect, allowing classes with incompatible interfaces to collaborate.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is the 'Repository Pattern'?",
+            "options": [
+                "A Git pattern",
+                "A pattern that mediates between domain and data mapping layers",
+                "A storage pattern",
+                "A security pattern"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Repository pattern encapsulates data access logic, providing a collection-like interface for accessing domain objects and separating business logic from data access.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is 'Dependency Injection'?",
+            "options": [
+                "Adding new dependencies to a project",
+                "A technique where dependencies are provided to a class rather than created by it",
+                "A security vulnerability",
+                "A database connection method"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Dependency Injection provides dependencies to a class from the outside rather than having the class create them, promoting loose coupling and testability.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is the 'Builder Pattern'?",
+            "options": [
+                "A construction management pattern",
+                "A pattern for constructing complex objects step by step",
+                "A database creation pattern",
+                "A UI building pattern"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Builder pattern separates the construction of a complex object from its representation, allowing the same construction process to create different representations.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is the 'Facade Pattern'?",
+            "options": [
+                "A UI design pattern",
+                "A pattern that provides a simplified interface to a complex subsystem",
+                "A security pattern",
+                "A database pattern"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Facade pattern provides a unified, simplified interface to a set of interfaces in a subsystem, making the subsystem easier to use.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is the 'Command Pattern'?",
+            "options": [
+                "A terminal command pattern",
+                "A pattern that encapsulates a request as an object",
+                "A security pattern",
+                "A database query pattern"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Command pattern encapsulates a request as an object, allowing you to parameterize clients with different requests, queue requests, and support undoable operations.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "What is the 'Open/Closed Principle'?",
+            "options": [
+                "Code should be open source",
+                "Software entities should be open for extension but closed for modification",
+                "Files should be opened and closed properly",
+                "APIs should be public or private"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Open/Closed Principle states you should be able to extend a class's behavior without modifying it, typically achieved through inheritance or composition.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is the 'Proxy Pattern'?",
+            "options": [
+                "A network proxy",
+                "A pattern that provides a surrogate or placeholder for another object",
+                "A security pattern",
+                "A caching pattern"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Proxy pattern provides a substitute or placeholder for another object to control access to it, useful for lazy loading, access control, or logging.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "What is the 'Template Method Pattern'?",
+            "options": [
+                "A code template generator",
+                "A pattern that defines the skeleton of an algorithm, letting subclasses override specific steps",
+                "A UI template pattern",
+                "A documentation pattern"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Template Method defines the structure of an algorithm in a base class but lets subclasses override specific steps without changing the algorithm's structure.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "What is 'Liskov Substitution Principle'?",
+            "options": [
+                "Variables should be substitutable",
+                "Objects of a superclass should be replaceable with objects of a subclass without breaking the application",
+                "Functions should be interchangeable",
+                "Classes should be substitutable with interfaces"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Liskov Substitution Principle states that derived classes must be substitutable for their base classes without altering the correctness of the program.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "What is the 'State Pattern'?",
+            "options": [
+                "A pattern for managing application state",
+                "A pattern that allows an object to alter its behavior when its internal state changes",
+                "A database state pattern",
+                "A UI state management pattern"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "State pattern allows an object to change its behavior when its internal state changes, appearing to change its class. Useful for state machines.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "What is the 'Chain of Responsibility Pattern'?",
+            "options": [
+                "A management hierarchy",
+                "A pattern that passes requests along a chain of handlers until one handles it",
+                "A security pattern",
+                "A logging pattern"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Chain of Responsibility passes a request along a chain of potential handlers until one handles it, decoupling senders from receivers.",
+            "difficulty": "Hard"
+        }
+    ]
+}
