@@ -1,0 +1,201 @@
+{
+    "id": "rest-api-mastery",
+    "topicTitle": "REST API Mastery",
+    "category": "Backend",
+    "difficulty": "Medium",
+    "accentColor": "#0EA5E9",
+    "tags": [
+        "API",
+        "HTTP",
+        "Backend"
+    ],
+    "questions": [
+        "HTTP Methods",
+        "Status Codes",
+        "Authentication",
+        "Idempotency",
+        "Rate Limiting"
+    ],
+    "fullQuestions": [
+        {
+            "question": "Which HTTP method is typically used to update an existing resource by replacing it entirely?",
+            "options": [
+                "POST",
+                "PATCH",
+                "PUT",
+                "UPDATE"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "PUT is used to replace an entire resource. PATCH is used for partial updates, and POST is usually for creating new resources.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What does a 403 Forbidden status code indicate?",
+            "options": [
+                "The server is down for maintenance",
+                "The user is not logged in",
+                "The server understood the request but refuses to authorize it",
+                "The requested resource does not exist"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "A 403 Forbidden error means the server understands who you are (you might even be logged in), but you do not have permission to access that specific resource.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "Which header is commonly used to send a JSON Web Token (JWT) for authentication?",
+            "options": [
+                "X-Auth-Token",
+                "Authorization",
+                "Authentication",
+                "Bearer"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The 'Authorization' header is the standard way to send credentials, typically formatted as 'Bearer <token>'.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "Which HTTP method is considered 'Idempotent'?",
+            "options": [
+                "POST",
+                "GET",
+                "PATCH",
+                "DELETE"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "GET, PUT, and DELETE are idempotent, meaning multiple identical requests will have the same effect as a single request. POST is not idempotent.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is the purpose of 'HATEOAS' in RESTful design?",
+            "options": [
+                "To speed up network requests",
+                "To provide links to other related actions/resources within the API response",
+                "To encrypt sensitive data",
+                "To manage database migrations"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "HATEOAS (Hypermedia as the Engine of Application State) allows a client to interact with a network application entirely through hypermedia provided dynamically by the server.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "What is a 'Race Condition' in the context of an API?",
+            "options": [
+                "When two users are competing for a prize",
+                "When the outcome depends on the timing of multiple concurrent processes",
+                "When an API is faster than its consumer",
+                "A condition that speeds up the server"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "A race condition occurs when concurrent requests attempt to modify the same resource at the same time, leading to unpredictable results.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "Which of these is NOT a valid JSON data type?",
+            "options": [
+                "String",
+                "Function",
+                "Boolean",
+                "Object"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "JSON supports strings, numbers, booleans, null, arrays, and objects. It does not support functions or dates directly.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is the difference between OAuth 2.0 and JWT?",
+            "options": [
+                "OAuth is a language, JWT is a framework",
+                "OAuth is a protocol for authorization, JWT is a token format",
+                "They are the same thing",
+                "OAuth is for frontend, JWT is for backend"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "OAuth 2.0 is an authorization framework/protocol. JWT is a compact, URL-safe means of representing claims to be transferred between two parties.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "What does a 409 Conflict status code typically mean?",
+            "options": [
+                "The server has too much traffic",
+                "The request could not be processed because of a conflict in the current state of the resource",
+                "The user entered the wrong password",
+                "The database is empty"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "409 is often used when an edit would create a duplicate record or violate a unique constraint in the database.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "Why is 'Base64' encoding used for basic authentication?",
+            "options": [
+                "To encrypt the password",
+                "To hide the password from the browser console",
+                "To ensure binary data or special characters are safely transmitted over text-based protocols",
+                "To make the password longer"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "Base64 is NOT encryption; it is encoding. It's used so that special characters in usernames/passwords don't break the HTTP protocol headers.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is 'CORS' (Cross-Origin Resource Sharing)?",
+            "options": [
+                "A way to share database connections",
+                "A security mechanism that allows or restricts resources on a web page to be requested from another domain",
+                "A method for compressing API responses",
+                "A tool for load balancing"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "CORS is a browser-level security feature that prevents a website from making requests to a different domain unless specifically permitted by the target server.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "Which HTTP status code is used for 'Partially Content' (often used for file downloads)?",
+            "options": [
+                "200 OK",
+                "201 Created",
+                "206 Partial Content",
+                "304 Not Modified"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "206 Partial Content is used when a client requests a range of a resource (like a specific byte range in a large file).",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "In a RESTful URL, which is the standard pluralization rule?",
+            "options": [
+                "/user/1",
+                "/users/1",
+                "/GetUser/1",
+                "/user?id=1"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The industry standard for RESTful APIs is to use plural nouns for resource collections (e.g., /users, /posts, /comments).",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is the primary benefit of 'Statelessness' in REST?",
+            "options": [
+                "It makes the API faster",
+                "It simplifies server design and improves scalability because the server doesn't need to store session state",
+                "It makes the data more secure",
+                "It prevents users from logging out"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Statelessness means each request from a client contains all the information necessary to understand and process the request, allowing any server in a cluster to handle any request.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is 'GraphQL' compared to REST?",
+            "options": [
+                "A new version of REST",
+                "A query language for APIs that allows clients to request exactly the data they need",
+                "A replacement for SQL",
+                "A frontend library for styling"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "GraphQL is an alternative to REST that provides a more flexible way to query data, often reducing the number of requests needed by providing precise data selection.",
+            "difficulty": "Medium"
+        }
+    ]
+}

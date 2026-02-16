@@ -1,0 +1,54 @@
+{
+  "id": "android-basics",
+  "topicTitle": "Android Basics",
+  "category": "Mobile",
+  "difficulty": "Easy",
+  "accentColor": "#10B981",
+  "tags": ["Android", "Basics", "UI"],
+  "companyHistory": "Frequently asked in early-round interviews at Google and Samsung",
+  "questions": [
+    "What is an Activity?",
+    "Describe the Activity Lifecycle",
+    "What is the difference between Service and IntentService?",
+    "How does a RecyclerView work?",
+    "What are the launch modes for an Activity?"
+  ],
+  "fullQuestions": [
+    {
+      "question": "What is an Activity in Android?",
+      "options": [
+        "A background process for long-running tasks",
+        "A single, focused thing that the user can do, usually with a UI",
+        "A way to store data in a database",
+        "A tool for managing network requests"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "An Activity is a fundamental component of an Android app, providing a window in which the app draws its UI. It represents a single screen with a user interface.",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "Which lifecycle method is called just before an Activity becomes visible to the user?",
+      "options": [
+        "onCreate()",
+        "onStart()",
+        "onResume()",
+        "onPause()"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "onStart() is called when the activity is becoming visible to the user. It is followed by onResume() when the activity becomes interactive.",
+      "difficulty": "Easy"
+    },
+    {
+      "question": "What is the purpose of an Intent in Android?",
+      "options": [
+        "To define the UI layout of a screen",
+        "To perform background database operations",
+        "To request an action from another app component",
+        "To handle user click events"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "An Intent is a messaging object you can use to request an action from another app component, such as starting an activity, starting a service, or delivering a broadcast.",
+      "difficulty": "Easy"
+    }
+  ]
+}

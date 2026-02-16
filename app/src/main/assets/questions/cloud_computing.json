@@ -1,0 +1,225 @@
+{
+    "id": "cloud-computing",
+    "topicTitle": "Cloud Computing Essentials",
+    "category": "Infrastructure",
+    "difficulty": "Medium",
+    "accentColor": "#3B82F6",
+    "tags": [
+        "Cloud",
+        "AWS",
+        "DevOps"
+    ],
+    "questions": [
+        "Cloud Models",
+        "Service Types",
+        "Scalability",
+        "Cloud Security",
+        "Cost Optimization"
+    ],
+    "fullQuestions": [
+        {
+            "question": "What are the three main cloud service models?",
+            "options": [
+                "Small, Medium, Large",
+                "IaaS, PaaS, SaaS",
+                "Public, Private, Hybrid",
+                "Storage, Compute, Network"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "IaaS (Infrastructure as a Service), PaaS (Platform as a Service), and SaaS (Software as a Service) are the three fundamental cloud service models.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'IaaS' (Infrastructure as a Service)?",
+            "options": [
+                "Complete applications delivered over the internet",
+                "Virtualized computing resources like servers, storage, and networking",
+                "Development platforms and tools",
+                "Email services"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "IaaS provides virtualized computing infrastructure over the internet. Users manage the OS, applications, and data while the provider manages the physical infrastructure.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is the main difference between Public Cloud and Private Cloud?",
+            "options": [
+                "Public is free, Private costs money",
+                "Public is shared infrastructure, Private is dedicated to one organization",
+                "Public is slower than Private",
+                "Private cloud doesn't use the internet"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Public cloud resources are shared among multiple customers, while private cloud infrastructure is dedicated to a single organization, offering more control and security.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'Elasticity' in cloud computing?",
+            "options": [
+                "The flexibility of pricing models",
+                "The ability to automatically scale resources up or down based on demand",
+                "The physical flexibility of data centers",
+                "The ability to change cloud providers"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Elasticity is the ability to quickly scale resources up or down automatically based on demand, ensuring you only pay for what you use.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is 'SaaS' (Software as a Service)?",
+            "options": [
+                "Renting physical servers",
+                "Complete software applications delivered over the internet",
+                "Development tools and frameworks",
+                "Network infrastructure"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "SaaS delivers complete software applications over the internet on a subscription basis. Examples include Gmail, Salesforce, and Microsoft 365.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is a 'Region' in cloud computing?",
+            "options": [
+                "A pricing tier",
+                "A geographic area containing multiple data centers",
+                "A type of virtual machine",
+                "A security group"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "A region is a separate geographic area with multiple isolated data centers (availability zones). Choosing regions affects latency, compliance, and disaster recovery.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'Multi-tenancy' in cloud computing?",
+            "options": [
+                "Having multiple cloud accounts",
+                "Multiple customers sharing the same physical infrastructure while keeping data isolated",
+                "Using multiple cloud providers",
+                "Having multiple data centers"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Multi-tenancy allows multiple customers (tenants) to share the same physical resources while maintaining logical isolation of their data and applications.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is 'Serverless Computing'?",
+            "options": [
+                "Computing without any servers",
+                "A model where the cloud provider manages servers and you only pay for actual compute time",
+                "Computing on local machines",
+                "A type of database"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Serverless computing abstracts server management. You write code that runs in response to events, and the provider handles all infrastructure, scaling, and maintenance.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is 'Object Storage'?",
+            "options": [
+                "Storage for programming objects",
+                "A storage architecture that manages data as objects rather than files or blocks",
+                "Storage for physical objects",
+                "A type of database"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Object storage manages data as objects (data + metadata + unique identifier) rather than traditional file hierarchies. It's ideal for unstructured data like images and videos.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is a 'Load Balancer' in cloud infrastructure?",
+            "options": [
+                "A tool to measure server load",
+                "A service that distributes incoming traffic across multiple servers",
+                "A billing calculator",
+                "A security firewall"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "A load balancer distributes incoming network traffic across multiple servers to ensure no single server is overwhelmed, improving availability and reliability.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'CDN' (Content Delivery Network)?",
+            "options": [
+                "A type of database",
+                "A distributed network of servers that deliver content to users based on their geographic location",
+                "A cloud storage service",
+                "A security protocol"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "A CDN caches content at edge locations worldwide, delivering it from the server closest to the user, reducing latency and improving load times.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'Auto Scaling'?",
+            "options": [
+                "Automatic billing adjustments",
+                "Automatically adjusting the number of compute resources based on demand",
+                "Automatic software updates",
+                "Automatic data backup"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Auto Scaling automatically increases or decreases compute resources based on defined metrics like CPU usage, ensuring optimal performance and cost efficiency.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is the 'Shared Responsibility Model' in cloud security?",
+            "options": [
+                "Sharing passwords between team members",
+                "Security responsibilities are divided between the cloud provider and the customer",
+                "All security is the provider's responsibility",
+                "All security is the customer's responsibility"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The provider secures the infrastructure (hardware, network, facilities), while customers secure their data, applications, access management, and configurations.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is 'Hybrid Cloud'?",
+            "options": [
+                "Using two different cloud providers",
+                "A combination of public and private cloud infrastructure",
+                "A cloud that runs on solar power",
+                "A mix of old and new servers"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Hybrid cloud combines public and private cloud environments, allowing data and applications to move between them for greater flexibility and deployment options.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'Cloud Migration'?",
+            "options": [
+                "Moving data centers to different locations",
+                "The process of moving applications, data, and workloads to the cloud",
+                "Switching between cloud providers",
+                "Updating cloud software"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Cloud migration is the process of moving digital assets (applications, data, workloads) from on-premises infrastructure or legacy systems to cloud infrastructure.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'CapEx' vs 'OpEx' in cloud economics?",
+            "options": [
+                "Two types of cloud services",
+                "CapEx is upfront infrastructure investment, OpEx is ongoing operational costs",
+                "Two pricing models",
+                "Two security frameworks"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "CapEx (Capital Expenditure) involves upfront costs for physical infrastructure. OpEx (Operational Expenditure) is the pay-as-you-go model used in cloud, treating IT as an ongoing expense.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is 'Cloud Vendor Lock-in'?",
+            "options": [
+                "Security features that lock accounts",
+                "Dependency on a specific cloud provider making it difficult to switch",
+                "A type of encryption",
+                "A pricing strategy"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Vendor lock-in occurs when you become dependent on a specific provider's proprietary services, making migration to another provider difficult and costly.",
+            "difficulty": "Hard"
+        }
+    ]
+}

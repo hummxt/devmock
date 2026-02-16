@@ -1,0 +1,201 @@
+{
+    "id": "agile-scrum",
+    "topicTitle": "Agile & Scrum Methodology",
+    "category": "Project Management",
+    "difficulty": "Easy",
+    "accentColor": "#8B5CF6",
+    "tags": [
+        "Agile",
+        "Scrum",
+        "PM"
+    ],
+    "questions": [
+        "Agile Principles",
+        "Scrum Roles",
+        "Sprint Planning",
+        "Daily Standup",
+        "Retrospectives"
+    ],
+    "fullQuestions": [
+        {
+            "question": "What is the primary goal of Agile methodology?",
+            "options": [
+                "To create perfect documentation",
+                "To deliver working software frequently with flexibility to change",
+                "To eliminate all meetings",
+                "To work without any planning"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Agile focuses on iterative development, delivering working software in short cycles, and being responsive to changing requirements rather than following a rigid plan.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is a 'Sprint' in Scrum?",
+            "options": [
+                "A very fast coding session",
+                "A time-boxed period (usually 1-4 weeks) to complete a set amount of work",
+                "A type of meeting",
+                "A software testing phase"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "A Sprint is a fixed time period during which a Scrum team works to complete a set amount of work. It's the basic unit of development in Scrum.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "Who is responsible for maximizing the value of the product in Scrum?",
+            "options": [
+                "Scrum Master",
+                "Product Owner",
+                "Development Team",
+                "Stakeholders"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The Product Owner is responsible for maximizing the value of the product and the work of the Development Team. They manage the product backlog and prioritize features.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is the main purpose of a Daily Standup (Daily Scrum)?",
+            "options": [
+                "To report to management",
+                "To synchronize the team's work and identify impediments",
+                "To assign new tasks",
+                "To review completed work"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The Daily Standup is a short meeting where team members synchronize their activities, discuss what they did, what they'll do, and any blockers they're facing.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is a 'User Story'?",
+            "options": [
+                "A biography of the end user",
+                "A short description of a feature from the user's perspective",
+                "A detailed technical specification",
+                "A bug report"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "A User Story is a simple description of a software feature from the perspective of the end user, typically following the format: 'As a [user], I want [goal] so that [benefit]'.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is the role of a Scrum Master?",
+            "options": [
+                "To manage the team and assign tasks",
+                "To facilitate the Scrum process and remove impediments",
+                "To write all the code",
+                "To make all technical decisions"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The Scrum Master is a servant-leader who helps the team follow Scrum practices, removes obstacles, and facilitates meetings, but doesn't manage the team.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What happens during a Sprint Retrospective?",
+            "options": [
+                "The team demonstrates completed work to stakeholders",
+                "The team reflects on the sprint and identifies improvements",
+                "New features are planned",
+                "Bugs are fixed"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The Sprint Retrospective is a meeting where the team reflects on the past sprint and identifies actionable improvements for the next sprint.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'Velocity' in Agile?",
+            "options": [
+                "How fast developers type",
+                "The amount of work a team completes in a sprint",
+                "The speed of the internet connection",
+                "The number of meetings per week"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Velocity is a metric that measures the amount of work (usually in story points) a team completes during a sprint. It helps with planning future sprints.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is the Product Backlog?",
+            "options": [
+                "A list of bugs",
+                "An ordered list of everything that might be needed in the product",
+                "Completed features",
+                "A list of team members"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The Product Backlog is a prioritized list of features, enhancements, and fixes that serves as the single source of requirements for the product.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'Definition of Done'?",
+            "options": [
+                "When the sprint ends",
+                "A shared understanding of what it means for work to be complete",
+                "When the product ships",
+                "When all bugs are fixed"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The Definition of Done is a clear and concise list of criteria that a product increment must meet to be considered complete, ensuring quality and consistency.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is the typical duration of a Daily Standup?",
+            "options": [
+                "1 hour",
+                "15 minutes",
+                "30 minutes",
+                "5 minutes"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The Daily Standup is time-boxed to 15 minutes to keep it focused and efficient. It's meant to be a quick synchronization, not a detailed discussion.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'Sprint Planning'?",
+            "options": [
+                "Planning next year's roadmap",
+                "A meeting where the team decides what work to complete in the upcoming sprint",
+                "Scheduling team vacations",
+                "Reviewing past sprints"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Sprint Planning is a collaborative meeting where the team selects items from the product backlog and plans how to deliver them during the sprint.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is a 'Burndown Chart'?",
+            "options": [
+                "A chart showing team stress levels",
+                "A visual representation of work remaining versus time in a sprint",
+                "A list of completed tasks",
+                "A performance review document"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "A Burndown Chart shows the amount of work remaining in a sprint over time, helping the team track progress and predict if they'll complete their commitment.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is the difference between Agile and Waterfall?",
+            "options": [
+                "Agile is faster than Waterfall",
+                "Agile is iterative and flexible, Waterfall is sequential and rigid",
+                "Waterfall uses sprints, Agile doesn't",
+                "They are the same methodology"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Waterfall follows a linear, sequential approach where each phase must be completed before the next begins. Agile is iterative, allowing for changes and continuous feedback.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'Continuous Integration' in Agile?",
+            "options": [
+                "Having continuous meetings",
+                "Frequently merging code changes into a shared repository and automatically testing them",
+                "Working without breaks",
+                "Integrating new team members"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Continuous Integration (CI) is a practice where developers frequently integrate their code into a shared repository, with automated builds and tests to detect issues early.",
+            "difficulty": "Medium"
+        }
+    ]
+}
