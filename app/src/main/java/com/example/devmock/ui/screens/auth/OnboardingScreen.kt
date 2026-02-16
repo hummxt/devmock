@@ -161,7 +161,7 @@ fun OnboardingScreen(
                     } else {
                         isLoading = true
                         scope.launch {
-                            val userName = com.google.firebase.auth.FirebaseAuth.getInstance().currentUser?.displayName ?: "Devmock User"
+                            val userName = com.google.firebase.auth.FirebaseAuth.getInstance().currentUser?.displayName ?: "Hummet User"
                             repository.updateOnboardingData(userName, selectedLevel, selectedPath, goal, profileImageUrl)
                             isLoading = false
                             onComplete()

@@ -52,13 +52,6 @@ fun RegisterScreen(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
-            Image(
-                painter = painterResource(id = R.drawable.logo),
-                contentDescription = "Devmock Logo",
-                modifier = Modifier
-                    .size(80.dp)
-                    .padding(bottom = 24.dp)
-            )
 
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
@@ -72,7 +65,7 @@ fun RegisterScreen(
                 )
                 Spacer(modifier = Modifier.height(8.dp))
                 Text(
-                    text = "Join Devmock and start mastering your future",
+                    text = "Join Hummet and start mastering your future",
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     textAlign = TextAlign.Center

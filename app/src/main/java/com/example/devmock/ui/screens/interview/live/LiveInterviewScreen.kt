@@ -32,37 +32,37 @@ fun LiveInterviewScreen(
 
     Scaffold(
         containerColor = MaterialTheme.colorScheme.background,
-        contentWindowInsets = WindowInsets(0.dp),
-        topBar = {
-            TopAppBar(
-                colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = MaterialTheme.colorScheme.background,
-                    titleContentColor = MaterialTheme.colorScheme.onBackground
-                ),
-                title = { 
-                    Text(
-                        if (state.isCompleted) "Interview Result" else state.title, 
-                        fontWeight = FontWeight.Bold
-                    ) 
-                },
-                navigationIcon = {
-                    IconButton(onClick = onBackClick) {
-                        Icon(Icons.Default.Close, "Exit", tint = MaterialTheme.colorScheme.onBackground)
-                    }
-                },
-                actions = {
-                    if (!state.isCompleted && state.questions.isNotEmpty()) {
-                        Text(
-                            "${state.currentQuestionIndex + 1}/${state.questions.size}",
-                            modifier = Modifier.padding(end = 16.dp),
-                            fontWeight = FontWeight.Bold,
-                            color = MaterialTheme.colorScheme.primary
-                        )
-                    }
-                }
-            )
-        }
+        contentWindowInsets = WindowInsets(0.dp)
     ) { padding ->
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(padding)
+        ) {
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 4.dp, vertical = 8.dp),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                IconButton(onClick = onBackClick) {
+                    Icon(Icons.Default.Close, "Exit", tint = MaterialTheme.colorScheme.onBackground)
+                }
+                Text(
+                    if (state.isCompleted) "Interview Result" else state.title, 
+                    fontWeight = FontWeight.Bold,
+                    modifier = Modifier.weight(1f),
+                    style = MaterialTheme.typography.titleLarge
+                )
+                if (!state.isCompleted && state.questions.isNotEmpty()) {
+                    Text(
+                        "${state.currentQuestionIndex + 1}/${state.questions.size}",
+                        modifier = Modifier.padding(end = 16.dp),
+                        fontWeight = FontWeight.Bold,
+                        color = MaterialTheme.colorScheme.primary
+                    )
+                }
+            }
         Box(
             modifier = Modifier
                 .fillMaxSize()
