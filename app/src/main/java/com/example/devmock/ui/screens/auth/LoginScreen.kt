@@ -49,13 +49,6 @@ fun LoginScreen(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
-            Image(
-                painter = painterResource(id = R.drawable.logo),
-                contentDescription = "Devmock Logo",
-                modifier = Modifier
-                    .size(100.dp)
-                    .padding(bottom = 32.dp)
-            )
 
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,

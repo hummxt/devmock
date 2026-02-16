@@ -91,13 +91,17 @@ fun OnboardingScreen(
                 .padding(24.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Image(
-                painter = painterResource(id = R.drawable.logo),
-                contentDescription = "Devmock Logo",
-                modifier = Modifier
-                    .size(60.dp)
-                    .padding(top = 16.dp)
-            )
+
+            Row(
+                modifier = Modifier.fillMaxWidth().padding(top = 8.dp),
+                horizontalArrangement = Arrangement.End
+            ) {
+                TextButton(onClick = { 
+                    if (currentStep < 3) currentStep++ else onComplete() 
+                }) {
+                    Text("Skip", color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.5f))
+                }
+            }
 
             Row(
                 modifier = Modifier.padding(top = 24.dp),
@@ -354,8 +358,7 @@ fun LearningPathStep(
         val paths = listOf(
             OnboardingOption("Mobile Development", "Android, iOS, Flutter", Icons.Outlined.PhoneAndroid),
             OnboardingOption("Frontend Engineering", "React, Vue, Web", Icons.Outlined.Palette),
-            OnboardingOption("Backend Engineering", "Kotlin, Python, Java", Icons.Outlined.Storage),
-            OnboardingOption("UI/UX Design", "Figma, User Research", Icons.Outlined.Draw)
+            OnboardingOption("Backend Engineering", "Kotlin, Python, Java", Icons.Outlined.Storage)
         )
 
         paths.forEach { path ->

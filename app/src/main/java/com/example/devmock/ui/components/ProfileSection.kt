@@ -44,68 +44,62 @@ fun ProfileSection(
     val displayName = userData?.name ?: auth.currentUser?.displayName ?: "Devmock User"
     val experienceLevel = userData?.experienceLevel ?: "Beginner"
 
-    CenterAlignedTopAppBar(
-        title = {
-            Row(
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 24.dp, vertical = 8.dp),
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.SpaceBetween
+    ) {
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Surface(
                 modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(start = 24.dp),
-                verticalAlignment = Alignment.CenterVertically
+                    .size(42.dp)
+                    .clip(CircleShape),
+                color = primaryTextColor.copy(alpha = 0.1f)
             ) {
-                Surface(
-                    modifier = Modifier
-                        .size(42.dp)
-                        .clip(CircleShape),
-                    color = primaryTextColor.copy(alpha = 0.1f)
-                ) {
-                    if (userData?.profilePhotoUrl?.isNotEmpty() == true) {
-                        AsyncImage(
-                            model = ImageRequest.Builder(LocalContext.current)
-                                .data(userData?.profilePhotoUrl)
-                                .crossfade(true)
-                                .build(),
-                            contentDescription = "Profile Picture",
-                            modifier = Modifier.fillMaxSize(),
-                            contentScale = ContentScale.Crop
-                        )
-                    } else {
-                        Icon(
-                            imageVector = Icons.Default.Person,
-                            contentDescription = null,
-                            modifier = Modifier.padding(8.dp),
-                            tint = primaryTextColor.copy(alpha = 0.5f)
-                        )
-                    }
-                }
-                Column(modifier = Modifier.padding(start = 12.dp)) {
-                    Text(
-                        "Hello, $displayName",
-                        style = MaterialTheme.typography.titleMedium,
-                        fontWeight = FontWeight.Bold,
-                        color = primaryTextColor
+                if (userData?.profilePhotoUrl?.isNotEmpty() == true) {
+                    AsyncImage(
+                        model = ImageRequest.Builder(LocalContext.current)
+                            .data(userData?.profilePhotoUrl)
+                            .crossfade(true)
+                            .build(),
+                        contentDescription = "Profile Picture",
+                        modifier = Modifier.fillMaxSize(),
+                        contentScale = ContentScale.Crop
                     )
-                    Text(
-                        experienceLevel,
-                        style = MaterialTheme.typography.labelSmall,
-                        color = secondaryTextColor
+                } else {
+                    Icon(
+                        imageVector = Icons.Default.Person,
+                        contentDescription = null,
+                        modifier = Modifier.padding(8.dp),
+                        tint = primaryTextColor.copy(alpha = 0.5f)
                     )
                 }
             }
-        },
-        actions = {
-            IconButton(onClick = { }) {
-                Icon(
-                    Icons.Outlined.Notifications,
-                    null,
-                    modifier = Modifier.size(26.dp),
-                    tint = primaryTextColor
+            Column(modifier = Modifier.padding(start = 12.dp)) {
+                val nameToDisplay = if (displayName == "Devmock User") "Hummet User" else displayName
+                Text(
+                    "Hello, $nameToDisplay",
+                    style = MaterialTheme.typography.titleMedium,
+                    fontWeight = FontWeight.Bold,
+                    color = primaryTextColor
+                )
+                Text(
+                    experienceLevel,
+                    style = MaterialTheme.typography.labelSmall,
+                    color = secondaryTextColor
                 )
             }
-        },
-        colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
-            containerColor = Color.Transparent,
-            scrolledContainerColor = Color.Transparent
-        ),
-        windowInsets = WindowInsets(0.dp)
-    )
+        }
+        
+        IconButton(onClick = { }) {
+            Icon(
+                Icons.Outlined.Notifications,
+                null,
+                modifier = Modifier.size(26.dp),
+                tint = primaryTextColor
+            )
+        }
+    }
 }

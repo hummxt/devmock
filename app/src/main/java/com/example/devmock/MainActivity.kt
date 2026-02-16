@@ -77,12 +77,16 @@ class MainActivity : ComponentActivity() {
                     ) { innerPadding ->
                         NavHost(
                             navController = navController,
-                            startDestination = if (isLoggedIn) "home" else "onboarding",
+                            startDestination = if (isLoggedIn) "home" else "login",
                             modifier = Modifier.padding(innerPadding)
                         ) {
                             composable("onboarding") {
                                 OnboardingScreen(
-                                    onComplete = { navController.navigate("login") }
+                                    onComplete = { 
+                                        navController.navigate("home") {
+                                            popUpTo("onboarding") { inclusive = true }
+                                        }
+                                    }
                                 )
                             }
                             composable("login") {
@@ -100,8 +104,8 @@ class MainActivity : ComponentActivity() {
                                 RegisterScreen(
                                     onRegisterSuccess = {
                                         isLoggedIn = true
-                                        navController.navigate("home") {
-                                            popUpTo("onboarding") { inclusive = true }
+                                        navController.navigate("onboarding") {
+                                            popUpTo("register") { inclusive = true }
                                         }
                                     },
                                     onNavigateToLogin = { navController.popBackStack() }
