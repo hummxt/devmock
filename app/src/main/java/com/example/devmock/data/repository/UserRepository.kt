@@ -37,14 +37,15 @@ class UserRepository {
         }.await()
     }
 
-    suspend fun updateOnboardingData(name: String, level: String, path: String, goal: String) {
+    suspend fun updateOnboardingData(name: String, level: String, path: String, goal: String, profilePhotoUrl: String? = null) {
         val uid = auth.currentUser?.uid ?: return
-        val updates = mapOf(
+        val updates = mutableMapOf(
             "name" to name,
             "experienceLevel" to level,
             "learningPath" to path,
             "goal" to goal
         )
+        profilePhotoUrl?.let { updates["profilePhotoUrl"] = it }
         usersCollection.document(uid).set(updates + mapOf("uid" to uid, "readyMeter" to 0), com.google.firebase.firestore.SetOptions.merge()).await()
     }
 

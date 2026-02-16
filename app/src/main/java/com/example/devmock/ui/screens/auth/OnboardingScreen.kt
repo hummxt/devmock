@@ -64,7 +64,21 @@ fun OnboardingScreen(
     val imagePicker = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.GetContent()
     ) { uri: Uri? ->
-        uri?.let { selectedImageUri = it }
+        uri?.let { 
+            selectedImageUri = it 
+            scope.launch {
+                isUploadingImage = true
+                profileImageRepository.uploadProfileImage(it).fold(
+                    onSuccess = { url ->
+                        profileImageUrl = url
+                        isUploadingImage = false
+                    },
+                    onFailure = { 
+                        isUploadingImage = false
+                    }
+                )
+            }
+        }
     }
 
     Scaffold(
@@ -119,23 +133,7 @@ fun OnboardingScreen(
                         selectedUri = selectedImageUri,
                         profileImageUrl = profileImageUrl,
                         isUploading = isUploadingImage,
-                        onSelectImage = { imagePicker.launch("image/*") },
-                        onUploadImage = {
-                            selectedImageUri?.let { uri ->
-                                scope.launch {
-                                    isUploadingImage = true
-                                    profileImageRepository.uploadProfileImage(uri).fold(
-                                        onSuccess = { url ->
-                                            profileImageUrl = url
-                                            isUploadingImage = false
-                                        },
-                                        onFailure = { 
-                                            isUploadingImage = false
-                                        }
-                                    )
-                                }
-                            }
-                        }
+                        onSelectImage = { imagePicker.launch("image/*") }
                     )
                     1 -> ExperienceLevelStep(
                         selectedLevel = selectedLevel,
@@ -160,7 +158,7 @@ fun OnboardingScreen(
                         isLoading = true
                         scope.launch {
                             val userName = com.google.firebase.auth.FirebaseAuth.getInstance().currentUser?.displayName ?: "Devmock User"
-                            repository.updateOnboardingData(userName, selectedLevel, selectedPath, goal)
+                            repository.updateOnboardingData(userName, selectedLevel, selectedPath, goal, profileImageUrl)
                             isLoading = false
                             onComplete()
                         }
@@ -174,7 +172,7 @@ fun OnboardingScreen(
                     containerColor = MaterialTheme.colorScheme.primary,
                     contentColor = MaterialTheme.colorScheme.onPrimary
                 ),
-                enabled = !isLoading && !isUploadingImage && (currentStep != 0 || profileImageUrl != null || selectedImageUri == null)
+                enabled = !isLoading && !isUploadingImage
             ) {
                 if (isLoading) {
                     CircularProgressIndicator(modifier = Modifier.size(24.dp), color = MaterialTheme.colorScheme.onPrimary)
@@ -195,8 +193,7 @@ fun ProfileImageStep(
     selectedUri: Uri?,
     profileImageUrl: String?,
     isUploading: Boolean,
-    onSelectImage: () -> Unit,
-    onUploadImage: () -> Unit
+    onSelectImage: () -> Unit
 ) {
     Column(horizontalAlignment = Alignment.CenterHorizontally) {
         Text(
@@ -277,18 +274,8 @@ fun ProfileImageStep(
 
         Spacer(modifier = Modifier.height(32.dp))
         
-        if (selectedUri != null && profileImageUrl == null) {
-            Button(
-                onClick = onUploadImage,
-                enabled = !isUploading,
-                shape = RoundedCornerShape(12.dp),
-                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF10B981))
-            ) {
-                Icon(Icons.Default.CloudUpload, null, modifier = Modifier.size(18.dp))
-                Spacer(Modifier.width(8.dp))
-                Text("Save Photo to Cloud")
-            }
-        } else if (profileImageUrl != null) {
+        if (profileImageUrl != null) {
+            Spacer(modifier = Modifier.height(32.dp))
             Text(
                 "Photo successfully saved!",
                 style = MaterialTheme.typography.titleMedium,
