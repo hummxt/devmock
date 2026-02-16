@@ -60,7 +60,7 @@ class MainActivity : ComponentActivity() {
                             BottomBar(navController = navController)
                         }
                     }
-                ) { innerPadding: PaddingValues ->
+                ) { innerPadding ->
                     NavHost(
                         navController = navController,
                         startDestination = if (isLoggedIn) "home" else "login",
@@ -138,7 +138,6 @@ class MainActivity : ComponentActivity() {
                                 topicId = topicId,
                                 onBackClick = { navController.popBackStack() },
                                 onStartInterview = { 
-
                                     val currentState = viewModel.state.value
                                     if (currentState is com.example.hummet.ui.screens.interview.detail.InterviewDetailState.Success) {
                                         val topic = currentState.detail.topic

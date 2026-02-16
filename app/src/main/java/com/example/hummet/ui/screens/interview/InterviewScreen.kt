@@ -3,8 +3,6 @@ package com.example.hummet.ui.screens.interview
 import androidx.compose.animation.*
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.isSystemInDarkTheme
-import com.example.hummet.ui.theme.isAppInDarkTheme
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.*
 import androidx.compose.foundation.shape.CircleShape
@@ -63,17 +61,6 @@ enum class Category(val label: String, val icon: ImageVector, val gradient: List
     SECURITY("Security", Icons.Outlined.Security, listOf(Color(0xFFEF4444), Color(0xFFDC2626)))
 }
 
-val sampleTopics = listOf(
-    InterviewTopic("1", "Object-Oriented Programming", "Core OOP concepts: encapsulation and inheritance.", DifficultyLevel.JUNIOR, Category.BACKEND, 24, "45 min"),
-    InterviewTopic("2", "Kotlin Coroutines", "Structured concurrency and Flow.", DifficultyLevel.MIDDLE, Category.MOBILE, 32, "60 min"),
-    InterviewTopic("3", "Jetpack Compose", "Modern declarative UI and State management.", DifficultyLevel.MIDDLE, Category.MOBILE, 28, "55 min"),
-    InterviewTopic("4", "Clean Architecture", "SOLID principles and layered architecture.", DifficultyLevel.SENIOR, Category.ARCHITECTURE, 20, "50 min"),
-    InterviewTopic("5", "REST API Design", "RESTful principles and best practices.", DifficultyLevel.MIDDLE, Category.BACKEND, 18, "40 min"),
-    InterviewTopic("6", "SQL & Database Design", "Queries, indexing, and normalization.", DifficultyLevel.JUNIOR, Category.DATABASE, 30, "50 min"),
-    InterviewTopic("7", "Docker & Containers", "Containerization and orchestration basics.", DifficultyLevel.MIDDLE, Category.DEVOPS, 22, "45 min"),
-    InterviewTopic("8", "Unit Testing", "TDD, mocking, and test strategies.", DifficultyLevel.JUNIOR, Category.TESTING, 26, "40 min")
-)
-
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun InterviewScreen(
@@ -90,29 +77,23 @@ fun InterviewScreen(
     var selectedDifficulty by remember { mutableStateOf<DifficultyLevel?>(null) }
     var showStats by remember { mutableStateOf(false) }
 
-    val isDark = isAppInDarkTheme()
-    val primaryTextColor = if (isDark) Color.White else Color.Black
-    val secondaryTextColor = if (isDark) Color.LightGray else Color.Gray
-    val accentButtonColor = if (isDark) Color.White else Color.Black
-    val accentButtonTextColor = if (isDark) Color.Black else Color.White
-    val containerColor = if (isDark) Color(0xFF1E1E1E) else Color(0xFFF0F0F0)
-    val dailyCardColor = if (isDark) Color(0xFF0D2F47) else Color(0xFFC3E7FF)
-    val dailyCardTextColor = if (isDark) Color.White else Color.Black
-    val streakCardColor = if (isDark) Color(0xFF2D1B47) else Color(0xFFE9D5FF)
-    val achievementCardColor = if (isDark) Color(0xFF1F3A1F) else Color(0xFFD1FAE5)
+    val sampleTopics = listOf(
+        InterviewTopic("1", "Object-Oriented Programming", "Core OOP concepts: encapsulation and inheritance.", DifficultyLevel.JUNIOR, Category.BACKEND, 24, "45 min"),
+        InterviewTopic("2", "Kotlin Coroutines", "Structured concurrency and Flow.", DifficultyLevel.MIDDLE, Category.MOBILE, 32, "60 min"),
+        InterviewTopic("3", "Jetpack Compose", "Modern declarative UI and State management.", DifficultyLevel.MIDDLE, Category.MOBILE, 28, "55 min"),
+        InterviewTopic("4", "Clean Architecture", "SOLID principles and layered architecture.", DifficultyLevel.SENIOR, Category.ARCHITECTURE, 20, "50 min")
+    )
 
-    val filteredTopics = remember(searchQuery, selectedCategory, selectedDifficulty) {
-        sampleTopics.filter { topic ->
-            val matchesSearch = searchQuery.isEmpty() || topic.title.contains(searchQuery, ignoreCase = true)
-            val matchesCategory = selectedCategory == null || topic.category == selectedCategory
-            val matchesDifficulty = selectedDifficulty == null || topic.difficulty == selectedDifficulty
-            matchesSearch && matchesCategory && matchesDifficulty
-        }
+    val filteredTopics = sampleTopics.filter { topic ->
+        val matchesSearch = searchQuery.isEmpty() || topic.title.contains(searchQuery, ignoreCase = true)
+        val matchesCategory = selectedCategory == null || topic.category == selectedCategory
+        val matchesDifficulty = selectedDifficulty == null || topic.difficulty == selectedDifficulty
+        matchesSearch && matchesCategory && matchesDifficulty
     }
 
     Scaffold(
-        containerColor = MaterialTheme.colorScheme.surface
-    ) { padding: PaddingValues ->
+        containerColor = MaterialTheme.colorScheme.background
+    ) { padding ->
         LazyColumn(
             modifier = Modifier
                 .fillMaxSize()
@@ -133,13 +114,13 @@ fun InterviewScreen(
                         text = "Interview Prep",
                         style = MaterialTheme.typography.headlineMedium,
                         fontWeight = FontWeight.Bold,
-                        color = primaryTextColor
+                        color = MaterialTheme.colorScheme.onBackground
                     )
                     IconButton(onClick = { showStats = !showStats }) {
                         Icon(
                             imageVector = if (showStats) Icons.Outlined.GridView else Icons.Outlined.BarChart,
                             contentDescription = "Toggle Stats",
-                            tint = primaryTextColor
+                            tint = MaterialTheme.colorScheme.primary
                         )
                     }
                 }
@@ -148,11 +129,7 @@ fun InterviewScreen(
             item {
                 AnimatedVisibility(visible = showStats) {
                     Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
-                        StatsGrid(
-                            primaryTextColor = primaryTextColor,
-                            secondaryTextColor = secondaryTextColor,
-                            containerColor = containerColor
-                        )
+                        StatsGrid()
                         Spacer(modifier = Modifier.height(4.dp))
                     }
                 }
@@ -166,35 +143,19 @@ fun InterviewScreen(
                     onQuestionCountChange = { customQuestionCount = it },
                     difficulty = customDifficulty,
                     onDifficultyChange = { customDifficulty = it },
-                    isRandomMix = isRandomMix,
-                    onRandomMixChange = { isRandomMix = it },
-                    primaryTextColor = primaryTextColor,
-                    secondaryTextColor = secondaryTextColor,
-                    accentColor = accentButtonColor,
-                    accentTextColor = accentButtonTextColor,
-                    containerColor = containerColor,
                     onStartInterview = { 
                         onStartInterview(customTopic, customQuestionCount, customDifficulty)
                     }
                 )
             }
 
-
             item {
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.spacedBy(16.dp)
                 ) {
-                    StreakCard(
-                        modifier = Modifier.weight(1f),
-                        cardColor = streakCardColor,
-                        textColor = dailyCardTextColor
-                    )
-                    AchievementCard(
-                        modifier = Modifier.weight(1f),
-                        cardColor = achievementCardColor,
-                        textColor = dailyCardTextColor
-                    )
+                    StreakCard(modifier = Modifier.weight(1f))
+                    AchievementCard(modifier = Modifier.weight(1f))
                 }
             }
 
@@ -203,24 +164,24 @@ fun InterviewScreen(
                     value = searchQuery,
                     onValueChange = { searchQuery = it },
                     modifier = Modifier.fillMaxWidth(),
-                    placeholder = { Text("Search topics...", color = secondaryTextColor, fontSize = 14.sp) },
-                    leadingIcon = { Icon(Icons.Default.Search, null, tint = primaryTextColor, modifier = Modifier.size(20.dp)) },
+                    placeholder = { Text("Search topics...", color = MaterialTheme.colorScheme.onSurfaceVariant, fontSize = 14.sp) },
+                    leadingIcon = { Icon(Icons.Default.Search, null, tint = MaterialTheme.colorScheme.primary, modifier = Modifier.size(20.dp)) },
                     trailingIcon = {
                         if (searchQuery.isNotEmpty()) {
                             IconButton(onClick = { searchQuery = "" }) {
-                                Icon(Icons.Default.Close, null, tint = secondaryTextColor, modifier = Modifier.size(18.dp))
+                                Icon(Icons.Default.Close, null, tint = MaterialTheme.colorScheme.onSurfaceVariant, modifier = Modifier.size(18.dp))
                             }
                         }
                     },
                     shape = RoundedCornerShape(16.dp),
                     singleLine = true,
                     colors = OutlinedTextFieldDefaults.colors(
-                        focusedContainerColor = containerColor,
-                        unfocusedContainerColor = containerColor,
+                        focusedContainerColor = MaterialTheme.colorScheme.surfaceVariant,
+                        unfocusedContainerColor = MaterialTheme.colorScheme.surfaceVariant,
                         focusedBorderColor = Color.Transparent,
                         unfocusedBorderColor = Color.Transparent,
-                        focusedTextColor = primaryTextColor,
-                        unfocusedTextColor = primaryTextColor
+                        focusedTextColor = MaterialTheme.colorScheme.onSurface,
+                        unfocusedTextColor = MaterialTheme.colorScheme.onSurface
                     )
                 )
             }
@@ -228,10 +189,6 @@ fun InterviewScreen(
             item {
                 CategoryFilterRow(
                     selectedCategory = selectedCategory,
-                    accentColor = accentButtonColor,
-                    accentTextColor = accentButtonTextColor,
-                    containerColor = containerColor,
-                    textColor = primaryTextColor,
                     onCategorySelected = { selectedCategory = if (selectedCategory == it) null else it }
                 )
             }
@@ -239,10 +196,6 @@ fun InterviewScreen(
             item {
                 DifficultyFilterRow(
                     selectedDifficulty = selectedDifficulty,
-                    accentColor = accentButtonColor,
-                    accentTextColor = accentButtonTextColor,
-                    containerColor = containerColor,
-                    textColor = primaryTextColor,
                     onDifficultySelected = { selectedDifficulty = if (selectedDifficulty == it) null else it }
                 )
             }
@@ -257,31 +210,26 @@ fun InterviewScreen(
                         "Topics (${filteredTopics.size})",
                         style = MaterialTheme.typography.titleMedium,
                         fontWeight = FontWeight.Bold,
-                        color = primaryTextColor
+                        color = MaterialTheme.colorScheme.onBackground
                     )
                     if (selectedCategory != null || selectedDifficulty != null) {
                         TextButton(onClick = {
                             selectedCategory = null
                             selectedDifficulty = null
                         }) {
-                            Text("Clear filters", fontSize = 12.sp)
+                            Text("Clear filters", fontSize = 12.sp, color = MaterialTheme.colorScheme.primary)
                         }
                     }
                 }
             }
 
             if (filteredTopics.isEmpty()) {
-                item { EmptyState(secondaryTextColor) }
+                item { EmptyState() }
             } else {
                 items(filteredTopics, key = { it.id }) { topic ->
                     TopicCard(
                         topic = topic,
-                        primaryTextColor = primaryTextColor,
-                        secondaryTextColor = secondaryTextColor,
-                        containerColor = containerColor,
-                        onClick = { 
-                            onNavigateToDetail(topic.id)
-                        }
+                        onClick = { onNavigateToDetail(topic.id) }
                     )
                 }
             }
@@ -297,153 +245,134 @@ fun CustomAiInterviewCard(
     onQuestionCountChange: (Int) -> Unit,
     difficulty: String,
     onDifficultyChange: (String) -> Unit,
-    isRandomMix: Boolean,
-    onRandomMixChange: (Boolean) -> Unit,
-    primaryTextColor: Color,
-    secondaryTextColor: Color,
-    accentColor: Color,
-    accentTextColor: Color,
-    containerColor: Color,
     onStartInterview: () -> Unit
 ) {
-    val isDark = isAppInDarkTheme()
-    val gradient = if (isDark) {
-        listOf(Color(0xFF1E1E1E), Color(0xFF0D2F47))
-    } else {
-        listOf(Color.White, Color(0xFFC3E7FF))
-    }
-
     Card(
         modifier = Modifier.fillMaxWidth(),
         shape = RoundedCornerShape(32.dp),
-        colors = CardDefaults.cardColors(containerColor = Color.Transparent)
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primary.copy(alpha = 0.05f)),
+        border = androidx.compose.foundation.BorderStroke(1.dp, MaterialTheme.colorScheme.primary.copy(alpha = 0.1f))
     ) {
-        Box(
-            modifier = Modifier
-                .background(Brush.linearGradient(gradient))
-                .padding(24.dp)
-        ) {
-            Column(verticalArrangement = Arrangement.spacedBy(20.dp)) {
-                Row(verticalAlignment = Alignment.CenterVertically) {
-                    Box(
-                        modifier = Modifier
-                            .size(40.dp)
-                            .background(accentColor.copy(alpha = 0.1f), CircleShape),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        Icon(Icons.Outlined.AutoAwesome, null, tint = accentColor, modifier = Modifier.size(20.dp))
-                    }
-                    Spacer(modifier = Modifier.width(12.dp))
-                    Text(
-                        "AI Custom Interview",
-                        style = MaterialTheme.typography.titleLarge,
-                        fontWeight = FontWeight.Bold,
-                        color = primaryTextColor
-                    )
-                }
-
-                Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                    Text("What should we talk about?", fontSize = 14.sp, fontWeight = FontWeight.Medium, color = primaryTextColor)
-                    OutlinedTextField(
-                        value = topic,
-                        onValueChange = onTopicChange,
-                        modifier = Modifier.fillMaxWidth(),
-                        placeholder = { Text("e.g. React Hooks, System Design, Java Basics", color = secondaryTextColor, fontSize = 14.sp) },
-                        shape = RoundedCornerShape(16.dp),
-                        colors = OutlinedTextFieldDefaults.colors(
-                            focusedTextColor = primaryTextColor,
-                            unfocusedTextColor = primaryTextColor,
-                            focusedBorderColor = accentColor,
-                            unfocusedBorderColor = primaryTextColor.copy(alpha = 0.1f)
-                        ),
-                        singleLine = true
-                    )
-                }
-
-                Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
-                    Text("Interview Length", fontSize = 14.sp, fontWeight = FontWeight.Medium, color = primaryTextColor)
-                    Row(
-                        modifier = Modifier.fillMaxWidth(),
-                        horizontalArrangement = Arrangement.spacedBy(8.dp)
-                    ) {
-                        listOf(5, 10, 15, 20).forEach { count ->
-                            val isSelected = questionCount == count
-                            Surface(
-                                modifier = Modifier
-                                    .weight(1f)
-                                    .height(44.dp)
-                                    .clickable { onQuestionCountChange(count) },
-                                shape = RoundedCornerShape(12.dp),
-                                color = if (isSelected) accentColor else primaryTextColor.copy(alpha = 0.05f),
-                                border = if (isSelected) null else androidx.compose.foundation.BorderStroke(1.dp, primaryTextColor.copy(alpha = 0.1f))
-                            ) {
-                                Box(contentAlignment = Alignment.Center) {
-                                    Text(
-                                        "$count Qs",
-                                        fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Normal,
-                                        color = if (isSelected) accentTextColor else primaryTextColor,
-                                        fontSize = 13.sp
-                                    )
-                                }
-                            }
-                        }
-                    }
-                }
-
-                Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
-                    Text("Difficulty Level", fontSize = 14.sp, fontWeight = FontWeight.Medium, color = primaryTextColor)
-                    Row(
-                        modifier = Modifier.fillMaxWidth(),
-                        horizontalArrangement = Arrangement.spacedBy(8.dp)
-                    ) {
-                        listOf("Junior", "Middle", "Senior", "Random Mix").forEach { level ->
-                            val isSelected = difficulty == level
-                            Surface(
-                                modifier = Modifier
-                                    .weight(1f)
-                                    .height(44.dp)
-                                    .clickable { onDifficultyChange(level) },
-                                shape = RoundedCornerShape(12.dp),
-                                color = if (isSelected) accentColor else primaryTextColor.copy(alpha = 0.05f),
-                                border = if (isSelected) null else androidx.compose.foundation.BorderStroke(1.dp, primaryTextColor.copy(alpha = 0.1f))
-                            ) {
-                                Box(contentAlignment = Alignment.Center) {
-                                    Text(
-                                        level,
-                                        fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Normal,
-                                        color = if (isSelected) accentTextColor else primaryTextColor,
-                                        fontSize = 11.sp,
-                                        textAlign = TextAlign.Center
-                                    )
-                                }
-                            }
-                        }
-                    }
-                }
-
-                Button(
-                    onClick = onStartInterview,
+        Column(modifier = Modifier.padding(24.dp), verticalArrangement = Arrangement.spacedBy(20.dp)) {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Box(
                     modifier = Modifier
-                        .fillMaxWidth()
-                        .height(56.dp),
-                    shape = RoundedCornerShape(18.dp),
-                    colors = ButtonDefaults.buttonColors(
-                        containerColor = accentColor,
-                        contentColor = accentTextColor
-                    ),
-                    enabled = topic.isNotBlank()
+                        .size(40.dp)
+                        .background(MaterialTheme.colorScheme.primary.copy(alpha = 0.1f), CircleShape),
+                    contentAlignment = Alignment.Center
                 ) {
-                    Icon(Icons.Outlined.ElectricBolt, null, modifier = Modifier.size(20.dp))
-                    Spacer(modifier = Modifier.width(8.dp))
-                    Text("Start AI Interview", fontWeight = FontWeight.Bold)
+                    Icon(Icons.Outlined.AutoAwesome, null, tint = MaterialTheme.colorScheme.primary, modifier = Modifier.size(20.dp))
                 }
+                Spacer(modifier = Modifier.width(12.dp))
+                Text(
+                    "AI Custom Interview",
+                    style = MaterialTheme.typography.titleLarge,
+                    fontWeight = FontWeight.Bold,
+                    color = MaterialTheme.colorScheme.onSurface
+                )
+            }
+
+            Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                Text("What should we talk about?", fontSize = 14.sp, fontWeight = FontWeight.Medium, color = MaterialTheme.colorScheme.onSurface)
+                OutlinedTextField(
+                    value = topic,
+                    onValueChange = onTopicChange,
+                    modifier = Modifier.fillMaxWidth(),
+                    placeholder = { Text("e.g. React Hooks, System Design, Java Basics", color = MaterialTheme.colorScheme.onSurfaceVariant, fontSize = 14.sp) },
+                    shape = RoundedCornerShape(16.dp),
+                    colors = OutlinedTextFieldDefaults.colors(
+                        focusedTextColor = MaterialTheme.colorScheme.onSurface,
+                        unfocusedTextColor = MaterialTheme.colorScheme.onSurface,
+                        focusedBorderColor = MaterialTheme.colorScheme.primary,
+                        unfocusedBorderColor = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.1f)
+                    ),
+                    singleLine = true
+                )
+            }
+
+            Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
+                Text("Interview Length", fontSize = 14.sp, fontWeight = FontWeight.Medium, color = MaterialTheme.colorScheme.onSurface)
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.spacedBy(8.dp)
+                ) {
+                    listOf(5, 10, 15, 20).forEach { count ->
+                        val isSelected = questionCount == count
+                        Surface(
+                            modifier = Modifier
+                                .weight(1f)
+                                .height(44.dp)
+                                .clickable { onQuestionCountChange(count) },
+                            shape = RoundedCornerShape(12.dp),
+                            color = if (isSelected) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.surfaceVariant,
+                            border = if (isSelected) null else androidx.compose.foundation.BorderStroke(1.dp, MaterialTheme.colorScheme.onSurface.copy(alpha = 0.1f))
+                        ) {
+                            Box(contentAlignment = Alignment.Center) {
+                                Text(
+                                    "$count Qs",
+                                    fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Normal,
+                                    color = if (isSelected) MaterialTheme.colorScheme.onPrimary else MaterialTheme.colorScheme.onSurface,
+                                    fontSize = 13.sp
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+
+            Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
+                Text("Difficulty Level", fontSize = 14.sp, fontWeight = FontWeight.Medium, color = MaterialTheme.colorScheme.onSurface)
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.spacedBy(8.dp)
+                ) {
+                    listOf("Junior", "Middle", "Senior", "Random Mix").forEach { level ->
+                        val isSelected = difficulty == level
+                        Surface(
+                            modifier = Modifier
+                                .weight(1f)
+                                .height(44.dp)
+                                .clickable { onDifficultyChange(level) },
+                            shape = RoundedCornerShape(12.dp),
+                            color = if (isSelected) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.surfaceVariant,
+                            border = if (isSelected) null else androidx.compose.foundation.BorderStroke(1.dp, MaterialTheme.colorScheme.onSurface.copy(alpha = 0.1f))
+                        ) {
+                            Box(contentAlignment = Alignment.Center) {
+                                Text(
+                                    level,
+                                    fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Normal,
+                                    color = if (isSelected) MaterialTheme.colorScheme.onPrimary else MaterialTheme.colorScheme.onSurface,
+                                    fontSize = 11.sp,
+                                    textAlign = TextAlign.Center
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+
+            Button(
+                onClick = onStartInterview,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(56.dp),
+                shape = RoundedCornerShape(18.dp),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = MaterialTheme.colorScheme.primary,
+                    contentColor = MaterialTheme.colorScheme.onPrimary
+                ),
+                enabled = topic.isNotBlank()
+            ) {
+                Icon(Icons.Outlined.ElectricBolt, null, modifier = Modifier.size(20.dp))
+                Spacer(modifier = Modifier.width(8.dp))
+                Text("Start AI Interview", fontWeight = FontWeight.Bold)
             }
         }
     }
 }
 
 @Composable
-fun StatsGrid(primaryTextColor: Color, secondaryTextColor: Color, containerColor: Color) {
+fun StatsGrid() {
     val stats = listOf(
         StatItem("Topics Completed", "0", Icons.Outlined.CheckCircle, Color(0xFF10B981)),
         StatItem("Hours Practiced", "0", Icons.Outlined.Schedule, Color(0xFF3B82F6)),
@@ -458,7 +387,8 @@ fun StatsGrid(primaryTextColor: Color, secondaryTextColor: Color, containerColor
                     Card(
                         modifier = Modifier.weight(1f),
                         shape = RoundedCornerShape(16.dp),
-                        colors = CardDefaults.cardColors(containerColor = containerColor)
+                        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
+                        border = androidx.compose.foundation.BorderStroke(1.dp, MaterialTheme.colorScheme.onSurface.copy(alpha = 0.05f))
                     ) {
                         Row(
                             modifier = Modifier.padding(16.dp),
@@ -472,8 +402,8 @@ fun StatsGrid(primaryTextColor: Color, secondaryTextColor: Color, containerColor
                                 Icon(stat.icon, null, tint = stat.color, modifier = Modifier.size(18.dp))
                             }
                             Column {
-                                Text(stat.value, fontWeight = FontWeight.Bold, fontSize = 18.sp, color = primaryTextColor)
-                                Text(stat.label, fontSize = 11.sp, color = secondaryTextColor, maxLines = 1, overflow = TextOverflow.Ellipsis)
+                                Text(stat.value, fontWeight = FontWeight.Bold, fontSize = 18.sp, color = MaterialTheme.colorScheme.onSurface)
+                                Text(stat.label, fontSize = 11.sp, color = MaterialTheme.colorScheme.onSurfaceVariant, maxLines = 1, overflow = TextOverflow.Ellipsis)
                             }
                         }
                     }
@@ -484,31 +414,41 @@ fun StatsGrid(primaryTextColor: Color, secondaryTextColor: Color, containerColor
 }
 
 @Composable
-fun StreakCard(modifier: Modifier = Modifier, cardColor: Color, textColor: Color) {
-    Card(modifier = modifier, shape = RoundedCornerShape(20.dp), colors = CardDefaults.cardColors(containerColor = cardColor)) {
+fun StreakCard(modifier: Modifier = Modifier) {
+    Card(
+        modifier = modifier, 
+        shape = RoundedCornerShape(20.dp), 
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.secondary.copy(alpha = 0.1f)),
+        border = androidx.compose.foundation.BorderStroke(1.dp, MaterialTheme.colorScheme.secondary.copy(alpha = 0.2f))
+    ) {
         Column(modifier = Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-            Icon(Icons.Outlined.LocalFireDepartment, null, tint = textColor, modifier = Modifier.size(24.dp))
-            Text("0 Days", fontWeight = FontWeight.Bold, fontSize = 20.sp, color = textColor)
-            Text("Current Streak", fontSize = 12.sp, color = textColor.copy(alpha = 0.8f))
+            Icon(Icons.Outlined.LocalFireDepartment, null, tint = MaterialTheme.colorScheme.primary, modifier = Modifier.size(24.dp))
+            Text("0 Days", fontWeight = FontWeight.Bold, fontSize = 20.sp, color = MaterialTheme.colorScheme.onSurface)
+            Text("Current Streak", fontSize = 12.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
         }
     }
 }
 
 @Composable
-fun AchievementCard(modifier: Modifier = Modifier, cardColor: Color, textColor: Color) {
-    Card(modifier = modifier, shape = RoundedCornerShape(20.dp), colors = CardDefaults.cardColors(containerColor = cardColor)) {
+fun AchievementCard(modifier: Modifier = Modifier) {
+    Card(
+        modifier = modifier, 
+        shape = RoundedCornerShape(20.dp), 
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.tertiary.copy(alpha = 0.1f)),
+        border = androidx.compose.foundation.BorderStroke(1.dp, MaterialTheme.colorScheme.tertiary.copy(alpha = 0.2f))
+    ) {
         Column(modifier = Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-            Icon(Icons.Outlined.EmojiEvents, null, tint = textColor, modifier = Modifier.size(24.dp))
-            Text("0 / 50", fontWeight = FontWeight.Bold, fontSize = 20.sp, color = textColor)
-            Text("Topics Mastered", fontSize = 12.sp, color = textColor.copy(alpha = 0.8f))
+            Icon(Icons.Outlined.EmojiEvents, null, tint = Color(0xFFF5CA0E), modifier = Modifier.size(24.dp))
+            Text("0 / 50", fontWeight = FontWeight.Bold, fontSize = 20.sp, color = MaterialTheme.colorScheme.onSurface)
+            Text("Topics Mastered", fontSize = 12.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
         }
     }
 }
 
 @Composable
-fun CategoryFilterRow(selectedCategory: Category?, accentColor: Color, accentTextColor: Color, containerColor: Color, textColor: Color, onCategorySelected: (Category) -> Unit) {
+fun CategoryFilterRow(selectedCategory: Category?, onCategorySelected: (Category) -> Unit) {
     Column {
-        Text("Categories", style = MaterialTheme.typography.labelLarge, fontWeight = FontWeight.Bold, color = textColor, modifier = Modifier.padding(bottom = 8.dp))
+        Text("Categories", style = MaterialTheme.typography.labelLarge, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onBackground, modifier = Modifier.padding(bottom = 8.dp))
         LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
             items(Category.entries) { category ->
                 FilterChip(
@@ -521,7 +461,12 @@ fun CategoryFilterRow(selectedCategory: Category?, accentColor: Color, accentTex
                         }
                     },
                     shape = RoundedCornerShape(12.dp),
-                    colors = FilterChipDefaults.filterChipColors(selectedContainerColor = accentColor, selectedLabelColor = accentTextColor, containerColor = containerColor, labelColor = textColor),
+                    colors = FilterChipDefaults.filterChipColors(
+                        selectedContainerColor = MaterialTheme.colorScheme.primary,
+                        selectedLabelColor = MaterialTheme.colorScheme.onPrimary,
+                        containerColor = MaterialTheme.colorScheme.surfaceVariant,
+                        labelColor = MaterialTheme.colorScheme.onSurfaceVariant
+                    ),
                     border = null
                 )
             }
@@ -530,9 +475,9 @@ fun CategoryFilterRow(selectedCategory: Category?, accentColor: Color, accentTex
 }
 
 @Composable
-fun DifficultyFilterRow(selectedDifficulty: DifficultyLevel?, accentColor: Color, accentTextColor: Color, containerColor: Color, textColor: Color, onDifficultySelected: (DifficultyLevel) -> Unit) {
+fun DifficultyFilterRow(selectedDifficulty: DifficultyLevel?, onDifficultySelected: (DifficultyLevel) -> Unit) {
     Column {
-        Text("Difficulty Level", style = MaterialTheme.typography.labelLarge, fontWeight = FontWeight.Bold, color = textColor, modifier = Modifier.padding(bottom = 8.dp))
+        Text("Difficulty Level", style = MaterialTheme.typography.labelLarge, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onBackground, modifier = Modifier.padding(bottom = 8.dp))
         Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
             DifficultyLevel.entries.forEach { difficulty ->
                 FilterChip(
@@ -541,13 +486,18 @@ fun DifficultyFilterRow(selectedDifficulty: DifficultyLevel?, accentColor: Color
                     onClick = { onDifficultySelected(difficulty) },
                     label = {
                         Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.Center, verticalAlignment = Alignment.CenterVertically) {
-                            Box(modifier = Modifier.size(8.dp).background(if (selectedDifficulty == difficulty) accentTextColor else difficulty.color, CircleShape))
+                            Box(modifier = Modifier.size(8.dp).background(if (selectedDifficulty == difficulty) MaterialTheme.colorScheme.onPrimary else difficulty.color, CircleShape))
                             Spacer(modifier = Modifier.width(6.dp))
                             Text(difficulty.label, textAlign = TextAlign.Center, fontSize = 12.sp)
                         }
                     },
                     shape = RoundedCornerShape(12.dp),
-                    colors = FilterChipDefaults.filterChipColors(selectedContainerColor = accentColor, selectedLabelColor = accentTextColor, containerColor = containerColor, labelColor = textColor),
+                    colors = FilterChipDefaults.filterChipColors(
+                        selectedContainerColor = MaterialTheme.colorScheme.primary,
+                        selectedLabelColor = MaterialTheme.colorScheme.onPrimary,
+                        containerColor = MaterialTheme.colorScheme.surfaceVariant,
+                        labelColor = MaterialTheme.colorScheme.onSurfaceVariant
+                    ),
                     border = null
                 )
             }
@@ -558,22 +508,15 @@ fun DifficultyFilterRow(selectedDifficulty: DifficultyLevel?, accentColor: Color
 @Composable
 fun TopicCard(
     topic: InterviewTopic,
-    primaryTextColor: Color,
-    secondaryTextColor: Color,
-    containerColor: Color,
     onClick: () -> Unit
 ) {
-    val isDark = isAppInDarkTheme()
-    val bgColor = if (isDark) Color(0xFF1E1E1E) else Color.White
-    val borderColor = if (isDark) Color.White.copy(alpha = 0.1f) else Color.Black.copy(alpha = 0.05f)
-
     Card(
         modifier = Modifier
             .fillMaxWidth()
             .clickable(onClick = onClick),
         shape = RoundedCornerShape(16.dp),
-        colors = CardDefaults.cardColors(containerColor = bgColor),
-        border = androidx.compose.foundation.BorderStroke(1.dp, borderColor)
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
+        border = androidx.compose.foundation.BorderStroke(1.dp, MaterialTheme.colorScheme.onSurface.copy(alpha = 0.05f))
     ) {
         Row(
             modifier = Modifier.padding(20.dp),
@@ -597,7 +540,7 @@ fun TopicCard(
                     Text(
                         text = topic.category.label,
                         style = MaterialTheme.typography.labelSmall,
-                        color = secondaryTextColor,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
                         fontWeight = FontWeight.Medium
                     )
                 }
@@ -606,25 +549,25 @@ fun TopicCard(
                     text = topic.title,
                     style = MaterialTheme.typography.titleMedium,
                     fontWeight = FontWeight.Bold,
-                    color = primaryTextColor
+                    color = MaterialTheme.colorScheme.onSurface
                 )
                 Text(
                     text = "${topic.questionsCount} Questions • ${topic.estimatedTime}",
                     style = MaterialTheme.typography.bodySmall,
-                    color = secondaryTextColor
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
             }
             
             Box(
                 modifier = Modifier
                     .size(32.dp)
-                    .background(borderColor, RoundedCornerShape(10.dp)),
+                    .background(MaterialTheme.colorScheme.onSurface.copy(alpha = 0.05f), RoundedCornerShape(10.dp)),
                 contentAlignment = Alignment.Center
             ) {
                 Icon(
                     imageVector = Icons.Default.ChevronRight,
                     contentDescription = null,
-                    tint = primaryTextColor,
+                    tint = MaterialTheme.colorScheme.primary,
                     modifier = Modifier.size(18.dp)
                 )
             }
@@ -633,10 +576,10 @@ fun TopicCard(
 }
 
 @Composable
-fun EmptyState(textColor: Color) {
+fun EmptyState() {
     Column(modifier = Modifier.fillMaxWidth().padding(60.dp), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(8.dp)) {
-        Icon(Icons.Outlined.SearchOff, null, tint = textColor.copy(alpha = 0.5f), modifier = Modifier.size(48.dp))
-        Text("No topics found", color = textColor, fontWeight = FontWeight.Medium, fontSize = 16.sp)
-        Text("Try adjusting your filters", color = textColor.copy(alpha = 0.7f), fontSize = 13.sp)
+        Icon(Icons.Outlined.SearchOff, null, tint = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.5f), modifier = Modifier.size(48.dp))
+        Text("No topics found", color = MaterialTheme.colorScheme.onSurface, fontWeight = FontWeight.Medium, fontSize = 16.sp)
+        Text("Try adjusting your filters", color = MaterialTheme.colorScheme.onSurfaceVariant, fontSize = 13.sp)
     }
 }

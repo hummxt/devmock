@@ -105,6 +105,7 @@ fun ProfileSection(
         colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
             containerColor = Color.Transparent,
             scrolledContainerColor = Color.Transparent
-        )
+        ),
+        windowInsets = WindowInsets(0.dp)
     )
 }

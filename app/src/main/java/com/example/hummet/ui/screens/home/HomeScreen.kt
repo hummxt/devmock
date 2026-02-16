@@ -1,7 +1,5 @@
 package com.example.hummet.ui.screens.home
 
-import androidx.compose.foundation.isSystemInDarkTheme
-import com.example.hummet.ui.theme.isAppInDarkTheme
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -34,17 +32,7 @@ fun Homepage(
     onNavigateToQuestions: () -> Unit
 ) {
     var searchQuery by remember { mutableStateOf("") }
-    var isSearchActive by remember { mutableStateOf(false) }
     var selectedTab by remember { mutableStateOf("Languages") }
-    val isDark = isAppInDarkTheme()
-
-    val primaryTextColor = if (isDark) Color.White else Color.Black
-    val secondaryTextColor = if (isDark) Color.LightGray else Color.Gray
-    val accentButtonColor = if (isDark) Color.White else Color.Black
-    val accentButtonTextColor = if (isDark) Color.Black else Color.White
-    val searchContainerColor = if (isDark) Color(0xFF1E1E1E) else Color(0xFFF0F0F0)
-    val dailyCardColor = if (isDark) Color(0xFF0D2F47) else Color(0xFFC3E7FF)
-    val dailyCardTextColor = if (isDark) Color.White else Color.Black
 
     val row1 = listOf("Languages", "Backend", "Frontend")
     val row2 = listOf("Databases", "DevOps", "Mobile")
@@ -81,52 +69,49 @@ fun Homepage(
     }
 
     Scaffold(
-        containerColor = MaterialTheme.colorScheme.surface
-    ) { innerPadding: PaddingValues ->
+        containerColor = MaterialTheme.colorScheme.background
+    ) { innerPadding ->
         LazyColumn(
-            modifier = Modifier
-                .fillMaxSize(),
+            modifier = Modifier.fillMaxSize(),
             contentPadding = PaddingValues(
                 top = innerPadding.calculateTopPadding(),
-                bottom = innerPadding.calculateBottomPadding() + 24.dp
+                bottom = innerPadding.calculateBottomPadding()
             ),
-            verticalArrangement = Arrangement.spacedBy(24.dp)
+            verticalArrangement = Arrangement.spacedBy(20.dp)
         ) {
             item {
                 Column(
-                    modifier = Modifier
-                        .statusBarsPadding()
-                        .padding(top = 16.dp)
+                    modifier = Modifier.padding(top = 8.dp)
                 ) {
                     ProfileSection(
-                        primaryTextColor = primaryTextColor,
-                        secondaryTextColor = secondaryTextColor
+                        primaryTextColor = MaterialTheme.colorScheme.onBackground,
+                        secondaryTextColor = MaterialTheme.colorScheme.onBackground.copy(alpha = 0.6f)
                     )
-                    Spacer(modifier = Modifier.height(24.dp))
+                    Spacer(modifier = Modifier.height(16.dp))
                     OutlinedTextField(
                         value = searchQuery,
                         onValueChange = { searchQuery = it },
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(horizontal = 24.dp),
-                        placeholder = { Text("Search interview topics...", color = secondaryTextColor, fontSize = 14.sp) },
-                        leadingIcon = { Icon(Icons.Default.Search, null, tint = primaryTextColor, modifier = Modifier.size(20.dp)) },
+                        placeholder = { Text("Search interview topics...", color = MaterialTheme.colorScheme.onSurfaceVariant, fontSize = 14.sp) },
+                        leadingIcon = { Icon(Icons.Default.Search, null, tint = MaterialTheme.colorScheme.primary, modifier = Modifier.size(20.dp)) },
                         trailingIcon = {
                             if (searchQuery.isNotEmpty()) {
                                 IconButton(onClick = { searchQuery = "" }) {
-                                    Icon(Icons.Default.Close, null, tint = secondaryTextColor, modifier = Modifier.size(18.dp))
+                                    Icon(Icons.Default.Close, null, tint = MaterialTheme.colorScheme.onSurfaceVariant, modifier = Modifier.size(18.dp))
                                 }
                             }
                         },
                         shape = RoundedCornerShape(16.dp),
                         singleLine = true,
                         colors = OutlinedTextFieldDefaults.colors(
-                            focusedContainerColor = searchContainerColor,
-                            unfocusedContainerColor = searchContainerColor,
+                            focusedContainerColor = MaterialTheme.colorScheme.surfaceVariant,
+                            unfocusedContainerColor = MaterialTheme.colorScheme.surfaceVariant,
                             focusedBorderColor = Color.Transparent,
                             unfocusedBorderColor = Color.Transparent,
-                            focusedTextColor = primaryTextColor,
-                            unfocusedTextColor = primaryTextColor
+                            focusedTextColor = MaterialTheme.colorScheme.onSurface,
+                            unfocusedTextColor = MaterialTheme.colorScheme.onSurface
                         )
                     )
                 }
@@ -137,21 +122,23 @@ fun Homepage(
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(horizontal = 24.dp),
-                    colors = CardDefaults.cardColors(containerColor = dailyCardColor),
+                    colors = CardDefaults.cardColors(
+                        containerColor = MaterialTheme.colorScheme.primary.copy(alpha = 0.1f)
+                    ),
                     shape = RoundedCornerShape(32.dp)
                 ) {
                     Column(modifier = Modifier.padding(24.dp)) {
                         Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
-                            Icon(Icons.Outlined.Terminal, null, modifier = Modifier.size(28.dp), tint = dailyCardTextColor)
+                            Icon(Icons.Outlined.Terminal, null, modifier = Modifier.size(28.dp), tint = MaterialTheme.colorScheme.primary)
                             Box(contentAlignment = Alignment.Center) {
                                 CircularProgressIndicator(
                                     progress = { 0f },
                                     modifier = Modifier.size(40.dp),
-                                    color = dailyCardTextColor,
+                                    color = MaterialTheme.colorScheme.primary,
                                     strokeWidth = 4.dp,
-                                    trackColor = dailyCardTextColor.copy(0.2f)
+                                    trackColor = MaterialTheme.colorScheme.primary.copy(0.2f)
                                 )
-                                Text("0/3", fontSize = 10.sp, fontWeight = FontWeight.Bold, color = dailyCardTextColor)
+                                Text("0/3", fontSize = 10.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.primary)
                             }
                         }
                         Text(
@@ -159,19 +146,19 @@ fun Homepage(
                             style = MaterialTheme.typography.titleLarge,
                             fontWeight = FontWeight.Bold,
                             modifier = Modifier.padding(top = 12.dp),
-                            color = dailyCardTextColor
+                            color = MaterialTheme.colorScheme.onSurface
                         )
                         Text(
                             "Today: System Design Basics",
                             style = MaterialTheme.typography.bodyMedium,
-                            color = dailyCardTextColor.copy(alpha = 0.8f)
+                            color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.8f)
                         )
                         Spacer(modifier = Modifier.height(16.dp))
                         Button(
                             onClick = onNavigateToInterview,
                             colors = ButtonDefaults.buttonColors(
-                                containerColor = accentButtonColor,
-                                contentColor = accentButtonTextColor
+                                containerColor = MaterialTheme.colorScheme.primary,
+                                contentColor = MaterialTheme.colorScheme.onPrimary
                             ),
                             shape = RoundedCornerShape(12.dp)
                         ) {
@@ -196,15 +183,15 @@ fun Homepage(
                                     label = { Text(tab, fontSize = 11.sp, textAlign = TextAlign.Center, modifier = Modifier.fillMaxWidth()) },
                                     shape = RoundedCornerShape(12.dp),
                                     colors = FilterChipDefaults.filterChipColors(
-                                        selectedContainerColor = accentButtonColor,
-                                        selectedLabelColor = accentButtonTextColor,
-                                        containerColor = searchContainerColor,
-                                        labelColor = primaryTextColor
+                                        selectedContainerColor = MaterialTheme.colorScheme.primary,
+                                        selectedLabelColor = MaterialTheme.colorScheme.onPrimary,
+                                        containerColor = MaterialTheme.colorScheme.surfaceVariant,
+                                        labelColor = MaterialTheme.colorScheme.onSurfaceVariant
                                     ),
                                     border = FilterChipDefaults.filterChipBorder(
                                         enabled = true,
                                         selected = selectedTab == tab,
-                                        borderColor = if (selectedTab == tab) accentButtonColor else Color.Transparent
+                                        borderColor = Color.Transparent
                                     )
                                 )
                             }
@@ -221,20 +208,17 @@ fun Homepage(
                         .height(IntrinsicSize.Max),
                     horizontalArrangement = Arrangement.spacedBy(16.dp)
                 ) {
-                    val purpleAccent = if (isDark) Color(0xFF4A3457) else Color(0xFFE8B9FF)
-                    val orangeAccent = if (isDark) Color(0xFF5C3D1E) else Color(0xFFFFB366)
-
                     SmallTaskCard(
                         topic = cardData.first,
                         icon = Icons.Rounded.Psychology,
-                        accentColor = purpleAccent,
+                        accentColor = MaterialTheme.colorScheme.secondary.copy(alpha = 0.2f),
                         modifier = Modifier.weight(1f).fillMaxHeight(),
                         onClick = onNavigateToQuestions
                     )
                     SmallTaskCard(
                         topic = cardData.second,
                         icon = Icons.Outlined.Code,
-                        accentColor = orangeAccent,
+                        accentColor = MaterialTheme.colorScheme.tertiary.copy(alpha = 0.2f),
                         modifier = Modifier.weight(1f).fillMaxHeight(),
                         onClick = onNavigateToQuestions
                     )
@@ -252,25 +236,20 @@ fun SmallTaskCard(
     modifier: Modifier,
     onClick: () -> Unit
 ) {
-    val isDark = isAppInDarkTheme()
-    val contentColor = if (isDark) Color.White else Color.Black
-    val borderColor = if (isDark) Color.White.copy(alpha = 0.1f) else Color.Black.copy(alpha = 0.05f)
-
     Card(
         onClick = onClick,
         modifier = modifier,
         colors = CardDefaults.cardColors(containerColor = accentColor),
         shape = RoundedCornerShape(20.dp),
-        border = androidx.compose.foundation.BorderStroke(1.dp, borderColor)
+        border = androidx.compose.foundation.BorderStroke(1.dp, MaterialTheme.colorScheme.onSurface.copy(alpha = 0.05f))
     ) {
         Column(modifier = Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
-            Icon(icon, null, modifier = Modifier.size(26.dp), tint = contentColor)
+            Icon(icon, null, modifier = Modifier.size(26.dp), tint = MaterialTheme.colorScheme.primary)
             Column {
-                Text(topic.title, fontWeight = FontWeight.ExtraBold, style = MaterialTheme.typography.titleMedium, lineHeight = 18.sp, color = contentColor)
+                Text(topic.title, fontWeight = FontWeight.ExtraBold, style = MaterialTheme.typography.titleMedium, lineHeight = 18.sp, color = MaterialTheme.colorScheme.onSurface)
                 Spacer(modifier = Modifier.height(4.dp))
-                Text(topic.description, style = MaterialTheme.typography.bodySmall, color = contentColor.copy(0.7f), lineHeight = 14.sp)
+                Text(topic.description, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurface.copy(0.7f), lineHeight = 14.sp)
             }
         }
     }
 }
-

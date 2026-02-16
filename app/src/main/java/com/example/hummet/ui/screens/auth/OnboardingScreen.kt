@@ -39,7 +39,6 @@ import coil.request.ImageRequest
 import com.example.hummet.R
 import com.example.hummet.data.repository.UserRepository
 import com.example.hummet.data.repository.ProfileImageRepository
-import com.example.hummet.ui.theme.isAppInDarkTheme
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalLayoutApi::class)
@@ -68,13 +67,8 @@ fun OnboardingScreen(
         uri?.let { selectedImageUri = it }
     }
 
-    val isDark = isAppInDarkTheme()
-    val primaryTextColor = if (isDark) Color.White else Color.Black
-    val containerColor = if (isDark) Color(0xFF1E1E1E) else Color.White
-    val borderColor = if (isDark) Color.White.copy(alpha = 0.1f) else Color.Black.copy(alpha = 0.05f)
-
     Scaffold(
-        containerColor = MaterialTheme.colorScheme.surface
+        containerColor = MaterialTheme.colorScheme.background
     ) { padding ->
         Column(
             modifier = Modifier
@@ -83,8 +77,16 @@ fun OnboardingScreen(
                 .padding(24.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
+            Image(
+                painter = painterResource(id = R.drawable.logo),
+                contentDescription = "Hummet Logo",
+                modifier = Modifier
+                    .size(60.dp)
+                    .padding(top = 16.dp)
+            )
+
             Row(
-                modifier = Modifier.padding(top = 16.dp),
+                modifier = Modifier.padding(top = 24.dp),
                 horizontalArrangement = Arrangement.spacedBy(8.dp)
             ) {
                 repeat(4) { step ->
@@ -93,12 +95,15 @@ fun OnboardingScreen(
                             .width(50.dp)
                             .height(4.dp)
                             .clip(CircleShape)
-                            .background(if (step <= currentStep) primaryTextColor else borderColor)
+                            .background(
+                                if (step <= currentStep) MaterialTheme.colorScheme.primary 
+                                else MaterialTheme.colorScheme.onSurface.copy(alpha = 0.1f)
+                            )
                     )
                 }
             }
 
-            Spacer(modifier = Modifier.height(48.dp))
+            Spacer(modifier = Modifier.height(32.dp))
 
             AnimatedContent(
                 targetState = currentStep,
@@ -106,7 +111,8 @@ fun OnboardingScreen(
                     slideInHorizontally { it } + fadeIn() togetherWith
                     slideOutHorizontally { -it } + fadeOut()
                 },
-                label = "StepTransition"
+                label = "StepTransition",
+                modifier = Modifier.weight(1f)
             ) { step ->
                 when (step) {
                     0 -> ProfileImageStep(
@@ -129,36 +135,22 @@ fun OnboardingScreen(
                                     )
                                 }
                             }
-                        },
-                        primaryTextColor = primaryTextColor,
-                        borderColor = borderColor,
-                        containerColor = containerColor,
-                        isDark = isDark
+                        }
                     )
                     1 -> ExperienceLevelStep(
                         selectedLevel = selectedLevel,
-                        onLevelSelected = { selectedLevel = it },
-                        primaryTextColor = primaryTextColor,
-                        borderColor = borderColor,
-                        containerColor = containerColor
+                        onLevelSelected = { selectedLevel = it }
                     )
                     2 -> LearningPathStep(
                         selectedPath = selectedPath,
-                        onPathSelected = { selectedPath = it },
-                        primaryTextColor = primaryTextColor,
-                        borderColor = borderColor,
-                        containerColor = containerColor
+                        onPathSelected = { selectedPath = it }
                     )
                     3 -> GoalStep(
                         goal = goal,
-                        onGoalChange = { goal = it },
-                        primaryTextColor = primaryTextColor,
-                        borderColor = borderColor
+                        onGoalChange = { goal = it }
                     )
                 }
             }
-
-            Spacer(modifier = Modifier.weight(1f))
 
             Button(
                 onClick = {
@@ -179,13 +171,13 @@ fun OnboardingScreen(
                     .height(56.dp),
                 shape = RoundedCornerShape(16.dp),
                 colors = ButtonDefaults.buttonColors(
-                    containerColor = primaryTextColor,
-                    contentColor = if (isDark) Color.Black else Color.White
+                    containerColor = MaterialTheme.colorScheme.primary,
+                    contentColor = MaterialTheme.colorScheme.onPrimary
                 ),
                 enabled = !isLoading && !isUploadingImage && (currentStep != 0 || profileImageUrl != null || selectedImageUri == null)
             ) {
                 if (isLoading) {
-                    CircularProgressIndicator(modifier = Modifier.size(24.dp), color = if (isDark) Color.Black else Color.White)
+                    CircularProgressIndicator(modifier = Modifier.size(24.dp), color = MaterialTheme.colorScheme.onPrimary)
                 } else {
                     Text(
                         if (currentStep < 3) "Continue" else "Finish Profile",
@@ -204,24 +196,20 @@ fun ProfileImageStep(
     profileImageUrl: String?,
     isUploading: Boolean,
     onSelectImage: () -> Unit,
-    onUploadImage: () -> Unit,
-    primaryTextColor: Color,
-    borderColor: Color,
-    containerColor: Color,
-    isDark: Boolean
+    onUploadImage: () -> Unit
 ) {
     Column(horizontalAlignment = Alignment.CenterHorizontally) {
         Text(
             "Add a profile picture",
             style = MaterialTheme.typography.headlineMedium,
             fontWeight = FontWeight.Bold,
-            color = primaryTextColor,
+            color = MaterialTheme.colorScheme.onBackground,
             textAlign = TextAlign.Center
         )
         Text(
             "Let others see who you are.",
             style = MaterialTheme.typography.bodyMedium,
-            color = primaryTextColor.copy(alpha = 0.6f),
+            color = MaterialTheme.colorScheme.onBackground.copy(alpha = 0.6f),
             modifier = Modifier.padding(top = 8.dp),
             textAlign = TextAlign.Center
         )
@@ -233,13 +221,13 @@ fun ProfileImageStep(
                 modifier = Modifier
                     .size(160.dp)
                     .clip(CircleShape)
-                    .border(3.dp, primaryTextColor, CircleShape)
+                    .border(3.dp, MaterialTheme.colorScheme.primary, CircleShape)
                     .clickable { onSelectImage() },
-                color = containerColor
+                color = MaterialTheme.colorScheme.surfaceVariant
             ) {
                 if (isUploading) {
                     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                        CircularProgressIndicator(color = primaryTextColor)
+                        CircularProgressIndicator(color = MaterialTheme.colorScheme.primary)
                     }
                 } else {
                     val imageSource = profileImageUrl ?: selectedUri
@@ -255,14 +243,14 @@ fun ProfileImageStep(
                         )
                     } else {
                         Box(
-                            modifier = Modifier.fillMaxSize().background(primaryTextColor.copy(alpha = 0.05f)),
+                            modifier = Modifier.fillMaxSize(),
                             contentAlignment = Alignment.Center
                         ) {
                             Icon(
                                 imageVector = Icons.Default.Person,
                                 contentDescription = null,
                                 modifier = Modifier.size(80.dp),
-                                tint = primaryTextColor.copy(alpha = 0.2f)
+                                tint = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.2f)
                             )
                         }
                     }
@@ -270,18 +258,18 @@ fun ProfileImageStep(
             }
             
             Surface(
-                color = primaryTextColor,
+                color = MaterialTheme.colorScheme.primary,
                 shape = CircleShape,
                 modifier = Modifier
                     .size(48.dp)
                     .offset(x = (-4).dp, y = (-4).dp)
-                    .border(3.dp, containerColor, CircleShape)
+                    .border(3.dp, MaterialTheme.colorScheme.background, CircleShape)
                     .clickable { onSelectImage() }
             ) {
                 Icon(
                     imageVector = Icons.Default.CameraAlt,
                     contentDescription = "Add Photo",
-                    tint = if (isDark) Color.Black else Color.White,
+                    tint = MaterialTheme.colorScheme.onPrimary,
                     modifier = Modifier.padding(12.dp)
                 )
             }
@@ -307,12 +295,6 @@ fun ProfileImageStep(
                 fontWeight = FontWeight.Bold,
                 color = Color(0xFF10B981)
             )
-        } else {
-            Text(
-                "You can also do this later in profile settings",
-                style = MaterialTheme.typography.labelMedium,
-                color = primaryTextColor.copy(alpha = 0.4f)
-            )
         }
     }
 }
@@ -320,23 +302,20 @@ fun ProfileImageStep(
 @Composable
 fun ExperienceLevelStep(
     selectedLevel: String,
-    onLevelSelected: (String) -> Unit,
-    primaryTextColor: Color,
-    borderColor: Color,
-    containerColor: Color
+    onLevelSelected: (String) -> Unit
 ) {
     Column(horizontalAlignment = Alignment.CenterHorizontally) {
         Text(
             "What's your experience level?",
             style = MaterialTheme.typography.headlineMedium,
             fontWeight = FontWeight.Bold,
-            color = primaryTextColor,
+            color = MaterialTheme.colorScheme.onBackground,
             textAlign = TextAlign.Center
         )
         Text(
             "This helps us tailor the interview questions for you.",
             style = MaterialTheme.typography.bodyMedium,
-            color = primaryTextColor.copy(alpha = 0.6f),
+            color = MaterialTheme.colorScheme.onBackground.copy(alpha = 0.6f),
             modifier = Modifier.padding(top = 8.dp),
             textAlign = TextAlign.Center
         )
@@ -355,10 +334,7 @@ fun ExperienceLevelStep(
                 subtitle = level.subtitle,
                 icon = level.icon,
                 isSelected = selectedLevel == level.title,
-                onClick = { onLevelSelected(level.title) },
-                primaryTextColor = primaryTextColor,
-                borderColor = borderColor,
-                containerColor = containerColor
+                onClick = { onLevelSelected(level.title) }
             )
             Spacer(modifier = Modifier.height(12.dp))
         }
@@ -368,23 +344,20 @@ fun ExperienceLevelStep(
 @Composable
 fun LearningPathStep(
     selectedPath: String,
-    onPathSelected: (String) -> Unit,
-    primaryTextColor: Color,
-    borderColor: Color,
-    containerColor: Color
+    onPathSelected: (String) -> Unit
 ) {
     Column(horizontalAlignment = Alignment.CenterHorizontally) {
         Text(
             "What do you want to learn?",
             style = MaterialTheme.typography.headlineMedium,
             fontWeight = FontWeight.Bold,
-            color = primaryTextColor,
+            color = MaterialTheme.colorScheme.onBackground,
             textAlign = TextAlign.Center
         )
         Text(
             "Pick your primary focus area.",
             style = MaterialTheme.typography.bodyMedium,
-            color = primaryTextColor.copy(alpha = 0.6f),
+            color = MaterialTheme.colorScheme.onBackground.copy(alpha = 0.6f),
             modifier = Modifier.padding(top = 8.dp),
             textAlign = TextAlign.Center
         )
@@ -404,10 +377,7 @@ fun LearningPathStep(
                 subtitle = path.subtitle,
                 icon = path.icon,
                 isSelected = selectedPath == path.title,
-                onClick = { onPathSelected(path.title) },
-                primaryTextColor = primaryTextColor,
-                borderColor = borderColor,
-                containerColor = containerColor
+                onClick = { onPathSelected(path.title) }
             )
             Spacer(modifier = Modifier.height(12.dp))
         }
@@ -417,22 +387,20 @@ fun LearningPathStep(
 @Composable
 fun GoalStep(
     goal: String,
-    onGoalChange: (String) -> Unit,
-    primaryTextColor: Color,
-    borderColor: Color
+    onGoalChange: (String) -> Unit
 ) {
     Column(horizontalAlignment = Alignment.CenterHorizontally) {
         Text(
             "What is your career goal?",
             style = MaterialTheme.typography.headlineMedium,
             fontWeight = FontWeight.Bold,
-            color = primaryTextColor,
+            color = MaterialTheme.colorScheme.onBackground,
             textAlign = TextAlign.Center
         )
         Text(
             "Describe what you're aiming for in a few words.",
             style = MaterialTheme.typography.bodyMedium,
-            color = primaryTextColor.copy(alpha = 0.6f),
+            color = MaterialTheme.colorScheme.onBackground.copy(alpha = 0.6f),
             modifier = Modifier.padding(top = 8.dp),
             textAlign = TextAlign.Center
         )
@@ -445,11 +413,11 @@ fun GoalStep(
             modifier = Modifier
                 .fillMaxWidth()
                 .height(150.dp),
-            placeholder = { Text("e.g., Get a Senior Android job at Hummet", color = primaryTextColor.copy(alpha = 0.4f)) },
+            placeholder = { Text("e.g., Get a Senior Android job at Hummet", color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.4f)) },
             shape = RoundedCornerShape(16.dp),
             colors = OutlinedTextFieldDefaults.colors(
-                focusedBorderColor = primaryTextColor,
-                unfocusedBorderColor = borderColor
+                focusedBorderColor = MaterialTheme.colorScheme.primary,
+                unfocusedBorderColor = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.1f)
             )
         )
     }
@@ -461,10 +429,7 @@ fun SelectableCard(
     subtitle: String,
     icon: ImageVector,
     isSelected: Boolean,
-    onClick: () -> Unit,
-    primaryTextColor: Color,
-    borderColor: Color,
-    containerColor: Color
+    onClick: () -> Unit
 ) {
     Surface(
         modifier = Modifier
@@ -472,11 +437,11 @@ fun SelectableCard(
             .clickable { onClick() }
             .border(
                 width = if (isSelected) 2.dp else 1.dp,
-                color = if (isSelected) primaryTextColor else borderColor,
+                color = if (isSelected) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurface.copy(alpha = 0.1f),
                 shape = RoundedCornerShape(16.dp)
             ),
         shape = RoundedCornerShape(16.dp),
-        color = containerColor
+        color = MaterialTheme.colorScheme.surface
     ) {
         Row(
             modifier = Modifier.padding(16.dp),
@@ -486,22 +451,26 @@ fun SelectableCard(
             Box(
                 modifier = Modifier
                     .size(48.dp)
-                    .background(if (isSelected) primaryTextColor else borderColor, CircleShape),
+                    .background(
+                        if (isSelected) MaterialTheme.colorScheme.primary 
+                        else MaterialTheme.colorScheme.onSurface.copy(alpha = 0.05f), 
+                        CircleShape
+                    ),
                 contentAlignment = Alignment.Center
             ) {
                 Icon(
                     icon,
                     null,
-                    tint = if (isSelected) (if (isAppInDarkTheme()) Color.Black else Color.White) else primaryTextColor,
+                    tint = if (isSelected) MaterialTheme.colorScheme.onPrimary else MaterialTheme.colorScheme.primary,
                     modifier = Modifier.size(24.dp)
                 )
             }
             Column(modifier = Modifier.weight(1f)) {
-                Text(title, fontWeight = FontWeight.Bold, color = primaryTextColor)
-                Text(subtitle, style = MaterialTheme.typography.labelSmall, color = primaryTextColor.copy(alpha = 0.6f))
+                Text(title, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface)
+                Text(subtitle, style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f))
             }
             if (isSelected) {
-                Icon(Icons.Default.ChevronRight, null, tint = primaryTextColor)
+                Icon(Icons.Default.ChevronRight, null, tint = MaterialTheme.colorScheme.primary)
             }
         }
     }
@@ -512,4 +481,3 @@ data class OnboardingOption(
     val subtitle: String,
     val icon: ImageVector
 )
-
