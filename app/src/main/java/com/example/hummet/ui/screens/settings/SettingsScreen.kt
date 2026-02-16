@@ -1,7 +1,6 @@
 package com.example.hummet.ui.screens.settings
 
 import kotlinx.coroutines.launch
-
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -99,7 +98,7 @@ fun SettingsScreen(onNavigateBack: () -> Unit) {
         snackbarHost = { SnackbarHost(snackbarHostState) }
     ) { padding ->
         if (isLoading) {
-            Box(modifier = Modifier.fillMaxSize(), contentAlignment = androidx.compose.ui.Alignment.Center) {
+            Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
                 CircularProgressIndicator()
             }
         } else {
@@ -125,7 +124,7 @@ fun SettingsScreen(onNavigateBack: () -> Unit) {
                                 color = MaterialTheme.colorScheme.surfaceVariant
                             ) {
                                 if (isUploadingImage) {
-                                    Box(modifier = Modifier.fillMaxSize(), contentAlignment = androidx.compose.ui.Alignment.Center) {
+                                    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
                                         CircularProgressIndicator(modifier = Modifier.size(30.dp))
                                     }
                                 } else if (selectedLocalUri != null || profileImageUrl != null) {
@@ -152,7 +151,6 @@ fun SettingsScreen(onNavigateBack: () -> Unit) {
                                 }
                             }
                             
-
                             Row(
                                 modifier = Modifier.offset(x = 8.dp, y = 8.dp),
                                 horizontalArrangement = Arrangement.spacedBy(4.dp)
@@ -243,8 +241,8 @@ fun SettingsScreen(onNavigateBack: () -> Unit) {
                             .height(56.dp),
                         shape = RoundedCornerShape(16.dp),
                         colors = ButtonDefaults.buttonColors(
-                            containerColor = MaterialTheme.colorScheme.onSurface,
-                            contentColor = MaterialTheme.colorScheme.surface
+                            containerColor = MaterialTheme.colorScheme.primary,
+                            contentColor = MaterialTheme.colorScheme.onPrimary
                         )
                     ) {
                         Text("Save Changes", fontWeight = FontWeight.Bold)
@@ -287,6 +285,20 @@ fun SettingsScreen(onNavigateBack: () -> Unit) {
                         )
                     }
                 }
+
+                item {
+                    Spacer(modifier = Modifier.height(48.dp))
+                    Box(
+                        modifier = Modifier.fillMaxWidth(),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Text(
+                            text = "Made by Hummet Azim",
+                            style = MaterialTheme.typography.labelLarge,
+                            color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.5f)
+                        )
+                    }
+                }
             }
         }
     }
@@ -309,7 +321,7 @@ fun ToggleSettingItem(
                 .fillMaxWidth()
                 .padding(vertical = 12.dp),
             horizontalArrangement = Arrangement.spacedBy(16.dp),
-            verticalAlignment = androidx.compose.ui.Alignment.CenterVertically
+            verticalAlignment = Alignment.CenterVertically
         ) {
             Icon(
                 icon,
@@ -323,7 +335,7 @@ fun ToggleSettingItem(
                 onCheckedChange = onCheckedChange,
                 colors = SwitchDefaults.colors(
                     checkedThumbColor = MaterialTheme.colorScheme.primary,
-                    checkedTrackColor = MaterialTheme.colorScheme.primaryContainer,
+                    checkedTrackColor = MaterialTheme.colorScheme.primary.copy(alpha = 0.5f),
                 )
             )
         }
@@ -347,7 +359,7 @@ fun SettingItem(
                 .fillMaxWidth()
                 .padding(vertical = 12.dp),
             horizontalArrangement = Arrangement.spacedBy(16.dp),
-            verticalAlignment = androidx.compose.ui.Alignment.CenterVertically
+            verticalAlignment = Alignment.CenterVertically
         ) {
             Icon(icon, null, modifier = Modifier.size(24.dp), tint = textColor.copy(alpha = 0.7f))
             Text(title, style = MaterialTheme.typography.bodyLarge, color = textColor, modifier = Modifier.weight(1f))
