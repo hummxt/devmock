@@ -161,7 +161,7 @@ fun OnboardingScreen(
                     } else {
                         isLoading = true
                         scope.launch {
-                            val userName = com.google.firebase.auth.FirebaseAuth.getInstance().currentUser?.displayName ?: "Hummet User"
+                            val userName = com.google.firebase.auth.FirebaseAuth.getInstance().currentUser?.displayName ?: "Devmock User"
                             repository.updateOnboardingData(userName, selectedLevel, selectedPath, goal, profileImageUrl)
                             isLoading = false
                             onComplete()
@@ -358,7 +358,8 @@ fun LearningPathStep(
         val paths = listOf(
             OnboardingOption("Mobile Development", "Android, iOS, Flutter", Icons.Outlined.PhoneAndroid),
             OnboardingOption("Frontend Engineering", "React, Vue, Web", Icons.Outlined.Palette),
-            OnboardingOption("Backend Engineering", "Kotlin, Python, Java", Icons.Outlined.Storage)
+            OnboardingOption("Backend Engineering", "Kotlin, Python, Java", Icons.Outlined.Storage),
+            OnboardingOption("DevOps & Cloud", "Docker, Kubernetes, AWS", Icons.Outlined.CloudQueue)
         )
 
         paths.forEach { path ->
