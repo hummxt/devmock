@@ -30,7 +30,7 @@ fun Homepage(
 ) {
     var showNotifs by remember { mutableStateOf(false) }
     var selectedTab by remember { mutableStateOf("Logic") }
-    val tabs = listOf("Logic", "Algorithms", "UI/UX")
+    val tabs = listOf("Logic", "Algorithms")
 
     Scaffold(
         topBar = {
