@@ -63,23 +63,23 @@ fun LiveInterviewScreen(
                     )
                 }
             }
-        Box(
-            modifier = Modifier
-                .fillMaxSize()
-                .background(MaterialTheme.colorScheme.background)
-                .padding(padding)
-        ) {
-            when {
-                state.isLoading -> LoadingState()
-                state.error != null -> ErrorState(state.error!!, onBackClick)
-                state.isCompleted -> CompletionState(state, onBackClick)
-                state.questions.isNotEmpty() -> {
-                    InterviewContent(
-                        state = state,
-                        onOptionSelect = viewModel::selectOption,
-                        onConfirm = viewModel::confirmAnswer,
-                        onNext = viewModel::nextQuestion
-                    )
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .background(MaterialTheme.colorScheme.background)
+            ) {
+                when {
+                    state.isLoading -> LoadingState()
+                    state.error != null -> ErrorState(state.error!!, onBackClick)
+                    state.isCompleted -> CompletionState(state, onBackClick)
+                    state.questions.isNotEmpty() -> {
+                        InterviewContent(
+                            state = state,
+                            onOptionSelect = viewModel::selectOption,
+                            onConfirm = viewModel::confirmAnswer,
+                            onNext = viewModel::nextQuestion
+                        )
+                    }
                 }
             }
         }
