@@ -1,0 +1,225 @@
+{
+    "id": "software-testing",
+    "topicTitle": "Software Testing Fundamentals",
+    "category": "Quality Assurance",
+    "difficulty": "Medium",
+    "accentColor": "#06B6D4",
+    "tags": [
+        "Testing",
+        "QA",
+        "Quality"
+    ],
+    "questions": [
+        "Testing Types",
+        "Test Automation",
+        "Bug Lifecycle",
+        "Test Coverage",
+        "Quality Metrics"
+    ],
+    "fullQuestions": [
+        {
+            "question": "What is the main difference between Unit Testing and Integration Testing?",
+            "options": [
+                "Unit tests are slower than integration tests",
+                "Unit tests verify individual components, integration tests verify how components work together",
+                "Integration tests are written first",
+                "They are the same thing"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Unit tests focus on testing individual functions or methods in isolation. Integration tests verify that different modules or services work correctly together.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'Regression Testing'?",
+            "options": [
+                "Testing old software",
+                "Re-running tests to ensure new changes haven't broken existing functionality",
+                "Testing for performance issues",
+                "Testing user interfaces"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Regression testing ensures that recent code changes haven't adversely affected existing features. It's typically automated and run frequently.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What does 'TDD' stand for?",
+            "options": [
+                "Technical Design Document",
+                "Test-Driven Development",
+                "Total Development Duration",
+                "Testing and Debugging Department"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Test-Driven Development (TDD) is a practice where you write tests before writing the actual code, following a red-green-refactor cycle.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is a 'Mock' in testing?",
+            "options": [
+                "A fake version of a component used to simulate behavior during testing",
+                "A type of bug",
+                "A testing framework",
+                "A performance metric"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "A mock is a simulated object that mimics the behavior of real objects in controlled ways. It's used to isolate the code being tested from its dependencies.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is 'Code Coverage'?",
+            "options": [
+                "How many developers work on the code",
+                "The percentage of code executed by tests",
+                "The number of lines of code",
+                "How well code is documented"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Code coverage measures what percentage of your code is executed when tests run. High coverage doesn't guarantee quality, but low coverage indicates untested code.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is the purpose of 'Smoke Testing'?",
+            "options": [
+                "Testing in hot environments",
+                "Quick preliminary tests to verify basic functionality before deeper testing",
+                "Testing for security vulnerabilities",
+                "Performance testing under load"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Smoke testing (or sanity testing) is a quick test to verify that the most important functions work. If smoke tests fail, there's no point in deeper testing.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is 'Black Box Testing'?",
+            "options": [
+                "Testing in the dark",
+                "Testing software without knowledge of internal implementation",
+                "Testing only error cases",
+                "Testing database systems"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Black box testing examines functionality without knowing the internal code structure. Testers focus on inputs and expected outputs.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'White Box Testing'?",
+            "options": [
+                "Testing only successful scenarios",
+                "Testing with full knowledge of internal code structure and logic",
+                "Testing user interfaces",
+                "Testing on white backgrounds"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "White box testing (or glass box testing) examines the internal structure of the application. Testers need to understand the code to design test cases.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'Load Testing'?",
+            "options": [
+                "Testing how fast the application loads",
+                "Testing system behavior under expected load conditions",
+                "Testing file uploads",
+                "Testing database queries"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Load testing evaluates how a system performs under expected user load. It helps identify performance bottlenecks before they affect real users.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is 'Stress Testing'?",
+            "options": [
+                "Testing developer patience",
+                "Testing system behavior beyond normal operational capacity",
+                "Testing under time pressure",
+                "Testing security features"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Stress testing pushes the system beyond its normal limits to see how it handles extreme conditions and where it breaks. It helps identify the breaking point.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is the 'Bug Life Cycle'?",
+            "options": [
+                "How long bugs live in production",
+                "The stages a bug goes through from discovery to closure",
+                "The time it takes to fix a bug",
+                "The number of bugs per release"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The bug life cycle includes stages like New, Assigned, Open, Fixed, Retest, Verified, Closed, and sometimes Reopened. It tracks the status of defects.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'Acceptance Testing'?",
+            "options": [
+                "Testing if developers accept the requirements",
+                "Testing to verify the system meets business requirements and is ready for delivery",
+                "Testing user login functionality",
+                "Testing database connections"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Acceptance testing (UAT - User Acceptance Testing) validates that the system meets business needs and is ready for production deployment.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is a 'Test Case'?",
+            "options": [
+                "A container for storing tests",
+                "A set of conditions and variables to determine if a system works correctly",
+                "A type of bug",
+                "A testing tool"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "A test case is a set of actions, inputs, and expected results developed for a particular objective, such as verifying a specific feature or function.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'Continuous Testing'?",
+            "options": [
+                "Testing 24/7",
+                "Executing automated tests as part of the software delivery pipeline",
+                "Manual testing every day",
+                "Testing without breaks"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Continuous Testing is the practice of executing automated tests throughout the software delivery pipeline to obtain immediate feedback on business risks.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is the difference between 'Verification' and 'Validation'?",
+            "options": [
+                "They are the same thing",
+                "Verification checks if we built the product right, Validation checks if we built the right product",
+                "Verification is automated, Validation is manual",
+                "Validation happens before Verification"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Verification asks 'Are we building the product right?' (following specs). Validation asks 'Are we building the right product?' (meeting user needs).",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "What is 'Exploratory Testing'?",
+            "options": [
+                "Testing in different countries",
+                "Simultaneous learning, test design, and test execution without predefined test cases",
+                "Testing new features only",
+                "Automated testing"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Exploratory testing is an approach where testers actively explore the application, learning about it while designing and executing tests simultaneously.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is a 'Flaky Test'?",
+            "options": [
+                "A test that is poorly written",
+                "A test that sometimes passes and sometimes fails without code changes",
+                "A test that takes too long",
+                "A test that never passes"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Flaky tests are unreliable tests that exhibit non-deterministic behavior. They can pass or fail for the same code, often due to timing issues or external dependencies.",
+            "difficulty": "Hard"
+        }
+    ]
+}

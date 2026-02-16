@@ -1,0 +1,237 @@
+{
+    "id": "microservices-architecture",
+    "topicTitle": "Microservices Architecture",
+    "category": "Architecture",
+    "difficulty": "Hard",
+    "accentColor": "#EC4899",
+    "tags": [
+        "Microservices",
+        "Architecture",
+        "Distributed"
+    ],
+    "questions": [
+        "Microservices Basics",
+        "Service Communication",
+        "Data Management",
+        "Deployment",
+        "Challenges"
+    ],
+    "fullQuestions": [
+        {
+            "question": "What is Microservices Architecture?",
+            "options": [
+                "Very small applications",
+                "An architectural style where an application is composed of small, independent services",
+                "A programming language",
+                "A database design pattern"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Microservices architecture structures an application as a collection of loosely coupled, independently deployable services, each focused on a specific business capability.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is the main difference between Microservices and Monolithic architecture?",
+            "options": [
+                "Microservices are faster",
+                "Monolithic is a single unified application, Microservices are multiple independent services",
+                "Monolithic uses more servers",
+                "They are the same thing"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "A monolith is built as a single unit where all components are interconnected. Microservices split functionality into separate, independently deployable services.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'Service Discovery'?",
+            "options": [
+                "Finding bugs in services",
+                "The process of automatically detecting and locating service instances on a network",
+                "Discovering new features",
+                "A debugging tool"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Service discovery allows services to find and communicate with each other dynamically, without hardcoding network locations. Tools include Consul, Eureka, and etcd.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is an 'API Gateway'?",
+            "options": [
+                "A network router",
+                "A single entry point that routes requests to appropriate microservices",
+                "A database connection",
+                "A security firewall"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "An API Gateway acts as a reverse proxy, routing client requests to the appropriate microservice, and can handle authentication, rate limiting, and load balancing.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'Circuit Breaker' pattern?",
+            "options": [
+                "A security mechanism",
+                "A pattern that prevents cascading failures by stopping requests to failing services",
+                "An electrical component",
+                "A load balancing strategy"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Circuit Breaker monitors for failures and temporarily blocks requests to a failing service, allowing it to recover and preventing system-wide failures.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is the 'Database per Service' pattern?",
+            "options": [
+                "Using one large database",
+                "Each microservice has its own private database",
+                "Sharing databases between services",
+                "Using no databases"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Each microservice owns its data and database, ensuring loose coupling and allowing services to choose the best database technology for their needs.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is 'Event-Driven Architecture' in microservices?",
+            "options": [
+                "Scheduling events in a calendar",
+                "Services communicate by producing and consuming events asynchronously",
+                "Organizing team events",
+                "A testing methodology"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "In event-driven architecture, services publish events when state changes occur, and other services subscribe to these events, enabling loose coupling and scalability.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is 'Saga Pattern'?",
+            "options": [
+                "A story-telling pattern",
+                "A pattern for managing distributed transactions across multiple services",
+                "A naming convention",
+                "A security pattern"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Saga pattern manages data consistency across services by breaking a transaction into a sequence of local transactions, with compensating actions if failures occur.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "What is 'Service Mesh'?",
+            "options": [
+                "A network of servers",
+                "An infrastructure layer that handles service-to-service communication",
+                "A type of database",
+                "A monitoring tool"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "A service mesh (like Istio or Linkerd) provides features like load balancing, service discovery, encryption, and observability for microservices communication.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "What is 'Distributed Tracing'?",
+            "options": [
+                "Tracking user locations",
+                "Tracking requests as they flow through multiple microservices",
+                "A debugging technique",
+                "A security audit"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Distributed tracing tracks a request's journey across multiple services, helping identify performance bottlenecks and failures. Tools include Jaeger and Zipkin.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is 'Eventual Consistency'?",
+            "options": [
+                "Data is always consistent",
+                "Data will become consistent over time, but may be temporarily inconsistent",
+                "Data is never consistent",
+                "A database type"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "In distributed systems, eventual consistency means that if no new updates are made, all replicas will eventually converge to the same value, accepting temporary inconsistencies.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "What is 'Containerization' in microservices?",
+            "options": [
+                "Storing data in containers",
+                "Packaging each microservice with its dependencies into containers",
+                "A shipping method",
+                "A design pattern"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Containerization (using Docker) packages each microservice with its dependencies, ensuring consistency across environments and simplifying deployment.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'Blue-Green Deployment'?",
+            "options": [
+                "Using colored servers",
+                "Running two identical production environments and switching traffic between them",
+                "A testing strategy",
+                "A database backup method"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Blue-green deployment maintains two identical environments. You deploy to the inactive one (green), test it, then switch traffic from blue to green, enabling zero-downtime deployments.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is 'Canary Deployment'?",
+            "options": [
+                "Deploying to bird-themed servers",
+                "Gradually rolling out changes to a small subset of users before full deployment",
+                "A backup strategy",
+                "A testing framework"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Canary deployment releases changes to a small percentage of users first, monitoring for issues before rolling out to everyone, reducing risk.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is 'Strangler Fig Pattern'?",
+            "options": [
+                "A plant-based architecture",
+                "Gradually replacing a monolith by building new functionality as microservices",
+                "A security pattern",
+                "A database migration technique"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The Strangler Fig pattern incrementally migrates from a monolith to microservices by routing new features to new services while gradually replacing old functionality.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "What is 'Idempotency' in microservices?",
+            "options": [
+                "Services that never change",
+                "An operation that produces the same result regardless of how many times it's executed",
+                "A security feature",
+                "A performance optimization"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Idempotency ensures that repeating an operation (like due to retries) produces the same result, critical for reliability in distributed systems.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "What is 'Sidecar Pattern'?",
+            "options": [
+                "A motorcycle attachment",
+                "Deploying helper components alongside the main service in the same container/pod",
+                "A backup service",
+                "A load balancing technique"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Sidecar pattern deploys auxiliary components (logging, monitoring, proxies) alongside the main service, extending functionality without modifying the service itself.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "What is 'Bounded Context' in Domain-Driven Design?",
+            "options": [
+                "A limited database size",
+                "A logical boundary within which a particular model is defined and applicable",
+                "A security restriction",
+                "A performance limit"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Bounded Context defines clear boundaries for domain models. In microservices, each service typically represents one bounded context with its own ubiquitous language.",
+            "difficulty": "Hard"
+        }
+    ]
+}

@@ -1,0 +1,261 @@
+{
+    "id": "networking-fundamentals",
+    "topicTitle": "Networking Fundamentals",
+    "category": "Infrastructure",
+    "difficulty": "Medium",
+    "accentColor": "#14B8A6",
+    "tags": [
+        "Networking",
+        "Protocols",
+        "Infrastructure"
+    ],
+    "questions": [
+        "Network Basics",
+        "Protocols",
+        "IP Addressing",
+        "DNS",
+        "Security"
+    ],
+    "fullQuestions": [
+        {
+            "question": "What does 'HTTP' stand for?",
+            "options": [
+                "High Transfer Text Protocol",
+                "HyperText Transfer Protocol",
+                "Hyper Transfer Technology Protocol",
+                "Home Tool Transfer Protocol"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "HTTP is the foundation of data communication on the web, defining how messages are formatted and transmitted between web browsers and servers.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is the difference between HTTP and HTTPS?",
+            "options": [
+                "HTTPS is faster",
+                "HTTPS is HTTP with encryption (SSL/TLS)",
+                "HTTP is newer than HTTPS",
+                "They are the same"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "HTTPS adds a layer of security through SSL/TLS encryption, protecting data in transit from eavesdropping and tampering. The 'S' stands for Secure.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is an 'IP Address'?",
+            "options": [
+                "Internet Password",
+                "A unique numerical identifier for devices on a network",
+                "A website URL",
+                "An email address"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "An IP (Internet Protocol) address is a unique identifier assigned to each device on a network, allowing devices to locate and communicate with each other.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is the difference between IPv4 and IPv6?",
+            "options": [
+                "IPv6 is faster",
+                "IPv4 uses 32-bit addresses, IPv6 uses 128-bit addresses",
+                "IPv4 is more secure",
+                "They are the same"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "IPv4 uses 32-bit addresses (like 192.168.1.1), providing about 4.3 billion addresses. IPv6 uses 128-bit addresses, providing vastly more addresses to meet growing demand.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'DNS' (Domain Name System)?",
+            "options": [
+                "A security protocol",
+                "A system that translates domain names to IP addresses",
+                "A type of server",
+                "A programming language"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "DNS is like the internet's phonebook, translating human-readable domain names (like google.com) into IP addresses that computers use to identify each other.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is a 'Subnet Mask'?",
+            "options": [
+                "A security feature",
+                "A number that defines which portion of an IP address is the network and which is the host",
+                "A type of firewall",
+                "A DNS setting"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "A subnet mask divides an IP address into network and host portions, enabling efficient routing and network organization. Example: 255.255.255.0",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is 'TCP' (Transmission Control Protocol)?",
+            "options": [
+                "A type of cable",
+                "A connection-oriented protocol that ensures reliable data delivery",
+                "A security protocol",
+                "A programming language"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "TCP establishes a connection before transmitting data and ensures all packets arrive in order and without errors, making it reliable but slower than UDP.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'UDP' (User Datagram Protocol)?",
+            "options": [
+                "A secure protocol",
+                "A connectionless protocol that sends data without guaranteeing delivery",
+                "A type of encryption",
+                "A database protocol"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "UDP sends data without establishing a connection or confirming delivery, making it faster but less reliable than TCP. Used for streaming and gaming.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is a 'Port' in networking?",
+            "options": [
+                "A physical connector",
+                "A virtual endpoint for network communication identified by a number",
+                "A type of cable",
+                "A network device"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Ports are numbered endpoints (0-65535) that allow multiple services to run on one IP address. Common examples: HTTP (80), HTTPS (443), SSH (22).",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'NAT' (Network Address Translation)?",
+            "options": [
+                "A type of cable",
+                "A method of mapping private IP addresses to public IP addresses",
+                "A security protocol",
+                "A routing algorithm"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "NAT allows multiple devices on a private network to share a single public IP address, conserving IPv4 addresses and providing a layer of security.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is the 'OSI Model'?",
+            "options": [
+                "A type of network",
+                "A 7-layer conceptual framework for understanding network communication",
+                "A security standard",
+                "A programming model"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The OSI (Open Systems Interconnection) model has 7 layers: Physical, Data Link, Network, Transport, Session, Presentation, and Application, each handling specific networking functions.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is a 'Router'?",
+            "options": [
+                "A type of cable",
+                "A device that forwards data packets between networks",
+                "A security firewall",
+                "A storage device"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "A router connects different networks and directs data packets to their destinations using IP addresses, determining the best path for data to travel.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is a 'Switch' in networking?",
+            "options": [
+                "An on/off button",
+                "A device that connects devices within a network using MAC addresses",
+                "A type of router",
+                "A security device"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "A switch connects devices on a local network and uses MAC addresses to forward data only to the intended recipient, improving network efficiency.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'Latency'?",
+            "options": [
+                "Network speed",
+                "The time delay between sending and receiving data",
+                "Bandwidth capacity",
+                "Network security level"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Latency is the time it takes for data to travel from source to destination, usually measured in milliseconds. Lower latency means faster response times.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'Bandwidth'?",
+            "options": [
+                "The width of a cable",
+                "The maximum amount of data that can be transmitted over a network in a given time",
+                "Network latency",
+                "The number of devices on a network"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Bandwidth is the capacity of a network connection, typically measured in bits per second (bps). Higher bandwidth allows more data to be transmitted simultaneously.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'DHCP' (Dynamic Host Configuration Protocol)?",
+            "options": [
+                "A security protocol",
+                "A protocol that automatically assigns IP addresses to devices on a network",
+                "A type of router",
+                "A DNS service"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "DHCP automatically assigns IP addresses, subnet masks, and other network settings to devices, eliminating the need for manual configuration.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is a 'MAC Address'?",
+            "options": [
+                "An Apple computer address",
+                "A unique hardware identifier assigned to network interfaces",
+                "A type of IP address",
+                "A security key"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "MAC (Media Access Control) address is a unique identifier assigned to network interface cards by manufacturers, used for communication within a local network.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'Ping'?",
+            "options": [
+                "A sound notification",
+                "A network utility that tests connectivity by sending ICMP echo requests",
+                "A type of protocol",
+                "A security scan"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Ping sends packets to a destination and measures the round-trip time, helping diagnose network connectivity issues and measure latency.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is a 'Proxy Server'?",
+            "options": [
+                "A backup server",
+                "An intermediary server that forwards requests between clients and other servers",
+                "A type of firewall",
+                "A DNS server"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "A proxy server acts as an intermediary, forwarding client requests to other servers. It can provide anonymity, caching, and content filtering.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is 'Three-Way Handshake' in TCP?",
+            "options": [
+                "A security protocol",
+                "The process of establishing a TCP connection using SYN, SYN-ACK, and ACK",
+                "A type of encryption",
+                "A routing method"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "TCP uses a three-way handshake to establish a connection: client sends SYN, server responds with SYN-ACK, client sends ACK. This ensures both sides are ready to communicate.",
+            "difficulty": "Hard"
+        }
+    ]
+}
