@@ -1,0 +1,214 @@
+{
+    "id": "kotlin-multiplatform",
+    "topicTitle": "Kotlin Multiplatform (KMP)",
+    "category": "Modern Development",
+    "difficulty": "Hard",
+    "accentColor": "#F59E0B",
+    "tags": [
+        "Kotlin",
+        "KMP",
+        "Android",
+        "iOS",
+        "Shared Code"
+    ],
+    "companyHistory": "Adopted by Netflix, Disney+, and McDonald's to share business logic across Android and iOS apps.",
+    "questions": [
+        "What is Kotlin Multiplatform (KMP)?",
+        "What is the difference between KMP and Flutter/React Native?",
+        "What code can be shared in KMP?",
+        "What is a 'Common' source set?",
+        "What are 'Platform-specific' source sets?",
+        "Explain the 'expect/actual' mechanism.",
+        "What is Compose Multiplatform?",
+        "How does KMP handle networking (e.g., Ktor)?",
+        "How is KMP code compiled for iOS?",
+        "What is the 'Kotlin/Native' compiler?",
+        "Can you share UI in KMP?",
+        "What is a 'Hierarchical project structure'?",
+        "How do you handle local storage in KMP (e.g., SQLDelight)?",
+        "What is the memory management model in Kotlin/Native?",
+        "What are the benefits of using KMP over other cross-platform dev tools?"
+    ],
+    "fullQuestions": [
+        {
+            "question": "What is the primary philosophy of Kotlin Multiplatform?",
+            "options": [
+                "Write Once, Run Everywhere (UI included)",
+                "Share business logic while keeping the UI native",
+                "Only for Android-to-Android sharing",
+                "Replacing Java completely for all systems"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "KMP focuses on sharing core logic, data, and networking, while allowing developers to implement platform-specific UIs if desired.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "Which keyword is used in 'commonMain' to define a function that must be implemented by platforms?",
+            "options": [
+                "interface",
+                "abstract",
+                "expect",
+                "actual"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "The 'expect' keyword defines a declaration in common code that requires an 'actual' implementation in platform-specific code.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "In which source set do you write code that is shared across all targets?",
+            "options": [
+                "androidMain",
+                "iosMain",
+                "commonMain",
+                "desktopMain"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "commonMain is the heart of a KMP project where the platform-independent logic resides.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "Which library is commonly used for multiplatform networking in KMP?",
+            "options": [
+                "Retrofit",
+                "Ktor",
+                "OkHttp",
+                "Volley"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Ktor is a multiplatform asynchronous HTTP client that works across all KMP targets.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What does KMP stand for?",
+            "options": [
+                "Kotlin Modern Platform",
+                "Kotlin Multiplatform",
+                "Kotlin Mobile Programming",
+                "Kotlin Managed Package"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "KMP stands for Kotlin Multiplatform, reflecting its ability to target diverse environments.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "How does the 'expect/actual' mechanism differ from an Interface?",
+            "options": [
+                "It doesn't; they are the same",
+                "expect/actual works at compile-time and doesn't require dependency injection",
+                "Interfaces can only be used on Android",
+                "actual functions cannot have parameters"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "expect/actual is a compiler-level feature that links declarations across platform boundaries without runtime overhead.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is 'Compose Multiplatform'?",
+            "options": [
+                "A tool for composing music in Kotlin",
+                "A declarative UI framework (based on Jetpack Compose) for Android, iOS, Desktop, and Web",
+                "A way to combine multiple Kotlin projects into one",
+                "The legacy version of KMP"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Compose Multiplatform extends Jetpack Compose to allow sharing UI code across platforms.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "Which plugin is required to build KMP projects in IntelliJ or Android Studio?",
+            "options": [
+                "Flutter Plugin",
+                "Kotlin Multiplatform Mobile (KMM) / KMP Wizard",
+                "Python Debugger",
+                "Rust Toolchain"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The KMP ecosystem provides specialized plugins for IDEs to manage shared source sets and runners.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "How is Kotlin code executed on iOS?",
+            "options": [
+                "It runs via a JVM on iOS",
+                "It is compiled to Objective-C/Swift bytecode",
+                "It is compiled to a native framework using Kotlin/Native",
+                "It runs inside a hidden browser window"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "Kotlin/Native compiles the code to a native binary (framework) that iOS apps can use directly.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is SQLDelight used for in a KMP project?",
+            "options": [
+                "Analyzing JSON data",
+                "Type-safe multiplatform database management",
+                "Styling icons",
+                "Handling user authentication"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "SQLDelight generates Kotlin APIs from SQL queries, making it perfect for shared local persistence.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What are 'SKIE' or 'KMP-NativeCoroutines' libraries often used for?",
+            "options": [
+                "Better interoperability with Swift (handling Coroutines and Flow)",
+                "Speeding up the Android build",
+                "Translating Kotlin to JavaScript",
+                "Defining UI layouts in XML"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "Bridging Kotlin's Coroutines/Flows to Swift's Async/Await or Combine can be tricky; these libraries automate that bridge.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "Explain the concept of 'Frozen Objects' in the legacy Kotlin/Native memory model.",
+            "options": [
+                "Objects that are saved to disk",
+                "Objects that became immutable when shared across threads",
+                "Objects that the GC cannot delete",
+                "Objects that are encrypted"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "In the old model, sharing state required freezing, which made the object thread-safe by making it immutable. This is largely replaced by the new GC.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "What is a 'Target' in a build.gradle.kts KMP configuration?",
+            "options": [
+                "The goal of the development team",
+                "A specific output platform, such as iosArm64, androidTarget, or js",
+                "The main function of the app",
+                "The source code directory name"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Targets define which platforms and architectures the Kotlin compiler should generate code for.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "How does KMP handle platform-specific dependencies (e.g., using CocoaPods)?",
+            "options": [
+                "It doesn't support them",
+                "Via a dedicated 'cocoapods' block in Gradle that integrates with Xcode",
+                "By manually copying files into the project",
+                "By using NPM"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "KMP has built-in support for integrating with the CocoaPods dependency manager for iOS development.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "What is the 'Intermediate Source Set'?",
+            "options": [
+                "A place for code that is used only during the build",
+                "A source set shared by a subset of targets (e.g., iosMain shared between iosArm64 and iosX64)",
+                "The folder for documentation",
+                "The folder for experimental features"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Intermediate sets allow for code reuse between specific platforms without making it available to all platforms.",
+            "difficulty": "Hard"
+        }
+    ]
+}
