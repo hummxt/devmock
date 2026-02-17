@@ -33,6 +33,7 @@ import com.example.devmock.ui.screens.splash.SplashScreen
 import kotlinx.coroutines.delay
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.devmock.ui.screens.quiz.QuestionsViewModel
+import androidx.compose.ui.platform.LocalContext
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
