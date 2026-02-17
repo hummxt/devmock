@@ -1,0 +1,213 @@
+{
+    "id": "ci-cd-pipelines",
+    "topicTitle": "CI/CD Pipelines",
+    "category": "DevOps & Infrastructure",
+    "difficulty": "Medium",
+    "accentColor": "#EF4444",
+    "tags": [
+        "DevOps",
+        "Automation",
+        "Jenkins",
+        "GitHub Actions"
+    ],
+    "companyHistory": "Standard requirement at nearly every tech company including Amazon, Netflix, and Meta for deploying reliable software.",
+    "questions": [
+        "What does CI stand for?",
+        "What does CD stand for?",
+        "What is the main goal of a CI/CD pipeline?",
+        "What is a 'build' in a pipeline?",
+        "What is automated testing in CI?",
+        "Explain the difference between Continuous Delivery and Continuous Deployment.",
+        "What is a 'Staging' environment?",
+        "What is 'Pipeline as Code'?",
+        "What are artifacts in a CI/CD process?",
+        "How do you handle secrets (API keys) in a pipeline?",
+        "What is the concept of 'Shifting Left'?",
+        "What is Blue-Green Deployment?",
+        "Explain Canary Releases.",
+        "What is a rollback and why is it important?",
+        "How do you optimize pipeline build times?"
+    ],
+    "fullQuestions": [
+        {
+            "question": "What is the primary purpose of Continuous Integration (CI)?",
+            "options": [
+                "To deploy code directly to customers",
+                "To automatically integrate code changes from multiple contributors into a shared repository",
+                "To write documentation for the project",
+                "To design the user interface"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "CI focus on frequently merging code changes into a central repository where automated builds and tests are run.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "In a CI/CD pipeline, what usually happens immediately after code is pushed?",
+            "options": [
+                "Manual code review",
+                "The automated build process starts",
+                "The app is published to the App Store",
+                "The server is restarted"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Modern CI systems are triggered by git hooks to start a build as soon as new code is detected.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'Continuous Deployment'?",
+            "options": [
+                "Manually moving files to a server",
+                "Every change that passes all stages of your production pipeline is released to your customers",
+                "Writing code continuosly without breaks",
+                "Deploying only once a month"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Continuous Deployment goes one step further than delivery by automatically deploying every validated change to production.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "Which of these is a common CI/CD tool?",
+            "options": [
+                "Adobe Photoshop",
+                "GitHub Actions",
+                "Microsoft Word",
+                "VLC Media Player"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "GitHub Actions is a popular automation platform for CI/CD.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is a 'Unit Test' in the context of CI?",
+            "options": [
+                "Testing the entire application at once",
+                "Testing a large group of integrated modules",
+                "Testing an individual unit or component of the code in isolation",
+                "Testing the hardware on which the app runs"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "Unit tests are fast, automated tests that verify small pieces of logic. They are the first line of defense in CI.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is the difference between Continuous Delivery and Continuous Deployment?",
+            "options": [
+                "Delivery is manual, Deployment is automatic",
+                "Delivery ensures code is *ready* for production, while Deployment *automatically releases* it",
+                "There is no difference",
+                "Delivery is for mobile apps only"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Delivery requires a manual approval/trigger for the final release, whereas Deployment is fully automated to production.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is 'Pipeline as Code'?",
+            "options": [
+                "Writing your code inside the pipeline terminal",
+                "Defining your build/deploy steps in a configuration file (like YAML) stored in version control",
+                "Using a graphics card to run pipelines",
+                "Coding without any pipelines"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "This allows the infrastructure and automation steps to be versioned, reviewed, and managed just like application code.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is a 'Staging Environment'?",
+            "options": [
+                "The developer's laptop",
+                "An environment that mirrors production and is used for final testing before release",
+                "The public website",
+                "A place to store old code"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Staging allows for caught-last-minute bugs in an environment that is as close to the real world as possible.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "How do you handle sensitive data (like API keys) in a CI/CD pipeline?",
+            "options": [
+                "Hardcode them in the source code",
+                "Store them in the git repository as a text file",
+                "Use 'Secrets' or 'Environment Variables' provided by the CI/CD platform",
+                "Print them in the build logs for easy access"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "Platforms like GitHub or Jenkins provide encrypted secret storage to keep sensitive info out of logs and source code.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What are 'Build Artifacts'?",
+            "options": [
+                "Historical relics found in the office",
+                "The output files generated by the build process (e.g., .apk, .jar, .zip)",
+                "The errors that occur during compilation",
+                "Old versions of the source code"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Artifacts are the deployable units produced by the CI process.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "Explain the Blue-Green Deployment strategy.",
+            "options": [
+                "Changing the app's colors to blue and green",
+                "Having two identical production environments; one is live, one is idle for the new version",
+                "Deploying only on Mondays and Fridays",
+                "Randomly selecting users to see the new version"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Blue-Green allows for near-zero downtime and instant rollbacks by simply switching traffic between the two environments.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "What is a 'Canary Release'?",
+            "options": [
+                "A release only for employees",
+                "An animal-themed software update",
+                "Rolling out a new version to a small subset of users first before a full release",
+                "A release that is guaranteed to fail"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "Like a canary in a coal mine, this release tests the waters with a small user group to detect issues before they affect everyone.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "What does 'Shift Left' mean in DevOps?",
+            "options": [
+                "Moving the code to a different folder",
+                "Integrating security and testing earlier (to the 'left' of the timeline) in the development process",
+                "Deleting the older code",
+                "Only using the left side of the keyboard"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Shifting left aims to catch bugs and security vulnerabilities at the earliest possible stage, reducing costs and risks.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "How do 'Dangling Container Images' affect CI builds?",
+            "options": [
+                "They make the UI faster",
+                "They consume disk space on build agents, potentially leading to build failures",
+                "They improve the security of the app",
+                "They have no effect"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Unused container layers take up significant space. Clean-up scripts are essential to maintain healthy build runners.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "What is the role of an 'Idempotent' deployment script?",
+            "options": [
+                "A script that only works once",
+                "A script that produces the same result regardless of the current state or how many times it's run",
+                "A script written in Python",
+                "A script that encrypts the database"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Idempotency ensures that running the deployment multiple times won't cause duplicate resources or errors if something already exists.",
+            "difficulty": "Hard"
+        }
+    ]
+}

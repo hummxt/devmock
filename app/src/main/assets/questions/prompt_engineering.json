@@ -1,0 +1,214 @@
+{
+    "id": "prompt-engineering",
+    "topicTitle": "Prompt Engineering",
+    "category": "AI & Data Science",
+    "difficulty": "Easy",
+    "accentColor": "#10B981",
+    "tags": [
+        "AI",
+        "Prompting",
+        "LLM",
+        "NLP",
+        "GPT"
+    ],
+    "companyHistory": "Critical skill for developers and product managers working with LLMs at GitHub, Notion, and Jasper.",
+    "questions": [
+        "What is a 'Prompt'?",
+        "What is Prompt Engineering?",
+        "What is Zero-Shot prompting?",
+        "What is Few-Shot prompting?",
+        "What is Chain-of-Thought (CoT) prompting?",
+        "Explain the 'System Message' vs 'User Message'.",
+        "What is the 'Role Prompting' technique?",
+        "What is a 'Stop Sequence'?",
+        "How does the 'Temperature' setting affect output?",
+        "What is 'Prompt Injection'?",
+        "What are 'Delimiters' in prompting?",
+        "Explain the 'Step-by-Step' instruction technique.",
+        "What is a 'Negative Prompt'?",
+        "What is 'Few-Shot Chain of Thought'?",
+        "How do you optimize a prompt for token usage?"
+    ],
+    "fullQuestions": [
+        {
+            "question": "What is 'Zero-Shot' prompting?",
+            "options": [
+                "Giving the model no examples and expecting it to solve the task",
+                "Restarting the model 0 times",
+                "A prompt with 0 words",
+                "Sending a prompt to 0 models"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "Zero-shot relies solely on the model's pre-trained knowledge without providing specific examples of how to format or solve the task in the prompt.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "Which of these is used to give the model a specific personality or set of rules at the start of a conversation?",
+            "options": [
+                "Footer message",
+                "System Message (or System Prompt)",
+                "CSS Style",
+                "Database Index"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "The system message sets the 'persona' and constraints for the LLM's behavior.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'Few-Shot' prompting?",
+            "options": [
+                "Using as few words as possible",
+                "Providing the model with a few examples of input-output pairs in the prompt",
+                "Running the model only a few times",
+                "Only for mathematics tasks"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Few-shot prompting provides examples to help the model understand the pattern, format, or logic required.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is the purpose of 'Chain of Thought' (CoT) prompting?",
+            "options": [
+                "To make the model think about its childhood",
+                "To force the model to show its step-by-step reasoning process before giving a final answer",
+                "To speed up the network response",
+                "To reduce the number of tokens used"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "CoT significantly improves performance on complex logic, math, and reasoning tasks by allowing the model to 'deliberate' first.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "Which delimiter is commonly used to separate instructions from input text in a prompt?",
+            "options": [
+                "Triple quotes (''' or \"\"\")",
+                "Backticks (`)",
+                "A space",
+                "An emoji"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "Using clear delimiters like triple quotes or XML tags helps the model distinguish what is an instruction and what is the data to be processed.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What does a 'Temperature' of 0 usually result in?",
+            "options": [
+                "The model stops working",
+                "Highly deterministic and focused responses (always choosing the most likely next word)",
+                "Very creative and random responses",
+                "The response becomes cold"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Setting temperature to 0 makes the model 'greedy', picking the highest probability token, which is good for factual and repetitive tasks.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is 'Prompt Injection'?",
+            "options": [
+                "Adding more memory to the server",
+                "When a user provides input that 'tricks' the model into ignoring its original instructions",
+                "A way to speed up the prompt",
+                "Injecting code into the database via the prompt"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Prompt injection is a security vulnerability where untrusted input overrides the system prompt's constraints.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "How do you 'Context Stuff' a prompt?",
+            "options": [
+                "By providing as much relevant info as possible into the prompt's context window",
+                "By repeating the same word many times",
+                "By compressing the prompt into a ZIP file",
+                "By deleting the context"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "Context stuffing involves maximizing the use of the context window to provide all necessary background info to the model.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is the 'Least-to-Most' prompting strategy?",
+            "options": [
+                "Starting with the hardest part",
+                "Breaking down a problem into sub-problems and solving them sequentially, using previous answers as context",
+                "Paying the model more for better answers",
+                "Using small fonts"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "This method helps solve complex tasks by tackling the easiest parts first and building up to the final answer.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is a 'Secondary Prompt' or 'Meta-Prompt'?",
+            "options": [
+                "A hidden prompt",
+                "A prompt used to generate or optimize other prompts",
+                "A backup prompt",
+                "A prompt for a different language"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Meta-prompting involves using an LLM to help write, refine, or test prompts for another LLM or task.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "Explain 'Chain of Verification' (CoVe) prompting.",
+            "options": [
+                "Double checking the internet",
+                "A process where the model generates a response, identifies possible errors, and then verifies those facts independently",
+                "Logging in twice",
+                "Asking another model if the first one was right"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "CoVe reduces hallucinations by forcing the model to verify its own claims through a structured verification phase.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "What is 'Tree of Thoughts' (ToT) prompting?",
+            "options": [
+                "Drawing a tree in the prompt",
+                "A framework that explores multiple reasoning paths simultaneously and evaluates their promise",
+                "A way to organize files",
+                "A type of neural network"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "ToT is an extension of CoT that allows the model to backtrack or look ahead, exploring a search space of potential solutions.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "What is 'Direct Assessment' in prompt evaluation?",
+            "options": [
+                "Asking the developer if it's good",
+                "Having a high-quality LLM (like GPT-4) score the outputs of another model based on specific criteria",
+                "Testing the code in a sandbox",
+                "Measuring the time taken"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Using an 'LLM-as-a-judge' is a common way to evaluate complex, open-ended responses that can't be easily graded by scripts.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "What is 'Few-Shot Chain of Thought' (FS-CoT)?",
+            "options": [
+                "A mixed technique providing both examples AND the reasoning steps for those examples",
+                "A fast version of CoT",
+                "A way to save tokens",
+                "Only for image models"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "FS-CoT combines the benefits of both learning from examples and thinking step-by-step for the highest accuracy.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "What is 'Prompt Compression'?",
+            "options": [
+                "Zipping the text",
+                "Techniques to remove redundant or low-information tokens from a long prompt while retaining its meaning for the model",
+                "Using a smaller font size",
+                "Reducing the context window size"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Compression helps save on API costs and keeps the prompt within context limits without sacrificing accuracy.",
+            "difficulty": "Hard"
+        }
+    ]
+}

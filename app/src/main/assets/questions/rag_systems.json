@@ -1,0 +1,214 @@
+{
+    "id": "rag-systems",
+    "topicTitle": "Retrieval-Augmented Generation (RAG)",
+    "category": "AI & Data Science",
+    "difficulty": "Medium",
+    "accentColor": "#6366F1",
+    "tags": [
+        "AI",
+        "RAG",
+        "LLM",
+        "Vector DB",
+        "Search"
+    ],
+    "companyHistory": "Key technology used by Perplexity AI, OpenAI (GPTs), and Enterprise AI search tools to ground LLMs in factual data.",
+    "questions": [
+        "What does RAG stand for?",
+        "Why is RAG used instead of just fine-tuning?",
+        "What is an 'Embedding'?",
+        "What is the role of a Vector Database in RAG?",
+        "What is 'Hallucination' in LLMs?",
+        "What is the 'Query' in a RAG pipeline?",
+        "Explain the 'Retrieve' step.",
+        "Explain the 'Augment' step.",
+        "Explain the 'Generate' step.",
+        "What is 'Top-K' retrieval?",
+        "What is Semantic Search?",
+        "How does RAG help with data privacy?",
+        "What is 'Chunking' in RAG?",
+        "Describe the 'Context Window' limit and how RAG interacts with it.",
+        "What is 'Re-ranking' in retrieval?"
+    ],
+    "fullQuestions": [
+        {
+            "question": "What is the primary goal of Retrieval-Augmented Generation (RAG)?",
+            "options": [
+                "To make the LLM faster",
+                "To ground the LLM's response in specific, external, and up-to-date information",
+                "To replace the LLM with a search engine",
+                "To encrypt the user's prompt"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "RAG retrieves relevant documents and provides them to the LLM as context, ensuring the answer is based on factual data rather than pre-training memory alone.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is 'Hallucination' in the context of Large Language Models?",
+            "options": [
+                "When the model takes too long to respond",
+                "When the model generates confident but factually incorrect information",
+                "When the model crashes the server",
+                "When the model uses too many emojis"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Hallucination is a common issue where LLMs create plausible sounding but false details.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "Which component is used to convert text into numerical vectors that reflect its meaning?",
+            "options": [
+                "A JPEG encoder",
+                "An Embedding Model",
+                "A ZIP compressor",
+                "A regular expression"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Embedding models turn text into high-dimensional vectors (mathematical representations) for similarity search.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is the 'Retrieve' phase in RAG?",
+            "options": [
+                "Deleting old data",
+                "Finding the most relevant documents related to the user's query from a database",
+                "A way to train the model",
+                "Updating the software"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "In this phase, the system searches the knowledge base (often via vector similarity) to find information pertinent to the question.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "Why is 'Chunking' necessary in RAG?",
+            "options": [
+                "To make the code look better",
+                "Because documents can be too long for the LLM's context window",
+                "To slow down the process",
+                "To randomise the data"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Large documents must be broken into smaller segments (chunks) so they can fit into the context window with other retrieved snippets.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "How does RAG differ from Fine-Tuning?",
+            "options": [
+                "Fine-tuning is for vision models only",
+                "RAG uses external data at retrieval time; Fine-tuning internalizes knowledge into the model weights",
+                "RAG is more expensive than fine-tuning",
+                "Fine-tuning requires a Vector DB"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Fine-tuning is like a student studying for an exam; RAG is like an open-book exam where the student can look up facts in real-time.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is 'Cosine Similarity' often used for in RAG systems?",
+            "options": [
+                "Drawing graphs",
+                "Measuring the mathematical distance (similarity) between two text embeddings",
+                "Encrypting the network",
+                "Formatting the output JSON"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Cosine similarity determines how 'close' a query vector is to a document vector in high-dimensional space.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is a 'Vector Database'?",
+            "options": [
+                "A database for storing images only",
+                "A specialized database designed to store and efficiently search through high-dimensional vectors",
+                "A list of numbers in a text file",
+                "An old version of SQL"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Vector DBs (like Pinecone, Milvus, or Chromadb) are optimized for similarity searches rather than exact row-column matches.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is 'Prompt Augmentation' in RAG?",
+            "options": [
+                "Making the prompt longer for no reason",
+                "Combining the user's query with the retrieved documents into a single prompt for the LLM",
+                "Translating the prompt into another language",
+                "Hiding the prompt from the model"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Augmentation is the 'A' in RAG; it provides the 'context' to the model so it can answer based on the facts provided.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is a 'Metadata Filter' in retrieval?",
+            "options": [
+                "A way to color the text",
+                "Using attributes like 'date' or 'author' to narrow down search results before or during vector search",
+                "An error message",
+                "A type of CSS style"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Metadata filters allow you to combine traditional filtering (e.g., 'show only documents from 2024') with semantic vector search.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "Explain 'Lost in the Middle' in long context LLMs.",
+            "options": [
+                "When the user forgets what they asked",
+                "The phenomenon where LLMs struggle to recall info located in the middle of a very long context window",
+                "A networking error",
+                "When the vector DB stops working"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Studies show models often pay more attention to the beginning and end of a prompt, potentially missing key retrieved facts in the middle.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "What is 'Recursive Retrieval'?",
+            "options": [
+                "Searching the same database over and over",
+                "A technique where the system retrieves a document, and then finds more related documents based on that first result",
+                "Deleting the search results",
+                "Only using recursive functions in Kotlin"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Recursive retrieval helps in expanding the context by following links or relationships between different pieces of data.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "What is 'Hybrid Search'?",
+            "options": [
+                "Searching on a car's computer",
+                "Combining keyword-based search (BM25) with vector-based semantic search",
+                "Searching two different databases at the same time",
+                "Searching using voice and text"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Hybrid search leverages the strengths of both exact keyword matches and conceptual 'meaning' matches to improve accuracy.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "What is a 'Cross-Encoder' used for in RAG post-processing?",
+            "options": [
+                "To encrypt the data",
+                "To re-rank the top-k results for much higher accuracy than a fast Bi-Encoder",
+                "To speed up the vectorization",
+                "To display the results on screen"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "While slow, cross-encoders can look at both the query and document together to give a highly accurate relevance score for final ranking.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "What is 'Self-RAG'?",
+            "options": [
+                "A model that updates itself",
+                "An architecture where the model learns to output 'critique tokens' to decide when it needs to retrieve information",
+                "Writing a RAG system manually",
+                "A RAG system that doesn't use a database"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Self-RAG is an advanced technique where the model itself judges if it has enough knowledge to answer or if it needs to trigger a retrieval.",
+            "difficulty": "Hard"
+        }
+    ]
+}

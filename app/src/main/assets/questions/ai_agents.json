@@ -1,0 +1,214 @@
+{
+    "id": "ai-agents",
+    "topicTitle": "AI Agent Systems",
+    "category": "AI & Data Science",
+    "difficulty": "Advanced",
+    "accentColor": "#8B5CF6",
+    "tags": [
+        "AI",
+        "Agents",
+        "LLM",
+        "Autonomy",
+        "Reasoning"
+    ],
+    "companyHistory": "Key focus area for companies like OpenAI, Google DeepMind, and Microsoft for building autonomous software assistants.",
+    "questions": [
+        "What is an AI Agent?",
+        "What is the role of 'reasoning' in agentic systems?",
+        "What is the difference between a chatbot and an AI agent?",
+        "Explain the 'Plan-and-Execute' pattern.",
+        "What are tools or functions in the context of LLM agents?",
+        "What is ReAct (Reason + Act) prompting?",
+        "How does memory work in AI agents?",
+        "What is the control loop in an autonomous agent?",
+        "What is multi-agent orchestration?",
+        "What is the significance of the 'scratchpad' or 'thought' trace?",
+        "How do agents handle tool execution errors?",
+        "What is the 'Halo' effect or over-reliance in agents?",
+        "Explain the concept of 'Agency' in AI.",
+        "What are the security risks of autonomous agents (e.g., prompt injection)?",
+        "How do you evaluate the performance of an AI agent?"
+    ],
+    "fullQuestions": [
+        {
+            "question": "What is the primary characteristic that distinguishes an AI Agent from a standard LLM chatbot?",
+            "options": [
+                "It can generate text faster",
+                "It has a larger context window",
+                "It can autonomously take actions and interact with external tools",
+                "It uses a more advanced transformer architecture"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "While a chatbot primarily responds to queries, an agent can use tools, make decisions, and execute steps to achieve a goal autonomously.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "In the context of AI agents, what does 'Reasoning' typically refer to?",
+            "options": [
+                "Calculating mathematical equations accurately",
+                "The ability to break down a complex task into smaller, logical steps",
+                "Storing user data in a long-term database",
+                "Translating text between different languages"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Reasoning involves the agent's ability to plan and decompose a broad goal into actionable sub-tasks.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "Which component allows an LLM agent to remember information across different steps of a single task?",
+            "options": [
+                "Short-term Memory (Context Window)",
+                "Pre-training data",
+                "The GPU memory",
+                "Vector Embeddings only"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "Agents use the context window as short-term memory to keep track of previous actions and thoughts within a session.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is a 'Tool' or 'Function' for an LLM agent?",
+            "options": [
+                "A specific brand of computer",
+                "A predefined interface that allow the LLM to interact with external systems (e.g., Search, Calculator)",
+                "The Python programming language itself",
+                "A type of neural network layer"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Tools are external functions that the agent can choose to call to retrieve info or perform actions it cannot do natively.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is the 'Thought' or 'Chain of Thought' step in an agent's loop?",
+            "options": [
+                "Saving the output to a file",
+                "The internal process where the LLM explains its plan before acting",
+                "The final answer given to the user",
+                "Encrypting the data transmission"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Chain of Thought (CoT) encourages the model to 'think out loud', which often improves performance on complex reasoning tasks.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What does the 'ReAct' framework stand for in agent design?",
+            "options": [
+                "Recursive Action",
+                "Reasoning and Acting",
+                "Reactive Activation",
+                "Read and Activate"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "ReAct combines reasoning traces and task-specific actions in an interleaved manner.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "Which of the following is a key challenge in 'Long-term Memory' for agents?",
+            "options": [
+                "LLMs don't have enough parameters",
+                "Retrieving only the most relevant information from a massive history",
+                "Internet speed constraints",
+                "The cost of electric power"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Effective long-term memory requires sophisticated retrieval (often via Vector DBs) to provide context without overflowing the context window.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "How does a 'Plan-and-Execute' agent differ from a standard 'ReAct' agent?",
+            "options": [
+                "It doesn't use an LLM",
+                "It generates a full plan upfront before taking any actions",
+                "It can only use one tool",
+                "It is much faster but less accurate"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Plan-and-Execute agents separate the planning phase from the execution phase to reduce errors and improve stability.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is 'Self-Reflection' in the context of an AI agent?",
+            "options": [
+                "Backing up the model weights",
+                "The agent reviewing its own past actions and correcting errors",
+                "Showing the user a mirror",
+                "Reducing the temperature of the model"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Self-reflection allows the agent to evaluate its own performance and modify its path if it detects a mistake.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "In multi-agent systems, what is the 'Manager' or 'Orchestrator' pattern?",
+            "options": [
+                "A system where agents compete for resources",
+                "A central agent that delegates tasks to specialized sub-agents",
+                "A human overseeing the AI",
+                "A load balancer for API requests"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "An orchestrator agent determines which specialized agent is best suited for a specific sub-task and routes the work accordingly.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is a 'State Machine' approach to agent design?",
+            "options": [
+                "Running the agent on a physical robot",
+                "Defining strict transitions and paths the agent can take between specific states",
+                "A way to speed up the LLM inference",
+                "Only using agents for financial state calculations"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "State machines or Graphs (like LangGraph) provide more control and reliability compared to 'pure' autonomous loops.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "What is 'Indirect Prompt Injection' in the context of an agent that can browse the web?",
+            "options": [
+                "A user typing a malicious prompt directly",
+                "Malicious instructions placed on a website that the agent reads and then follows",
+                "A hardware failure in the data center",
+                "A slow response from the API"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "If an agent reads a webpage containing hidden instructions, it might execute them, leading to security breaches.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "How can 'Hierarchical Planning' improve agent performance?",
+            "options": [
+                "By using older versions of LLMs",
+                "By creating high-level goals and then refining them into granular actions",
+                "By increasing the learning rate",
+                "By removing all tools"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Hierarchical planning helps manage long-horizon tasks by keeping the agent focused on the big picture while sub-agents handle details.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "Which evaluation metric is specially designed for agents to measure 'successful completion' rather than just text similarity?",
+            "options": [
+                "BLEU score",
+                "ROUGE score",
+                "Task Success Rate (on benchmarks like GAIA or SWE-bench)",
+                "Perplexity"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "Agents are evaluated on whether they actually solved the problem (e.g., fixed the bug, booked the flight), not just how they phrased the text.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "What is the 'Context Window' bottleneck in complex agent workflows?",
+            "options": [
+                "The screen size of the user's phone",
+                "The limit on how much total information the agent can 'see' at once",
+                "The time it takes to load the UI",
+                "The number of users using the agent simultaneously"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "As agents perform many steps, the accumulated history (thoughts, actions, tool outputs) can exceed the LLM's context limit, leading to loss of memory.",
+            "difficulty": "Hard"
+        }
+    ]
+}
