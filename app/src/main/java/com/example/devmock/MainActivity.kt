@@ -118,7 +118,15 @@ class MainActivity : ComponentActivity() {
                                 )
                             }
                             composable("questions") {
-                                val qViewModel: QuestionsViewModel = viewModel()
+                                val context = LocalContext.current
+                                val repository = remember { com.example.devmock.data.repository.LocalQuestionsRepository(context) }
+                                val qViewModel: QuestionsViewModel = viewModel(
+                                    factory = object : androidx.lifecycle.ViewModelProvider.Factory {
+                                        override fun <T : androidx.lifecycle.ViewModel> create(modelClass: Class<T>): T {
+                                            return QuestionsViewModel(repository) as T
+                                        }
+                                    }
+                                )
                                 QuestionsScreen(
                                     navController = navController,
                                     viewModel = qViewModel
@@ -136,7 +144,7 @@ class MainActivity : ComponentActivity() {
                             composable("live_interview/{topic}/{count}/{difficulty}") { backStackEntry ->
                                 val topic = backStackEntry.arguments?.getString("topic") ?: ""
                                 val count = backStackEntry.arguments?.getString("count")?.toIntOrNull() ?: 5
-                                val userName = com.google.firebase.auth.FirebaseAuth.getInstance().currentUser?.displayName ?: "Hummet User"
+                                val userName = com.google.firebase.auth.FirebaseAuth.getInstance().currentUser?.displayName ?: "User"
                                 val difficulty = backStackEntry.arguments?.getString("difficulty") ?: "Medium"
 
                                 val viewModel = remember {

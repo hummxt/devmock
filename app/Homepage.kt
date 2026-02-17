@@ -47,7 +47,7 @@ fun Homepage(
                         )
                         Column(modifier = Modifier.padding(start = 12.dp)) {
                             Text(
-                                text = "Hello, Devmock User",
+                                text = "Hello, User",
                                 style = MaterialTheme.typography.titleMedium,
                                 fontWeight = FontWeight.Bold
                             )
