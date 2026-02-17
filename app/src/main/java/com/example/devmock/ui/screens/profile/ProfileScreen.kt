@@ -54,9 +54,9 @@ fun ProfileScreen(onNavigateToSettings: () -> Unit) {
         isLoading = false
     }
 
-    val displayName = userData?.name ?: auth.currentUser?.displayName ?: "Devmock User"
-    val userRole = userData?.role ?: "Fullstack Developer"
-    val userGoal = userData?.goal ?: "Aiming for Mid-level Backend at Devmock"
+    val displayName = userData?.name ?: auth.currentUser?.displayName ?: "User"
+    val userRole = userData?.role ?: "Developer"
+    val userGoal = userData?.goal ?: "Aiming for Mid-level Backend"
     val readyMeterProgress = (userData?.readyMeter ?: 0) / 100f
     val readyMeterText = "${(readyMeterProgress * 100).toInt()}%"
     

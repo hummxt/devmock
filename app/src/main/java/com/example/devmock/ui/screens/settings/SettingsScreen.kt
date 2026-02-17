@@ -293,7 +293,7 @@ fun SettingsScreen(onNavigateBack: () -> Unit) {
                         contentAlignment = Alignment.Center
                     ) {
                         Text(
-                            text = "Made by Devmock",
+                            text = "Made for Developers",
                             style = MaterialTheme.typography.labelLarge,
                             color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.5f)
                         )

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Base application theme -->
-    <style name="Theme.Devmock" parent="android:Theme.Material.Light.NoActionBar" />
+    <style name="Theme.Devmock" parent="Theme.Material3.DayNight.NoActionBar" />
     
     <!-- Splash Screen Theme -->
     <style name="Theme.Devmock.Splash" parent="Theme.SplashScreen">
