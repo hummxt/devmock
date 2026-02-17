@@ -1,0 +1,214 @@
+{
+    "id": "vector-databases",
+    "topicTitle": "Vector Databases",
+    "category": "AI & Data Science",
+    "difficulty": "Hard",
+    "accentColor": "#6366F1",
+    "tags": [
+        "AI",
+        "Vector",
+        "Search",
+        "Embedding",
+        "Pinecone"
+    ],
+    "companyHistory": "Essential for AI search features at companies like Airbnb, Spotify, and Pinterest for recommendation engines.",
+    "questions": [
+        "What is a Vector Database?",
+        "How is it different from a Relational Database (SQL)?",
+        "What is high-dimensional data?",
+        "What is an Index in a Vector DB?",
+        "What is k-Nearest Neighbors (k-NN)?",
+        "What is Approximate Nearest Neighbor (ANN)?",
+        "Describe the 'HNSW' algorithm.",
+        "What is L2 Distance (Euclidean)?",
+        "What is Inner Product similarity?",
+        "How does 'Filtering' work in a vector search?",
+        "What is scalar quantization (SQ)?",
+        "What is product quantization (PQ)?",
+        "Explain the 'Sparse Vector' vs 'Dense Vector'.",
+        "How do you handle real-time vector updates?",
+        "What are the top popular vector databases today?"
+    ],
+    "fullQuestions": [
+        {
+            "question": "What is the primary use of a Vector Database in AI applications?",
+            "options": [
+                "Storing user passwords",
+                "Managing table relationships",
+                "Fast similarity search of high-dimensional embeddings",
+                "Hosting the application's website"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "Vector databases are optimized for finding the most similar items (using mathematical proximity) rather than exact key-value or row matches.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "Which of these is NOT a traditional vector similarity metric?",
+            "options": [
+                "Cosine Similarity",
+                "L2 Distance",
+                "Inner Product",
+                "Alphabetized Sorting"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "Similarity in Vector DBs is based on geometric distance, not lexicographical sorting.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What does ANN stand for in the context of vector search?",
+            "options": [
+                "Artificial Neural Network",
+                "Approximate Nearest Neighbor",
+                "Advanced Node Network",
+                "Always Nearly Next"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "ANN algorithms trade a small amount of accuracy for a massive increase in search speed on large datasets.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What are 'Embeddings' in a Vector DB?",
+            "options": [
+                "The images themselves",
+                "Numerical vector representations of data (text, image, audio) that capture its meaning",
+                "The CSS styles",
+                "The database logs"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Embeddings are the result of passing data through a model to get a fixed-size list of numbers describing its features.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "Why is a standard SQL database slow for vector similarity?",
+            "options": [
+                "It doesn't support numbers",
+                "Calculating distance between high-dimensional vectors for every row (O(n)) is orohibitively expensive at scale",
+                "SQL is too old",
+                "It only works on Windows"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Relational databases aren't designed for the complex geometric calculations required for high-dimensional search across millions of entries.",
+            "difficulty": "Easy"
+        },
+        {
+            "question": "What is the 'HNSW' algorithm?",
+            "options": [
+                "Hierarchical Navigable Small World - a popular graph-based ANN index",
+                "Highly Networked Standard Web",
+                "Hyper Node Search Wave",
+                "Hidden Network Soft Ware"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "HNSW is one of the most efficient algorithms for fast, high-accuracy neighbor search by building multi-layered graphs.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is 'Product Quantization' (PQ)?",
+            "options": [
+                "Counting the number of products",
+                "A compression technique that divides vectors into sub-vectors and quantizes them to save memory",
+                "Increasing the price of the database",
+                "Multiplying two vectors together"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "PQ allows storing massive numbers of vectors in RAM by drastically reducing their size with minimal loss of search precision.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is the difference between Dense and Sparse vectors?",
+            "options": [
+                "Dense vectors are for text; Sparse vectors are for images",
+                "Dense vectors have mostly non-zero values (like embeddings); Sparse vectors have mostly zeros (like word counts)",
+                "Dense vectors are longer",
+                "Sparse vectors are faster"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Dense vectors capture semantic meaning, while sparse vectors (like BM25) are great for exact keyword matching.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "How does 'Pre-filtering' work in vector search?",
+            "options": [
+                "Cleaning the data before it's saved",
+                "Applying metadata filters *before* the vector similarity search to reduce the search space",
+                "Only searching for metadata",
+                "Deleting results that don't match"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Pre-filtering ensures that the vector search only considers items that meet certain criteria (e.g., 'only show items in stock').",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is 'Dimensionality Reduction'?",
+            "options": [
+                "Making the database smaller",
+                "Reducing the number of features (dimensions) in a vector while trying to preserve relevant info",
+                "Deleting old vectors",
+                "Compressing the text"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Techniques like PCA or t-SNE help in visualizing high-dimensional data or speeding up search by simplifying vectors.",
+            "difficulty": "Medium"
+        },
+        {
+            "question": "What is 'IVF' (Inverted File Index)?",
+            "options": [
+                "Inverse Vector Flow",
+                "A technique that clusters vectors into Voronoi cells to search only a subset of data",
+                "A type of network protocol",
+                "A way to reverse the database"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "IVF divides the vector space into clusters, greatly speeding up search by only checking vectors in the most relevant clusters.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "What is the 'Curse of Dimensionality'?",
+            "options": [
+                "A computer virus",
+                "The phenomenon where geometric concepts (like distance) behave counter-intuitively as dimensionality increases",
+                "The database getting too big",
+                "When vectors become too long to read"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "In high-dimensional space, all points tend to become equidistant, making simple distance metrics less meaningful.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "Compare FAISS and Pinecone.",
+            "options": [
+                "Pinecone is a library; FAISS is a managed service",
+                "FAISS is an open-source library for efficient similarity search; Pinecone is a managed, cloud-native vector database",
+                "They are the same thing",
+                "FAISS is for Windows only"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "FAISS (developed by Meta) provides the algorithms, while Pinecone provides a full serverless infrastructure around them.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "What is 'Re-ranking' in the context of vector search?",
+            "options": [
+                "Sorting results by name",
+                "Taking the top results from a fast ANN search and using a more precise metric to order them strictly",
+                "Deleting the first result",
+                "Refreshing the database"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Re-ranking allows for high-recall cheap searches followed by high-precision expensive ordering for the best user experience.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "What is 'Multimodal Embedding'?",
+            "options": [
+                "Using multiple databases",
+                "Mapping data from different sources (text, image, audio) into the same vector space",
+                "A prompt with multiple languages",
+                "A type of data encryption"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Multimodal embeddings (like CLIP) allow you to search for images using a text query, or find similar audio using an image.",
+            "difficulty": "Hard"
+        }
+    ]
+}
