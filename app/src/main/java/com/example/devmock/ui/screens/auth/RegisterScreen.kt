@@ -65,7 +65,7 @@ fun RegisterScreen(
                 )
                 Spacer(modifier = Modifier.height(8.dp))
                 Text(
-                    text = "Join Hummet and start mastering your future",
+                    text = "Join Devmock and start mastering your future",
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     textAlign = TextAlign.Center

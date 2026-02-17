@@ -41,7 +41,7 @@ fun ProfileSection(
         isLoading = false
     }
 
-    val displayName = userData?.name ?: auth.currentUser?.displayName ?: "Devmock User"
+    val displayName = userData?.name ?: auth.currentUser?.displayName ?: "User"
     val experienceLevel = userData?.experienceLevel ?: "Beginner"
 
     Row(
@@ -78,17 +78,11 @@ fun ProfileSection(
                 }
             }
             Column(modifier = Modifier.padding(start = 12.dp)) {
-                val nameToDisplay = displayName
                 Text(
-                    "Hello, $nameToDisplay",
-                    style = MaterialTheme.typography.titleMedium,
+                    "Overview",
+                    style = MaterialTheme.typography.titleLarge,
                     fontWeight = FontWeight.Bold,
                     color = primaryTextColor
-                )
-                Text(
-                    experienceLevel,
-                    style = MaterialTheme.typography.labelSmall,
-                    color = secondaryTextColor
                 )
             }
         }
