@@ -46,7 +46,7 @@ class MainActivity : ComponentActivity() {
             var showSplash by remember { mutableStateOf(true) }
 
             LaunchedEffect(Unit) {
-                delay(2500)
+                delay(2000)
                 showSplash = false
             }
 
